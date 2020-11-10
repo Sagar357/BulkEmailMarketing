@@ -8,11 +8,15 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckeditor/adapters/jquery.js"></script>
+
     <div class="container body-content">
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
