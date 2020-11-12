@@ -1,8 +1,213 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-<textarea id="editor"></textarea>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <link rel="stylesheet" href="~/Content/Style.css">
+    @*<link rel="stylesheet" href="css/Hover-master/css/hover-min.css">*@
+</head>
+<body>
+    <div class="site_container">
+        <div class="container">
 
-<script>
-    $( '#editor' ).ckeditor();
-</script>
+            <div class="btn_Wrp">
+                <div class="child_Wrp">
+                    <button onclick="FormSubmit()">
+                        Add camp..
+                    </button>
+                </div>
+                <div class="Btn_Grid">
+                    <span class="R0 R_cmn">
+                        <input type="checkbox" name="checkbox" id="checkbox"
+                               title="Select All" style="cursor: pointer;">
+                        <span class="tool_tip">Select All</span>
+                    </span>
+                    <span class="R1 R_cmn">
+                        <button onclick="openProduct('CWrapper')">Email</button>
+                    </span>
+                    <span class="R2 R_cmn">
+                        <button onclick="openProduct('product2')">Bulk Email</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="Campaign_wrp product" style="display: none;" id="CWrapper">
+                <ul>
+                    <li class="L1">
+                        <form action="#">
+                            <span class="checkbox01">
+                                <input type="checkbox" name="checkbox" id="checkbox2">
+                            </span>
+                            <fieldset>
+                                <legend>Campaign</legend>
+                                <div class="d1 frm_dCmn">
+                                    <label for="#">To</label>
+                                    <input type="text" id="ToName" name="Toname" disabled placeholder="To.." required>
+                                </div>
+                                <div class="d2 frm_dCmn">
+                                    <label for="#">From</label>
+                                    <input type="text" id="ToFrom" name="ToFrom" disabled placeholder="from.." required>
+                                </div>
+                                <div class="d3 frm_dCmn">
+                                    <label for="#">subject</label>
+                                    <input type="text" id="Subject" name="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="d4 frm_dCmn">
+                                    <label for="#">body</label>
+                                    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                                </div>
+                                <div class="d5 submit">
+                                    <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
+                                    <input type="submit" value="Send">
+                                    <!-- </a>   -->
+                                    <span class="Attach">
+                                        <img src="image/attach_file_black_20dp.png" alt="attach">
+                                        <input type="file" hidden id="Attach">
+                                    </span>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="Campaign2 product" style="display: none;" id="product2">
+                <div class="Campaign_wrp">
+                    <div class="Camp_chain" id="Camp_chain">
+                        Campaign2
+                    </div>
+                    <ul>
+                        <li class="L2">
+                            <form action="#">
+                                <fieldset>
+                                    <legend>Campaign2</legend>
+                                    <div class="d2 frm_dCmn">
+                                        <label for="#">From</label>
+                                        <input type="text" id="ToFrom" name="ToFrom" disabled placeholder="from.." required>
+                                    </div>
+                                    <div class="d3 frm_dCmn">
+                                        <label for="#">subject</label>
+                                        <input type="text" id="Subject" name="subject" placeholder="Subject" required>
+                                    </div>
+                                    <!-- <div class="d4 frm_dCmn">
+                                        <label for="#">body</label>
+                                       <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                                    </div> -->
+                                    <div class="Table_wrp">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>To</th>
+                                                    <!-- <th>From</th> -->
+                                                    <th>body</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <!-- <td>3</td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <!-- <td>3</td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <!-- <td>3</td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <!-- <td>3</td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <!-- <td>3</td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d5 submit">
+                                        <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
+                                        <input type="submit" value="Send">
+                                        <!-- </a>   -->
+                                        <span class="Attach">
+                                            <img src="image/attach_file_black_20dp.png" alt="attach">
+                                            <input type="file" hidden id="Attach">
+                                        </span>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="FormPop Form_cmn">
+            <div class="Frm_wrp">
+                <form action="#">
+                    <!-- <div class="d1 d_cmn">
+                        <label >To:</label>
+                        <input type="text" name="Toinput" id="ToInpt" placeholder="To..">
+                    </div> -->
+                    <div class="d1 d_cmn">
+                        <label>From:</label>
+                        <input type="text" name="Toinput" disabled id="ToInpt" placeholder="From..">
+                    </div>
+                    <div class="d2 d_cmn">
+                        <label>Subject:</label>
+                        <input type="text" name="Subject" id="Subject" placeholder="Subject..">
+                    </div>
+                    <div class="d3 d_cmn">
+                        <div class="Cwrp01 Cwrp0">
+                            <label> Campaign Name:</label>
+                            <input type="text" name="CampaignName" id="CampaignName" placeholder="Campaign Name..">
+                        </div>
+                        <div class="Cwrp02 Cwrp0">
+                            <label> Upload File</label>
+                            <input type="file" name="File3" id="File3">
+                            <!-- <span> <img src="#" alt="image"></span> -->
+                        </div>
+                    </div>
+                    <div class="d4 d_cmn">
+                        <label> Email body:</label>
+                        <textarea name="textarea1" id="textarea1" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="Create_camp">
+                        <button type="button" title="button" onclick="FormSubmit2()"> create Campaign</button>
+                    </div>
+                    <span id="close01" role="button" onclick="fnclose(event);" class="close" data-target="FormPop" title="Close Modal">X</span>
+                </form>
+            </div>
+        </div>
+        <div class="FormPop2 Form_cmn">
+            <div class="Frm_wrp2">
+                <div class="thanks">
+                    <strong>
+                        <svg class="checkmark_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                        </svg>
+                    </strong>
+                    <h3>Campaign created</h3>
+                    <span id="close02" role="button" onclick="fnclose(event);" class="close" data-link="#" data-target="FormPop2" title="Ok Modal">Ok</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- curor movement -->
+    <!-- end here -->
+
+    <!-- script section -->
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+</html>

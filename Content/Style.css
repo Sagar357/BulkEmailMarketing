@@ -1,0 +1,865 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  color: #002f34;
+  background: #f9fafb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, del, dfn, em, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.container.body-content {
+    width: 100%!important;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.site_container {
+  background: url(/image/hero-bg.svg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+}
+
+.btn_Wrp {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.4rem 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+}
+
+.btn_Wrp .child_Wrp {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.btn_Wrp .child_Wrp button {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.747);
+  -webkit-box-shadow: 0 0 4px 3px #20c2dd52;
+          box-shadow: 0 0 4px 3px #20c2dd52;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background-image: linear-gradient(45deg, #002f34, #20fcbe);
+  font-weight: bold;
+  position: relative;
+  -o-object-fit: fill;
+     object-fit: fill;
+  outline: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.btn_Wrp .child_Wrp button:hover {
+  border-radius: 100px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn_Wrp .child_Wrp button:hover::before {
+  display: block;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn_Wrp .child_Wrp button::before {
+  content: '';
+  width: 100%;
+  background-image: linear-gradient(45deg, #20fcbe, #20bede);
+  color: #fff;
+  height: 49px;
+  position: absolute;
+  -webkit-animation: bghover .3s linear;
+          animation: bghover .3s linear;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: -2;
+}
+
+.btn_Wrp .Btn_Grid {
+  width: 60%;
+  text-align: right;
+}
+
+.btn_Wrp .Btn_Grid .R_cmn {
+  position: relative;
+}
+
+.btn_Wrp .Btn_Grid .R_cmn button {
+  padding: 0.9rem 2.9rem !important;
+  margin: 0 10px 0 0 !important;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.747);
+  -webkit-box-shadow: 0 0 4px 3px #20c2dd52;
+          box-shadow: 0 0 4px 3px #20c2dd52;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background-image: linear-gradient(45deg, #002f34, #20fcbe);
+  font-weight: bold;
+  position: relative;
+  -o-object-fit: fill;
+     object-fit: fill;
+  outline: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.btn_Wrp .Btn_Grid .R_cmn button:hover {
+  border-radius: 100px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn_Wrp .Btn_Grid .R_cmn button:hover::before {
+  display: block;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn_Wrp .Btn_Grid .R_cmn button::before {
+  content: '';
+  width: 100%;
+  background-image: linear-gradient(45deg, #20fcbe, #20bede);
+  color: #fff;
+  height: 49px;
+  position: absolute;
+  -webkit-animation: bghover .3s linear;
+          animation: bghover .3s linear;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: -2;
+}
+
+@-webkit-keyframes bghover {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+}
+
+@keyframes bghover {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+}
+
+.Form_cmn {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #02020252;
+  padding: 50px 0;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-animation: animatezoom 1s;
+          animation: animatezoom 1s;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.Form_cmn .Frm_wrp2 {
+  width: 60%;
+  height: 500px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.Form_cmn .Frm_wrp2 .thanks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
+          box-shadow: 0px 0px 5px 1px #d9fff9c4;
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+}
+
+.Form_cmn .Frm_wrp2 .thanks h3 {
+  text-transform: capitalize;
+  width: 100%;
+  font-size: 20px;
+}
+
+.Form_cmn .Frm_wrp2 .thanks span#close02 {
+  background-image: linear-gradient(45deg, #20fcbe, #002f34);
+  padding: 1rem 4rem;
+  border-radius: 5px;
+  display: block;
+  margin: 0rem 0 2rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.Form_cmn .Frm_wrp2 .thanks span#close02:hover {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-bottom-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-image: linear-gradient(40deg, #002f34, #20fcbe);
+}
+
+.Form_cmn input#File3, .Form_cmn .Frm_wrp form .d_cmn textarea#File3, .Frm_wrp form .d_cmn .Form_cmn textarea#File3, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#File3, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#File3 {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.Form_cmn input#File3:focus, .Form_cmn .Frm_wrp form .d_cmn textarea#File3:focus, .Frm_wrp form .d_cmn .Form_cmn textarea#File3:focus, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#File3:focus, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#File3:focus {
+  border: none;
+  outline: none;
+}
+
+.Form_cmn input#ToInpt, .Form_cmn .Frm_wrp form .d_cmn textarea#ToInpt, .Frm_wrp form .d_cmn .Form_cmn textarea#ToInpt, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToInpt, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#ToInpt {
+  cursor: not-allowed;
+}
+
+@-webkit-keyframes animatezoom {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+}
+
+@keyframes animatezoom {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+}
+
+#close01 {
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  right: -21px;
+  width: 50px;
+  height: 50px;
+  background-image: linear-gradient(40deg, #20fcbe, #002f34);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#close01:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background-image: linear-gradient(40deg, #002f34, #20fcbe);
+}
+
+.Frm_wrp {
+  width: 50%;
+  border-radius: 5px;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
+          box-shadow: 0px 0px 5px 1px #d9fff9c4;
+  background: #f9fafb;
+  padding: 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Frm_wrp form {
+  width: 100%;
+}
+
+.Frm_wrp form .d_cmn {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.Frm_wrp form .d_cmn input, .Frm_wrp form .d_cmn textarea, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .frm_dCmn textarea, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .frm_dCmn textarea, .Frm_wrp .Campaign_wrp ul li form fieldset .frm_dCmn .d_cmn textarea, .Campaign_wrp ul li .Frm_wrp form fieldset .frm_dCmn .d_cmn textarea {
+  width: 100%;
+  padding: .9rem .5rem;
+  margin: 1rem 0 0;
+}
+
+.Frm_wrp form .d_cmn label {
+  font-size: 1rem;
+  color: #002f34;
+  text-transform: capitalize;
+}
+
+.Frm_wrp form .d_cmn textarea {
+  height: 180px !important;
+}
+
+.Frm_wrp form .Create_camp {
+  width: 40%;
+}
+
+.Frm_wrp form .Create_camp button {
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  background-image: linear-gradient(45deg, #002f34, #20fcbe);
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all .3s ease-in-out;
+  border-radius: 6px;
+}
+
+.Frm_wrp form .Create_camp button:hover {
+  border-radius: 100px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background-image: linear-gradient(65deg, #20fcbe, #002f34);
+}
+
+.Frm_wrp form .Create_camp button:focus {
+  outline: none;
+}
+
+.Frm_wrp form .d3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Frm_wrp form .d3 .Cwrp0 {
+  width: 49%;
+}
+
+.Frm_wrp form .d3 .Cwrp02 {
+  text-align: center;
+}
+
+/* check mark  animation start here */
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  -webkit-animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+          animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark_svg {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 1rem  auto  0;
+  -webkit-box-shadow: inset 0px 0px 0px #7ac142;
+          box-shadow: inset 0px 0px 0px #7ac142;
+  -webkit-animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+          animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+          animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes scale {
+  0%, 100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+            transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+            transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@-webkit-keyframes fill {
+  100% {
+    -webkit-box-shadow: inset 0px 0px 0px 30px #7ac142;
+            box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+@keyframes fill {
+  100% {
+    -webkit-box-shadow: inset 0px 0px 0px 30px #7ac142;
+            box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+/* check mark end here */
+.L1 form {
+  width: 60% !important;
+}
+
+.Campaign_wrp {
+  width: 90%;
+  margin: 2.5rem auto;
+}
+
+.Campaign_wrp ul li {
+  margin: .1rem 0 0;
+  list-style-type: none;
+}
+
+.Campaign_wrp ul li form {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 11px 4px #0000000a;
+          box-shadow: 0 0 11px 4px #0000000a;
+}
+
+.Campaign_wrp ul li form fieldset {
+  padding: 1rem 1rem;
+  border: 1px solid;
+  border-radius: 4px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Campaign_wrp ul li form fieldset legend {
+  padding: 0 .4rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.Campaign_wrp ul li form fieldset .frm_dCmn {
+  width: 100%;
+  margin: 0 0 1.3rem;
+}
+
+.Campaign_wrp ul li form fieldset .frm_dCmn input, .Campaign_wrp ul li form fieldset .frm_dCmn textarea {
+  width: 100%;
+  margin: .9rem 0 .5rem;
+  padding: .8rem .5rem;
+  cursor: pointer;
+}
+
+.Campaign_wrp ul li form fieldset .frm_dCmn label {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.Campaign_wrp ul li form fieldset .frm_dCmn input#ToFrom, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToFrom, .Campaign_wrp ul li form fieldset .frm_dCmn input#ToName, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToName {
+  cursor: not-allowed;
+}
+
+.Campaign_wrp ul li form fieldset .frm_dCmn input#Subject, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#Subject, .Campaign_wrp ul li form fieldset .frm_dCmn textarea {
+  cursor: text;
+}
+
+.Campaign_wrp ul li form fieldset .d5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Campaign_wrp ul li form fieldset .d5 input[type="submit"], .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"], .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"], .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"], .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"] {
+  background-image: linear-gradient(45deg, #002f34, #20fcbe);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border: none;
+  outline: none;
+  padding: 1rem 3.5rem;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.Campaign_wrp ul li form fieldset .d5 input[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"]:hover {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 100px;
+  background-image: linear-gradient(45deg, #20fcbe, #002f34);
+}
+
+.Campaign_wrp ul li form fieldset .d5 .Attach {
+  cursor: pointer;
+  padding: .5rem .2rem;
+  margin: 0 0 0 16px;
+  overflow: hidden;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.Campaign_wrp ul li form fieldset .d5 .Attach:hover {
+  background: #adadad2e;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.Campaign_wrp ul li form fieldset .d5 .Attach img {
+  max-width: 100%;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.Campaign_wrp ul li form fieldset .d5 .Attach img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.Campaign2 {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Campaign2 .Table_wrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0 auto 2rem;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
+          box-shadow: 0px 0px 5px 1px #d9fff9c4;
+  border-radius: 5px;
+}
+
+.Campaign2 .Table_wrp table {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #f1f1f1;
+  border-spacing: 0;
+  border-collapse: inherit;
+}
+
+.Campaign2 .Table_wrp table thead {
+  background-image: linear-gradient(45deg, #20fcbe, #20bede);
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 7px 0px #002f342e;
+          box-shadow: 0px 3px 7px 0px #002f342e;
+  text-transform: capitalize;
+}
+
+.Campaign2 .Table_wrp table thead tr th {
+  padding: 1.2rem .5rem;
+  border-right: 1px solid #f1f1f170;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 21px;
+  color: #002f34;
+}
+
+.Campaign2 .Table_wrp table thead tr th:last-child {
+  border-right: none;
+}
+
+.Campaign2 .Table_wrp table tbody tr {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.Campaign2 .Table_wrp table tbody tr td {
+  padding: .8rem .5rem;
+  border-right: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.Campaign2 .Table_wrp table tbody tr td:last-child {
+  border-right: none;
+}
+
+.Campaign2 .Table_wrp table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.Campaign2 .Table_wrp table tbody tr:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#20ccd74d), to(#20e8c838));
+  background-image: linear-gradient(to right, #20ccd74d, #20e8c838);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.Campaign2 .Table_wrp table tbody tr:nth-child(odd) {
+  background: #f1f1f161;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.Campaign2 .Table_wrp table tbody tr:nth-child(odd):hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#20ccd74d), to(#20e8c838));
+  background-image: linear-gradient(to right, #20ccd74d, #20e8c838);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+span.checkbox01 {
+  position: absolute;
+  left: -31px;
+  top: 8px;
+}
+
+.checkbox01 #checkbox2, #checkbox {
+  /* padding: 15px 15px; */
+  width: 18px !important;
+  height: 18px !important;
+}
+
+#checkbox {
+  -webkit-transform: translate(-15px, 5px);
+          transform: translate(-15px, 5px);
+}
+
+.tool_tip {
+  cursor: pointer;
+  background: #0000;
+  color: #fff;
+  padding: .6rem 1.5rem 0 0;
+  border-radius: 100px;
+}
+
+.cursor {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.cursor:nth-child(1) {
+  background-color: #E74C3C;
+  z-index: 1;
+}
+
+.cursor:nth-child(2) {
+  background-color: #fff;
+}
+
+.Camp_chain {
+  width: 80%;
+  height: 50px;
+  background: #fff;
+  margin: 0 auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.L2 {
+  display: none;
+}
