@@ -71,9 +71,9 @@ namespace BulkEmailMarketing.Services
                 {
                     DataRow dr = records.smsRecords.NewRow();
                     dr["index"] = valueArray[xlRow, 1];
-                    dr["name"] = valueArray[xlRow, 2];
-                    dr["phoneno"] = valueArray[xlRow, 3];
-                    dr["message"] = valueArray[xlRow, 4];
+                    dr["EmailTo"] = valueArray[xlRow, 2];
+                    dr["Subject"] = valueArray[xlRow, 3];
+                    dr["body"] = valueArray[xlRow, 4];
                     records.smsRecords.Rows.Add(dr);
 
                 }
