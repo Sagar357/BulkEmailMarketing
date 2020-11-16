@@ -3,5 +3,51 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lg</title>
+    <link rel="stylesheet" href="~/Content/Style.css">
+    <link rel="stylesheet" href="~/Scripts/fontawesome-free-5.15.1-web/css/all.css">
+</head>
+<body>
+    <div class="site_container">
+        <div class="container">
+            <div class="main_Wrp">
+                <div class="wrapper">
+                    <div class="Lg_frst L_cmn01">
+                        <figure>
+                            <img src="~/img/undraw_mobile_login_ikmv.png" alt="login">
+                        </figure>
+                    </div>
+                    <form class="login L_cmn01">
+                        <p class="title">Log in</p>
+                        <input type="text" placeholder="Username" autofocus />
+                        <i class="fa fa-user"></i>
+                        <input type="password" placeholder="Password" />
+                        <i class="fa fa-key"></i>
+                        <a href="#">Forgot your password?</a>
+                        <a href="#" class="Remember_ME">
+                            <input type="checkbox" name="Remember" id="Remember">
+                            Remember me
+                        </a>
+                        <button>
+                            <i class="spinner"></i>
+                            <span class="state">Log in</span>
+                        </button>
+                    </form>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <!-- scritp section -->
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>
