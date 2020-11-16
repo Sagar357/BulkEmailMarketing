@@ -1,12 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+@model BulkEmailMarketing.Models.Campaign_List
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email</title>
     <link rel="stylesheet" href="~/Content/Style.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+ 
     @*<link rel="stylesheet" href="css/Hover-master/css/hover-min.css">*@
-</head>
+
 <body>
     <div class="site_container">
         <div class="container">
@@ -32,104 +39,32 @@
                 </div>
             </div>
 
-            <div class="Campaign_wrp product" style="display: none;" id="CWrapper">
+            <div class="Campaign_wrp product" style="display: block;" id="CWrapper">
                 <ul>
-                    <li class="L1">
-                        <form action="#">
-                            <span class="checkbox01">
-                                <input type="checkbox" name="checkbox" id="checkbox2">
-                            </span>
-                            <fieldset>
-                                <legend>Campaign</legend>
-                                <div class="d1 frm_dCmn">
-                                    <label for="#">To</label>
-                                    <input type="text" id="ToName" name="Toname" disabled placeholder="To.." required>
-                                </div>
-                                <div class="d2 frm_dCmn">
-                                    <label for="#">From</label>
-                                    <input type="text" id="ToFrom" name="ToFrom" disabled placeholder="from.." required>
-                                </div>
-                                <div class="d3 frm_dCmn">
-                                    <label for="#">subject</label>
-                                    <input type="text" id="Subject" name="subject" placeholder="Subject" required>
-                                </div>
-                                <div class="d4 frm_dCmn">
-                                    <label for="#">body</label>
-                                    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-                                </div>
-                                <div class="d5 submit">
-                                    <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
-                                    <input type="submit" value="Send">
-                                    <!-- </a>   -->
-                                    <span class="Attach">
-                                        <img src="image/attach_file_black_20dp.png" alt="attach">
-                                        <input type="file" hidden id="Attach">
-                                    </span>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-            <div class="Campaign2 product" style="display: none;" id="product2">
-                <div class="Campaign_wrp">
-                    <div class="Camp_chain" id="Camp_chain">
-                        Campaign2
-                    </div>
-                    <ul>
-                        <li class="L2">
-                            <form action="#">
+                    @foreach (var element in Model.list )
+                    {
+                        <li class="L1">
+                            <form action="@Url.Action("SendEmail" ,"Email")" method="post">
+                                <span class="checkbox01">
+                                    <input type="checkbox" name="checkbox" id="@element.campaighId">
+                                </span>
                                 <fieldset>
-                                    <legend>Campaign2</legend>
+                                    <legend>@element.campaignName</legend>
+                                    <div class="d1 frm_dCmn">
+                                        <label for="#">To</label>
+                                        <input type="text"  name="Toname" placeholder="To.." required>
+                                    </div>
                                     <div class="d2 frm_dCmn">
                                         <label for="#">From</label>
-                                        <input type="text" id="ToFrom" name="ToFrom" disabled placeholder="from.." required>
+                                        <input type="text"  value="@element.from" name="ToFrom" readonly placeholder="from.." required>
                                     </div>
                                     <div class="d3 frm_dCmn">
                                         <label for="#">subject</label>
-                                        <input type="text" id="Subject" name="subject" placeholder="Subject" required>
+                                        <input type="text"  name="subject" placeholder="Subject" value="@element.subject" required>
                                     </div>
-                                    <!-- <div class="d4 frm_dCmn">
+                                    <div class="d4 frm_dCmn">
                                         <label for="#">body</label>
-                                       <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-                                    </div> -->
-                                    <div class="Table_wrp">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>To</th>
-                                                    <!-- <th>From</th> -->
-                                                    <th>body</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <!-- <td>3</td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <!-- <td>3</td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <!-- <td>3</td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <!-- <td>3</td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>2</td>
-                                                    <!-- <td>3</td> -->
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <textarea name="textarea"  cols="30" rows="10">@element.emailBody</textarea>
                                     </div>
                                     <div class="d5 submit">
                                         <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
@@ -137,31 +72,115 @@
                                         <!-- </a>   -->
                                         <span class="Attach">
                                             <img src="image/attach_file_black_20dp.png" alt="attach">
-                                            <input type="file" hidden id="Attach">
+                                            <input type="file" hidden>
                                         </span>
                                     </div>
                                 </fieldset>
                             </form>
                         </li>
-                    </ul>
-                </div>
+
+                    }
+                </ul>
+            </div>
+            <div class="Campaign2 product" style="display: none;" id="product2">
+                @foreach (var element in Model.list)
+                {
+                    <div class="Campaign_wrp">
+                        <span class="Camp_chain" id="Camp_chain">
+                            +
+                        </span>
+                        <ul>
+                            <li class="L2">
+                                <form action="#">
+                                    <fieldset>
+                                        <legend>@element.campaignName</legend>
+                                        <div class="d2 frm_dCmn">
+                                            <label for="#">From</label>
+                                            <input type="text" id="ToFrom" name="ToFrom" value="@element.from" disabled placeholder="from.." required>
+                                        </div>
+                                        <div class="d3 frm_dCmn">
+                                            <label for="#">Excel Document</label>
+                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-name="" required>
+
+                                        </div>
+                                        <div class="d5 submit"> 
+                                        <input type="button" class="btnfile" value="Upload">
+                                        </div>
+                                        <!-- <div class="d4 frm_dCmn">
+        <label for="#">body</label>
+       <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+    </div> -->
+                                        <div class="Table_wrp">
+                                            @*<table>
+                <thead>
+                    <tr>
+                        <th>To</th>
+                         <th>From</th>
+                        <th>body</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                         <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                         <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                         <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                         <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                         <td>3</td>
+                    </tr>
+                </tbody>
+            </table>*@
+                                        </div>
+                                        <div class="d5 submit">
+                                            <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
+                                            <input type="submit" value="Send">
+                                            <!-- </a>   -->
+                                            <span class="Attach">
+                                                <img src="image/attach_file_black_20dp.png" alt="attach">
+                                                <input type="file" hidden>
+                                            </span>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+
+                }
 
             </div>
         </div>
         <div class="FormPop Form_cmn">
             <div class="Frm_wrp">
-                <form action="#">
+                <form action="@Url.Action("Create" ,"Campaign")" method="post">
                     <!-- <div class="d1 d_cmn">
                         <label >To:</label>
                         <input type="text" name="Toinput" id="ToInpt" placeholder="To..">
                     </div> -->
                     <div class="d1 d_cmn">
                         <label>From:</label>
-                        <input type="text" name="Toinput" disabled id="ToInpt" placeholder="From..">
+                        <input type="text" value="markushno357@gmail.com" name="Frominput" readonly id="ToInpt" placeholder="From..">
                     </div>
                     <div class="d2 d_cmn">
                         <label>Subject:</label>
-                        <input type="text" name="Subject" id="Subject" placeholder="Subject..">
+                        <input type="text" name="Subject" id="Subject2" placeholder="Subject..">
                     </div>
                     <div class="d3 d_cmn">
                         <div class="Cwrp01 Cwrp0">
@@ -171,7 +190,10 @@
                         <div class="Cwrp02 Cwrp0">
                             <label> Upload File</label>
                             <input type="file" name="File3" id="File3">
-                            <!-- <span> <img src="#" alt="image"></span> -->
+                            <span>
+                                <img id="camp_logo" src="#" alt="image">
+
+                            </span>
                         </div>
                     </div>
                     <div class="d4 d_cmn">
@@ -179,13 +201,16 @@
                         <textarea name="textarea1" id="textarea1" cols="30" rows="10"></textarea>
                     </div>
                     <div class="Create_camp">
-                        <button type="button" title="button" onclick="FormSubmit2()"> create Campaign</button>
+                        <button type="submit" title="button" @*onsubmit="FormSubmit2()"*@> create Campaign</button>
+                        <input type="hidden" value="" name="campaignLogo" id="hiddenLogo" />
                     </div>
                     <span id="close01" role="button" onclick="fnclose(event);" class="close" data-target="FormPop" title="Close Modal">X</span>
                 </form>
             </div>
         </div>
-        <div class="FormPop2 Form_cmn">
+          @if (ViewBag.status == "success")
+          {
+        <div class="FormPop2 Form_cmn" style="display:block;">
             <div class="Frm_wrp2">
                 <div class="thanks">
                     <strong>
@@ -199,15 +224,22 @@
                 </div>
             </div>
         </div>
+          }
     </div>
+
+    @if (ViewBag.status=="success") 
+    {
+        <script>
+            window.onload(function () {
+                FormSubmit2();
+            });
+        </script>
+    }
 
     <!-- curor movement -->
     <!-- end here -->
-
     <!-- script section -->
-
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/Index.js"></script>
     <script src="~/Scripts/main.js"></script>
 
 </body>
-</html>

@@ -34,6 +34,7 @@ function FormSubmit2() {
     } else {
         x[0].style.display = "block";
         y[0].style.display = "none";
+       
     }
 }
 
