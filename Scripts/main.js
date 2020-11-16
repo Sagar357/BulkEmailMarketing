@@ -34,7 +34,6 @@ function FormSubmit2() {
     } else {
         x[0].style.display = "block";
         y[0].style.display = "none";
-       
     }
 }
 
@@ -65,4 +64,26 @@ $('#checkbox').change(function () {
 
 $(".Camp_chain").click(function () {
     $(".L2").slideToggle(500).css("display-block");
-}); 
+});
+
+// ----***----Log In---**---//
+
+var working = false;
+$('.login').on('submit', function (e) {
+    e.preventDefault();
+    if (working) return;
+    working = true;
+    var $this = $(this),
+        $state = $this.find('button > .state');
+    $this.addClass('loading');
+    $state.html('Authenticating');
+    setTimeout(function () {
+        $this.addClass('ok');
+        $state.html('Welcome back!');
+        setTimeout(function () {
+            $state.html('Log in');
+            $this.removeClass('ok loading');
+            working = false;
+        }, 4000);
+    }, 3000);
+});
