@@ -469,8 +469,17 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
 
 .Frm_wrp form .d3 .Cwrp02 {
   text-align: center;
+  position:relative;
 }
-
+.Cwrp02.Cwrp0 span {
+    position: absolute;
+    right: 90px;
+    top: 38px;
+}
+img#camp_logo {
+    max-width: 20%;
+    border-radius: 5px;
+}
 /* check mark  animation start here */
 .checkmark__circle {
   stroke-dasharray: 166;
