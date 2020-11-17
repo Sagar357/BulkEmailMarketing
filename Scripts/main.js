@@ -34,7 +34,6 @@ function FormSubmit2() {
     } else {
         x[0].style.display = "block";
         y[0].style.display = "none";
-       
     }
 }
 
@@ -63,6 +62,45 @@ $('#checkbox').change(function () {
 
 // flip
 
-$(".Camp_chain").click(function () {
-    $(".L2").slideToggle(500).css("display-block");
-}); 
+// $(".Camp_chain").click(function(event)
+//   {
+//     $(".L2").slideToggle(500).css("display-block");           
+// });
+
+// ----***----Log In---**---//
+
+var working = false;
+$('.login').on('submit', function (e) {
+    e.preventDefault();
+    if (working) return;
+    working = true;
+    var $this = $(this),
+        $state = $this.find('.btn1 > .state');
+    $this.addClass('loading');
+    $state.html('Authenticating');
+    setTimeout(function () {
+        $this.addClass('ok');
+        $state.html('Welcome back!');
+        setTimeout(function () {
+            $state.html('Log in');
+            $this.removeClass('ok loading');
+            working = false;
+        }, 4000);
+    }, 3000);
+});
+
+
+var expand = event => {
+    event.currentTarget.nextElementSibling.style.display = "block";
+}
+
+// sign up pop up
+
+function mBtn() {
+    var x = document.querySelectorAll(".Form_cmn");
+    if (x[0].style.display === "block") {
+        x[0].style.display = "none";
+    } else {
+        x[0].style.display = "block";
+    }
+}
