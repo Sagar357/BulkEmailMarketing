@@ -62,9 +62,10 @@ $('#checkbox').change(function () {
 
 // flip
 
-$(".Camp_chain").click(function () {
-    $(".L2").slideToggle(500).css("display-block");
-});
+// $(".Camp_chain").click(function(event)
+//   {
+//     $(".L2").slideToggle(500).css("display-block");           
+// });
 
 // ----***----Log In---**---//
 
@@ -74,7 +75,7 @@ $('.login').on('submit', function (e) {
     if (working) return;
     working = true;
     var $this = $(this),
-        $state = $this.find('button > .state');
+        $state = $this.find('.btn1 > .state');
     $this.addClass('loading');
     $state.html('Authenticating');
     setTimeout(function () {
@@ -87,3 +88,19 @@ $('.login').on('submit', function (e) {
         }, 4000);
     }, 3000);
 });
+
+
+var expand = event => {
+    event.currentTarget.nextElementSibling.style.display = "block";
+}
+
+// sign up pop up
+
+function mBtn() {
+    var x = document.querySelectorAll(".Form_cmn");
+    if (x[0].style.display === "block") {
+        x[0].style.display = "none";
+    } else {
+        x[0].style.display = "block";
+    }
+}

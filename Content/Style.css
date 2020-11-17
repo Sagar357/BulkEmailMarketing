@@ -27,15 +27,14 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-
+.container.body-content {
+    width: inherit;
+}
 .container {
     width: 1200px;
     margin: 0 auto;
 }
- .container.body-content {
-    width: 100%;
-   /* margin: 0 auto; */
-  }
+
 .site_container {
     background: url(../image/hero-bg.svg) no-repeat;
     background-size: cover;
@@ -63,121 +62,121 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     justify-content: space-between !important;
 }
 
-    .btn_Wrp .child_Wrp {
-        width: 30%;
-        margin: 0 auto;
-    }
+.btn_Wrp .child_Wrp {
+    width: 30%;
+    margin: 0 auto;
+}
 
-        .btn_Wrp .child_Wrp button {
-            padding: 1rem 2rem;
-            text-transform: uppercase;
-            color: #ffffff;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.747);
-            -webkit-box-shadow: 0 0 4px 3px #20c2dd52;
-            box-shadow: 0 0 4px 3px #20c2dd52;
-            -webkit-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
-            background-image: linear-gradient(45deg, #002f34, #20fcbe);
-            font-weight: bold;
-            position: relative;
-            -o-object-fit: fill;
-            object-fit: fill;
-            outline: none;
-            overflow: hidden;
-            z-index: 2;
-        }
+.btn_Wrp .child_Wrp button {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.747);
+    -webkit-box-shadow: 0 0 4px 3px #20c2dd52;
+    box-shadow: 0 0 4px 3px #20c2dd52;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-image: linear-gradient(45deg, #002f34, #20fcbe);
+    font-weight: bold;
+    position: relative;
+    -o-object-fit: fill;
+    object-fit: fill;
+    outline: none;
+    overflow: hidden;
+    z-index: 2;
+}
 
-            .btn_Wrp .child_Wrp button:hover {
-                border-radius: 100px;
-                -webkit-transition: all .3s ease-in-out;
-                transition: all .3s ease-in-out;
-            }
+.btn_Wrp .child_Wrp button:hover {
+    border-radius: 100px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                .btn_Wrp .child_Wrp button:hover::before {
-                    display: block;
-                    -webkit-transition: all .3s ease-in-out;
-                    transition: all .3s ease-in-out;
-                }
+.btn_Wrp .child_Wrp button:hover::before {
+    display: block;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-            .btn_Wrp .child_Wrp button::before {
-                content: '';
-                width: 100%;
-                background-image: linear-gradient(45deg, #20fcbe, #20bede);
-                color: #fff;
-                height: 49px;
-                position: absolute;
-                -webkit-animation: bghover .3s linear;
-                animation: bghover .3s linear;
-                left: 0;
-                top: 0;
-                display: none;
-                z-index: -2;
-            }
+.btn_Wrp .child_Wrp button::before {
+    content: '';
+    width: 100%;
+    background-image: linear-gradient(45deg, #20fcbe, #20bede);
+    color: #fff;
+    height: 49px;
+    position: absolute;
+    -webkit-animation: bghover .3s linear;
+    animation: bghover .3s linear;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: -2;
+}
 
-    .btn_Wrp .Btn_Grid {
-        width: 60%;
-        text-align: right;
-    }
+.btn_Wrp .Btn_Grid {
+    width: 60%;
+    text-align: right;
+}
 
-        .btn_Wrp .Btn_Grid .R_cmn {
-            position: relative;
-        }
+.btn_Wrp .Btn_Grid .R_cmn {
+    position: relative;
+}
 
-            .btn_Wrp .Btn_Grid .R_cmn button {
-                padding: 0.9rem 2.9rem !important;
-                margin: 0 10px 0 0 !important;
-                text-transform: capitalize;
-                cursor: pointer;
-                padding: 1rem 2rem;
-                text-transform: uppercase;
-                color: #ffffff;
-                cursor: pointer;
-                border: none;
-                border-radius: 5px;
-                border: 1px solid rgba(255, 255, 255, 0.747);
-                -webkit-box-shadow: 0 0 4px 3px #20c2dd52;
-                box-shadow: 0 0 4px 3px #20c2dd52;
-                -webkit-transition: all .3s ease-in-out;
-                transition: all .3s ease-in-out;
-                background-image: linear-gradient(45deg, #002f34, #20fcbe);
-                font-weight: bold;
-                position: relative;
-                -o-object-fit: fill;
-                object-fit: fill;
-                outline: none;
-                overflow: hidden;
-                z-index: 2;
-            }
+.btn_Wrp .Btn_Grid .R_cmn button {
+    padding: 0.9rem 2.9rem !important;
+    margin: 0 10px 0 0 !important;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.747);
+    -webkit-box-shadow: 0 0 4px 3px #20c2dd52;
+    box-shadow: 0 0 4px 3px #20c2dd52;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-image: linear-gradient(45deg, #002f34, #20fcbe);
+    font-weight: bold;
+    position: relative;
+    -o-object-fit: fill;
+    object-fit: fill;
+    outline: none;
+    overflow: hidden;
+    z-index: 2;
+}
 
-                .btn_Wrp .Btn_Grid .R_cmn button:hover {
-                    border-radius: 100px;
-                    -webkit-transition: all .3s ease-in-out;
-                    transition: all .3s ease-in-out;
-                }
+.btn_Wrp .Btn_Grid .R_cmn button:hover {
+    border-radius: 100px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                    .btn_Wrp .Btn_Grid .R_cmn button:hover::before {
-                        display: block;
-                        -webkit-transition: all .3s ease-in-out;
-                        transition: all .3s ease-in-out;
-                    }
+.btn_Wrp .Btn_Grid .R_cmn button:hover::before {
+    display: block;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                .btn_Wrp .Btn_Grid .R_cmn button::before {
-                    content: '';
-                    width: 100%;
-                    background-image: linear-gradient(45deg, #20fcbe, #20bede);
-                    color: #fff;
-                    height: 49px;
-                    position: absolute;
-                    -webkit-animation: bghover .3s linear;
-                    animation: bghover .3s linear;
-                    left: 0;
-                    top: 0;
-                    display: none;
-                    z-index: -2;
-                }
+.btn_Wrp .Btn_Grid .R_cmn button::before {
+    content: '';
+    width: 100%;
+    background-image: linear-gradient(45deg, #20fcbe, #20bede);
+    color: #fff;
+    height: 49px;
+    position: absolute;
+    -webkit-animation: bghover .3s linear;
+    animation: bghover .3s linear;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: -2;
+}
 
 @-webkit-keyframes bghover {
     0% {
@@ -230,87 +229,87 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     transition: all .3s ease-in-out;
 }
 
-    .Form_cmn .Frm_wrp2 {
-        width: 60%;
-        height: 500px;
-        margin: 0 auto;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
+.Form_cmn .Frm_wrp2 {
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
 
-        .Form_cmn .Frm_wrp2 .thanks {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
-            box-shadow: 0px 0px 5px 1px #d9fff9c4;
-            width: 100%;
-            margin: 0 auto;
-            height: 300px;
-            border-radius: 5px;
-            background: #fff;
-            text-align: center;
-        }
+.Form_cmn .Frm_wrp2 .thanks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
+    box-shadow: 0px 0px 5px 1px #d9fff9c4;
+    width: 100%;
+    margin: 0 auto;
+    height: 300px;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+}
 
-            .Form_cmn .Frm_wrp2 .thanks h3 {
-                text-transform: capitalize;
-                width: 100%;
-                font-size: 20px;
-            }
+.Form_cmn .Frm_wrp2 .thanks h3 {
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 20px;
+}
 
-            .Form_cmn .Frm_wrp2 .thanks span#close02 {
-                background-image: linear-gradient(45deg, #20fcbe, #002f34);
-                padding: 1rem 4rem;
-                border-radius: 5px;
-                display: block;
-                margin: 0rem 0 2rem;
-                text-align: center;
-                color: #fff;
-                cursor: pointer;
-                -webkit-transition: all .3s ease-in-out;
-                transition: all .3s ease-in-out;
-                text-transform: uppercase;
-            }
+.Form_cmn .Frm_wrp2 .thanks span#close02 {
+    background-image: linear-gradient(45deg, #20fcbe, #002f34);
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    display: block;
+    margin: 0rem 0 2rem;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+}
 
-                .Form_cmn .Frm_wrp2 .thanks span#close02:hover {
-                    -webkit-transition: all .3s ease-in-out;
-                    transition: all .3s ease-in-out;
-                    border-bottom-left-radius: 40px;
-                    border-top-right-radius: 40px;
-                    background-image: linear-gradient(40deg, #002f34, #20fcbe);
-                }
+.Form_cmn .Frm_wrp2 .thanks span#close02:hover {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-image: linear-gradient(40deg, #002f34, #20fcbe);
+}
 
-    .Form_cmn input#File3, .Form_cmn .Frm_wrp form .d_cmn textarea#File3, .Frm_wrp form .d_cmn .Form_cmn textarea#File3, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#File3, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#File3 {
-        cursor: pointer;
-        outline: none;
-        border: none;
-    }
+.Form_cmn input#File3, .Form_cmn .Frm_wrp form .d_cmn textarea#File3, .Frm_wrp form .d_cmn .Form_cmn textarea#File3, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#File3, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#File3 {
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
 
-        .Form_cmn input#File3:focus, .Form_cmn .Frm_wrp form .d_cmn textarea#File3:focus, .Frm_wrp form .d_cmn .Form_cmn textarea#File3:focus, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#File3:focus, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#File3:focus {
-            border: none;
-            outline: none;
-        }
+.Form_cmn input#File3:focus, .Form_cmn .Frm_wrp form .d_cmn textarea#File3:focus, .Frm_wrp form .d_cmn .Form_cmn textarea#File3:focus, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#File3:focus, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#File3:focus {
+    border: none;
+    outline: none;
+}
 
-    .Form_cmn input#ToInpt, .Form_cmn .Frm_wrp form .d_cmn textarea#ToInpt, .Frm_wrp form .d_cmn .Form_cmn textarea#ToInpt, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToInpt, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#ToInpt {
-        cursor: not-allowed;
-    }
+.Form_cmn input#ToInpt, .Form_cmn .Frm_wrp form .d_cmn textarea#ToInpt, .Frm_wrp form .d_cmn .Form_cmn textarea#ToInpt, .Form_cmn .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToInpt, .Campaign_wrp ul li form fieldset .frm_dCmn .Form_cmn textarea#ToInpt {
+    cursor: not-allowed;
+}
 
 @-webkit-keyframes animatezoom {
     0% {
@@ -368,13 +367,13 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     transition: all .3s ease-in-out;
 }
 
-    #close01:hover {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-        background-image: linear-gradient(40deg, #002f34, #20fcbe);
-    }
+#close01:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-image: linear-gradient(40deg, #002f34, #20fcbe);
+}
 
 .Frm_wrp {
     width: 50%;
@@ -397,83 +396,104 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     justify-content: center;
 }
 
-    .Frm_wrp form {
-        width: 100%;
-    }
+.Frm_wrp form {
+    width: 100%;
+}
 
-        .Frm_wrp form .d_cmn {
-            width: 100%;
-            margin: 1rem 0;
-        }
+.Frm_wrp form .d_cmn {
+    width: 100%;
+    margin: 1rem 0;
+}
 
-            .Frm_wrp form .d_cmn input, .Frm_wrp form .d_cmn textarea, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .frm_dCmn textarea, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .frm_dCmn textarea, .Frm_wrp .Campaign_wrp ul li form fieldset .frm_dCmn .d_cmn textarea, .Campaign_wrp ul li .Frm_wrp form fieldset .frm_dCmn .d_cmn textarea {
-                width: 100%;
-                padding: .9rem .5rem;
-                margin: 1rem 0 0;
-            }
+.Frm_wrp form .d_cmn input, .Frm_wrp form .d_cmn textarea, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .frm_dCmn textarea, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .frm_dCmn textarea, .Frm_wrp .Campaign_wrp ul li form fieldset .frm_dCmn .d_cmn textarea, .Campaign_wrp ul li .Frm_wrp form fieldset .frm_dCmn .d_cmn textarea {
+    width: 100%;
+    padding: .9rem .5rem;
+    margin: 1rem 0 0;
+}
 
-            .Frm_wrp form .d_cmn label {
-                font-size: 1rem;
-                color: #002f34;
-                text-transform: capitalize;
-            }
+.Frm_wrp form .d_cmn label {
+    font-size: 1rem;
+    color: #002f34;
+    text-transform: capitalize;
+}
 
-            .Frm_wrp form .d_cmn textarea {
-                height: 180px !important;
-            }
+.Frm_wrp form .d_cmn textarea {
+    height: 180px !important;
+}
 
-        .Frm_wrp form .Create_camp {
-            width: 40%;
-        }
+.Frm_wrp form .Create_camp {
+    width: 40%;
+}
 
-            .Frm_wrp form .Create_camp button {
-                padding: 1rem 2rem;
-                text-transform: capitalize;
-                font-size: 1rem;
-                background-image: linear-gradient(45deg, #002f34, #20fcbe);
-                cursor: pointer;
-                -webkit-transition: all .3s ease-in-out;
-                border: 1px solid #fff;
-                color: #fff;
-                transition: all .3s ease-in-out;
-                border-radius: 6px;
-            }
+.Frm_wrp form .Create_camp button {
+    padding: 1rem 2rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+    background-image: linear-gradient(45deg, #002f34, #20fcbe);
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    border-radius: 6px;
+}
 
-                .Frm_wrp form .Create_camp button:hover {
-                    border-radius: 100px;
-                    -webkit-transition: all .3s ease-in-out;
-                    transition: all .3s ease-in-out;
-                    background-image: linear-gradient(65deg, #20fcbe, #002f34);
-                }
+.Frm_wrp form .Create_camp button:hover {
+    border-radius: 100px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-image: linear-gradient(65deg, #20fcbe, #002f34);
+}
 
-                .Frm_wrp form .Create_camp button:focus {
-                    outline: none;
-                }
+.Frm_wrp form .Create_camp button:focus {
+    outline: none;
+}
 
-        .Frm_wrp form .d3 {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-        }
+.Frm_wrp form .d3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
 
-            .Frm_wrp form .d3 .Cwrp0 {
-                width: 49%;
-            }
+.Frm_wrp form .d3 .Cwrp0 {
+    width: 49%;
+}
 
-            .Frm_wrp form .d3 .Cwrp02 {
-                text-align: center;
-            }
+.Frm_wrp form .d3 .Cwrp02 {
+    text-align: center;
+}
+
+.D_new1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.D_new1 .FW-01 {
+    width: 48%;
+}
 
 /* check mark  animation start here */
 .checkmark__circle {
@@ -571,237 +591,234 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     margin: 2.5rem auto;
 }
 
-    .Campaign_wrp ul li {
-        margin: .1rem 0 0;
-        list-style-type: none;
-    }
+.Campaign_wrp ul li {
+    list-style-type: none;
+}
 
-        .Campaign_wrp ul li form {
-            width: 80%;
-            margin: 0 auto;
-            position: relative;
-            background: #fff;
-            padding: 1rem;
-            border-radius: 5px;
-            -webkit-box-shadow: 0 0 11px 4px #0000000a;
-            box-shadow: 0 0 11px 4px #0000000a;
-        }
+.Campaign_wrp ul li form {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+}
 
-            .Campaign_wrp ul li form fieldset {
-                padding: 1rem 1rem;
-                border: 1px solid;
-                border-radius: 4px;
-                width: 100%;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-                -webkit-box-pack: start;
-                -ms-flex-pack: start;
-                justify-content: flex-start;
-            }
+.Campaign_wrp ul li form fieldset {
+    padding: 1rem 1rem;
+    border: 1px solid;
+    border-radius: 4px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
 
-                .Campaign_wrp ul li form fieldset legend {
-                    padding: 0 .4rem;
-                    font-size: 1.1rem;
-                    font-weight: bold;
-                }
+.Campaign_wrp ul li form fieldset legend {
+    padding: 0 .4rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 
-                .Campaign_wrp ul li form fieldset .frm_dCmn {
-                    width: 100%;
-                    margin: 0 0 1.3rem;
-                }
+.Campaign_wrp ul li form fieldset .frm_dCmn {
+    width: 100%;
+    margin: 0 0 1.3rem;
+}
 
-                    .Campaign_wrp ul li form fieldset .frm_dCmn input, .Campaign_wrp ul li form fieldset .frm_dCmn textarea {
-                        width: 100%;
-                        margin: .9rem 0 .5rem;
-                        padding: .8rem .5rem;
-                        cursor: pointer;
-                    }
+.Campaign_wrp ul li form fieldset .frm_dCmn input, .Campaign_wrp ul li form fieldset .frm_dCmn textarea {
+    width: 100%;
+    margin: .9rem 0 .5rem;
+    padding: .8rem .5rem;
+    cursor: pointer;
+}
 
-                    .Campaign_wrp ul li form fieldset .frm_dCmn label {
-                        font-size: 15px;
-                        text-transform: capitalize;
-                    }
+.Campaign_wrp ul li form fieldset .frm_dCmn label {
+    font-size: 15px;
+    text-transform: capitalize;
+}
 
-                    .Campaign_wrp ul li form fieldset .frm_dCmn input#ToFrom, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToFrom, .Campaign_wrp ul li form fieldset .frm_dCmn input#ToName, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToName {
-                        cursor: not-allowed;
-                    }
+.Campaign_wrp ul li form fieldset .frm_dCmn input#ToFrom, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToFrom, .Campaign_wrp ul li form fieldset .frm_dCmn input#ToName, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#ToName {
+    cursor: not-allowed;
+}
 
-                    .Campaign_wrp ul li form fieldset .frm_dCmn input#Subject, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#Subject, .Campaign_wrp ul li form fieldset .frm_dCmn textarea {
-                        cursor: text;
-                    }
+.Campaign_wrp ul li form fieldset .frm_dCmn input#Subject, .Campaign_wrp ul li form fieldset .frm_dCmn textarea#Subject, .Campaign_wrp ul li form fieldset .frm_dCmn textarea {
+    cursor: text;
+}
 
-                .Campaign_wrp ul li form fieldset .d5 {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                    justify-content: center;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    align-items: center;
-                    -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-                    -webkit-box-pack: start;
-                    -ms-flex-pack: start;
-                    justify-content: flex-start;
-                }
+.Campaign_wrp ul li form fieldset .d5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
 
-                    .Campaign_wrp ul li form fieldset .d5 input[type="submit"], .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"], .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"], .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"], .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"] {
-                        background-image: linear-gradient(45deg, #002f34, #20fcbe);
-                        -webkit-transition: all .3s ease-in-out;
-                        transition: all .3s ease-in-out;
-                        border: none;
-                        outline: none;
-                        padding: 1rem 3.5rem;
-                        color: #fff;
-                        text-transform: capitalize;
-                        font-size: 1rem;
-                        font-weight: bold;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        position: relative;
-                    }
+.Campaign_wrp ul li form fieldset .d5 input[type="submit"], .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"], .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"], .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"], .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"] {
+    background-image: linear-gradient(45deg, #002f34, #20fcbe);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border: none;
+    outline: none;
+    padding: 1rem 3.5rem;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
 
-                        .Campaign_wrp ul li form fieldset .d5 input[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"]:hover {
-                            -webkit-transition: all .3s ease-in-out;
-                            transition: all .3s ease-in-out;
-                            border-radius: 100px;
-                            background-image: linear-gradient(45deg, #20fcbe, #002f34);
-                        }
+.Campaign_wrp ul li form fieldset .d5 input[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"]:hover {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 100px;
+    background-image: linear-gradient(45deg, #20fcbe, #002f34);
+}
 
-                    .Campaign_wrp ul li form fieldset .d5 .Attach {
-                        cursor: pointer;
-                        padding: .5rem .2rem;
-                        margin: 0 0 0 16px;
-                        overflow: hidden;
-                        -webkit-transition: all .3s ease-in-out;
-                        transition: all .3s ease-in-out;
-                    }
+.Campaign_wrp ul li form fieldset .d5 .Attach {
+    cursor: pointer;
+    padding: .5rem .2rem;
+    margin: 0 0 0 16px;
+    overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                        .Campaign_wrp ul li form fieldset .d5 .Attach:hover {
-                            background: #adadad2e;
-                            -webkit-transition: all .3s ease-in-out;
-                            transition: all .3s ease-in-out;
-                            border-radius: 5px;
-                        }
+.Campaign_wrp ul li form fieldset .d5 .Attach:hover {
+    background: #adadad2e;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 5px;
+}
 
-                        .Campaign_wrp ul li form fieldset .d5 .Attach img {
-                            max-width: 100%;
-                            -webkit-transition: all .3s ease-in-out;
-                            transition: all .3s ease-in-out;
-                        }
+.Campaign_wrp ul li form fieldset .d5 .Attach img {
+    max-width: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                            .Campaign_wrp ul li form fieldset .d5 .Attach img:hover {
-                                -webkit-transform: scale(1.1);
-                                transform: scale(1.1);
-                                -webkit-transition: all .3s ease-in-out;
-                                transition: all .3s ease-in-out;
-                            }
+.Campaign_wrp ul li form fieldset .d5 .Attach img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
 .Campaign2 {
     width: 90%;
     margin: 0 auto;
 }
 
-    .Campaign2 .Table_wrp {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        width: 100%;
-        border-radius: 5px;
-        margin: 0 auto 2rem;
-        background: #fff;
-        -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
-        box-shadow: 0px 0px 5px 1px #d9fff9c4;
-        border-radius: 5px;
-    }
+.Campaign2 .Table_wrp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0 auto 2rem;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 5px 1px #d9fff9c4;
+    box-shadow: 0px 0px 5px 1px #d9fff9c4;
+    border-radius: 5px;
+}
 
-        .Campaign2 .Table_wrp table {
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;
-            border: 1px solid #f1f1f1;
-            border-spacing: 0;
-            border-collapse: inherit;
-        }
+.Campaign2 .Table_wrp table {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #f1f1f1;
+    border-spacing: 0;
+    border-collapse: inherit;
+}
 
-            .Campaign2 .Table_wrp table thead {
-                background-image: linear-gradient(45deg, #20fcbe, #20bede);
-                color: #fff;
-                -webkit-box-shadow: 0px 3px 7px 0px #002f342e;
-                box-shadow: 0px 3px 7px 0px #002f342e;
-                text-transform: capitalize;
-            }
+.Campaign2 .Table_wrp table thead {
+    background-image: linear-gradient(45deg, #20fcbe, #20bede);
+    color: #fff;
+    -webkit-box-shadow: 0px 3px 7px 0px #002f342e;
+    box-shadow: 0px 3px 7px 0px #002f342e;
+    text-transform: capitalize;
+}
 
-                .Campaign2 .Table_wrp table thead tr th {
-                    padding: 1.2rem .5rem;
-                    border-right: 1px solid #f1f1f170;
-                    border-bottom: 1px solid #f1f1f1;
-                    font-size: 21px;
-                    color: #002f34;
-                }
+.Campaign2 .Table_wrp table thead tr th {
+    padding: 1.2rem .5rem;
+    border-right: 1px solid #f1f1f170;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 21px;
+    color: #002f34;
+}
 
-                    .Campaign2 .Table_wrp table thead tr th:last-child {
-                        border-right: none;
-                    }
+.Campaign2 .Table_wrp table thead tr th:last-child {
+    border-right: none;
+}
 
-            .Campaign2 .Table_wrp table tbody tr {
-                -webkit-transition: all .3s ease-in-out;
-                transition: all .3s ease-in-out;
-                cursor: pointer;
-            }
+.Campaign2 .Table_wrp table tbody tr {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
 
-                .Campaign2 .Table_wrp table tbody tr td {
-                    padding: .8rem .5rem;
-                    border-right: 1px solid #f1f1f1;
-                    border-bottom: 1px solid #f1f1f1;
-                }
+.Campaign2 .Table_wrp table tbody tr td {
+    padding: .8rem .5rem;
+    border-right: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
 
-                    .Campaign2 .Table_wrp table tbody tr td:last-child {
-                        border-right: none;
-                    }
+.Campaign2 .Table_wrp table tbody tr td:last-child {
+    border-right: none;
+}
 
-                .Campaign2 .Table_wrp table tbody tr:last-child td {
-                    border-bottom: none;
-                }
+.Campaign2 .Table_wrp table tbody tr:last-child td {
+    border-bottom: none;
+}
 
-                .Campaign2 .Table_wrp table tbody tr:hover {
-                    background-image: -webkit-gradient(linear, left top, right top, from(#20ccd74d), to(#20e8c838));
-                    background-image: linear-gradient(to right, #20ccd74d, #20e8c838);
-                    -webkit-transition: all .3s ease-in-out;
-                    transition: all .3s ease-in-out;
-                }
+.Campaign2 .Table_wrp table tbody tr:hover {
+    background-image: -webkit-gradient(linear, left top, right top, from(#20ccd74d), to(#20e8c838));
+    background-image: linear-gradient(to right, #20ccd74d, #20e8c838);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                .Campaign2 .Table_wrp table tbody tr:nth-child(odd) {
-                    background: #f1f1f161;
-                    -webkit-transition: all .3s ease-in-out;
-                    transition: all .3s ease-in-out;
-                }
+.Campaign2 .Table_wrp table tbody tr:nth-child(odd) {
+    background: #f1f1f161;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-                    .Campaign2 .Table_wrp table tbody tr:nth-child(odd):hover {
-                        background-image: -webkit-gradient(linear, left top, right top, from(#20ccd74d), to(#20e8c838));
-                        background-image: linear-gradient(to right, #20ccd74d, #20e8c838);
-                        -webkit-transition: all .3s ease-in-out;
-                        transition: all .3s ease-in-out;
-                    }
+.Campaign2 .Table_wrp table tbody tr:nth-child(odd):hover {
+    background-image: -webkit-gradient(linear, left top, right top, from(#20ccd74d), to(#20e8c838));
+    background-image: linear-gradient(to right, #20ccd74d, #20e8c838);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
 span.checkbox01 {
     position: absolute;
@@ -836,14 +853,14 @@ span.checkbox01 {
     transform: translateX(-50%) translateY(-50%);
 }
 
-    .cursor:nth-child(1) {
-        background-color: #E74C3C;
-        z-index: 1;
-    }
+.cursor:nth-child(1) {
+    background-color: #E74C3C;
+    z-index: 1;
+}
 
-    .cursor:nth-child(2) {
-        background-color: #fff;
-    }
+.cursor:nth-child(2) {
+    background-color: #fff;
+}
 
 .Camp_chain {
     width: 80%;
@@ -910,162 +927,170 @@ span.checkbox01 {
     border-radius: 5px;
 }
 
-    .wrapper .L_cmn01 {
-        width: 48%;
-    }
+.wrapper .L_cmn01 {
+    width: 48%;
+}
 
-        .wrapper .L_cmn01 img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
+.wrapper .L_cmn01 img {
+    max-width: 100%;
+    border-radius: 5px;
+}
 
-.login {
-    border-radius: 2px 2px 5px 5px;
-    padding: 10px 20px 20px 20px;
+.form_WRp1 {
     width: 90%;
     max-width: 100%;
     min-height: 417px;
     background: #ffffff;
+}
+
+.form_WRp1 .login {
+    border-radius: 2px 2px 5px 5px;
+    padding: 10px 20px 20px 20px;
     position: relative;
-    padding-bottom: 80px;
     border-radius: 5px;
 }
 
-    .login.loading button {
-        max-height: 100%;
-        padding-top: 50px;
-        cursor: pointer;
-    }
+.form_WRp1 .login.loading .btn1 {
+    max-height: 100%;
+    padding-top: 50px;
+    cursor: pointer;
+}
 
-        .login.loading button .spinner {
-            opacity: 1;
-            top: 40%;
-        }
+.form_WRp1 .login.loading .btn1 .spinner {
+    opacity: 1;
+    top: 40%;
+}
 
-    .login.ok button {
-        background-color: #8bc34a;
-    }
+.form_WRp1 .login.ok .btn1 {
+    background-color: #8bc34a;
+}
 
-        .login.ok button .spinner {
-            border-radius: 0;
-            border-top-color: transparent;
-            border-right-color: transparent;
-            height: 20px;
-            -webkit-animation: none;
-            animation: none;
-            -webkit-transform: rotateZ(-45deg);
-            transform: rotateZ(-45deg);
-        }
+.form_WRp1 .login.ok .btn1 .spinner {
+    border-radius: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    height: 20px;
+    -webkit-animation: none;
+    animation: none;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+}
 
-    .login input, .login .Frm_wrp form .d_cmn textarea, .Frm_wrp form .d_cmn .login textarea, .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea, .Campaign_wrp ul li form fieldset .frm_dCmn .login textarea {
-        display: block;
-        padding: 15px 10px;
-        margin-bottom: 10px;
-        margin: 0 0 2rem;
-        width: 100%;
-        border: 1px solid #ddd;
-        -webkit-transition: border-width 0.2s ease;
-        transition: border-width 0.2s ease;
-        border-radius: 2px;
-        color: #ccc;
-    }
+.form_WRp1 .login input, .form_WRp1 .login .Frm_wrp form .d_cmn textarea, .Frm_wrp form .d_cmn .form_WRp1 .login textarea, .form_WRp1 .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea, .Campaign_wrp ul li form fieldset .frm_dCmn .form_WRp1 .login textarea {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    margin: 0 0 2rem;
+    width: 100%;
+    border: 1px solid #ddd;
+    -webkit-transition: border-width 0.2s ease;
+    transition: border-width 0.2s ease;
+    border-radius: 2px;
+    color: #ccc;
+}
 
-        .login input + i.fa, .login .Frm_wrp form .d_cmn textarea + i.fa, .Frm_wrp form .d_cmn .login textarea + i.fa, .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea + i.fa, .Campaign_wrp ul li form fieldset .frm_dCmn .login textarea + i.fa {
-            color: #fff;
-            font-size: 1em;
-            position: absolute;
-            margin-top: -63px;
-            opacity: 0;
-            left: 0;
-            -webkit-transition: all 0.1s ease-in;
-            transition: all 0.1s ease-in;
-        }
+.form_WRp1 .login input + i.fa, .form_WRp1 .login .Frm_wrp form .d_cmn textarea + i.fa, .Frm_wrp form .d_cmn .form_WRp1 .login textarea + i.fa, .form_WRp1 .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea + i.fa, .Campaign_wrp ul li form fieldset .frm_dCmn .form_WRp1 .login textarea + i.fa {
+    color: #fff;
+    font-size: 1em;
+    position: absolute;
+    margin-top: -63px;
+    opacity: 0;
+    left: 0;
+    -webkit-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+}
 
-        .login input:focus, .login .Frm_wrp form .d_cmn textarea:focus, .Frm_wrp form .d_cmn .login textarea:focus, .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea:focus, .Campaign_wrp ul li form fieldset .frm_dCmn .login textarea:focus {
-            outline: none;
-            color: #444;
-            border-color: #2196F3;
-            border-left-width: 35px;
-        }
+.form_WRp1 .login input:focus, .form_WRp1 .login .Frm_wrp form .d_cmn textarea:focus, .Frm_wrp form .d_cmn .form_WRp1 .login textarea:focus, .form_WRp1 .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea:focus, .Campaign_wrp ul li form fieldset .frm_dCmn .form_WRp1 .login textarea:focus {
+    outline: none;
+    color: #444;
+    border-color: #2196F3;
+    border-left-width: 35px;
+}
 
-            .login input:focus + i.fa, .login .Frm_wrp form .d_cmn textarea:focus + i.fa, .Frm_wrp form .d_cmn .login textarea:focus + i.fa, .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea:focus + i.fa, .Campaign_wrp ul li form fieldset .frm_dCmn .login textarea:focus + i.fa {
-                opacity: 1;
-                left: 30px;
-                -webkit-transition: all 0.25s ease-out;
-                transition: all 0.25s ease-out;
-            }
+.form_WRp1 .login input:focus + i.fa, .form_WRp1 .login .Frm_wrp form .d_cmn textarea:focus + i.fa, .Frm_wrp form .d_cmn .form_WRp1 .login textarea:focus + i.fa, .form_WRp1 .login .Campaign_wrp ul li form fieldset .frm_dCmn textarea:focus + i.fa, .Campaign_wrp ul li form fieldset .frm_dCmn .form_WRp1 .login textarea:focus + i.fa {
+    opacity: 1;
+    left: 30px;
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
 
-    .login a {
-        font-size: 0.8em;
-        color: #2196F3;
-        text-decoration: none;
-    }
+.form_WRp1 .login a {
+    font-size: 0.8em;
+    color: #2196F3;
+    text-decoration: none;
+}
 
-    .login .title {
-        color: #444;
-        font-size: 1.2em;
-        font-weight: bold;
-        margin: 10px 0 30px 0;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 20px;
-    }
+.form_WRp1 .login .title {
+    color: #444;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
 
-    .login button {
-        width: 100%;
-        height: 100%;
-        padding: 10px 10px;
-        background-image: linear-gradient(45deg, #002f34, #20fcbe);
-        color: #fff;
-        display: block;
-        border: none;
-        outline: none;
-        margin-top: 20px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        max-height: 55px;
-        border-radius: 0 0 2px 2px;
-        -webkit-transform: rotateZ(0deg);
-        transform: rotateZ(0deg);
-        -webkit-transition: all 0.1s ease-out;
-        transition: all 0.1s ease-out;
-        border-bottom-width: 7px;
-        cursor: pointer;
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-    }
+.form_WRp1 .login .btn1 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 10px;
+    background-image: linear-gradient(45deg, #002f34, #20fcbe);
+    color: #fff;
+    display: block;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    left: 0;
+    bottom: 0;
+    max-height: 55px;
+    border-radius: 0 0 2px 2px;
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    border-bottom-width: 7px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
-        .login button:hover {
-            -webkit-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
-            border-radius: 5px;
-            background-image: linear-gradient(45deg, #20fcbe, #002f34);
-        }
+.form_WRp1 .login .btn1:hover {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 5px;
+    background-image: linear-gradient(45deg, #20fcbe, #002f34);
+}
 
-        .login button .spinner {
-            display: block;
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            border: 4px solid #ffffff;
-            border-top-color: rgba(255, 255, 255, 0.3);
-            border-radius: 100%;
-            left: 50%;
-            top: 0;
-            opacity: 0;
-            margin-left: -20px;
-            margin-top: -20px;
-            -webkit-animation: spinner 0.6s infinite linear;
-            animation: spinner 0.6s infinite linear;
-            -webkit-transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease, border-radius 0.3s ease;
-            transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease, border-radius 0.3s ease;
-            -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
-        }
+.form_WRp1 .login .btn1 .spinner {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: 4px solid #ffffff;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+    left: 50%;
+    top: 0;
+    opacity: 0;
+    margin-left: -20px;
+    margin-top: -20px;
+    -webkit-animation: spinner 0.6s infinite linear;
+    animation: spinner 0.6s infinite linear;
+    -webkit-transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease, border-radius 0.3s ease;
+    transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease, border-radius 0.3s ease;
+    -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
 
-    .login:not(.loading) button:focus {
-        border-bottom-width: 4px;
-    }
+.form_WRp1 .login:not(.loading) button:focus {
+    border-bottom-width: 4px;
+}
+
+.loading .btn1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+}
 
 a.Remember_ME {
     display: -webkit-box;
@@ -1077,11 +1102,157 @@ a.Remember_ME {
     cursor: pointer;
 }
 
-    a.Remember_ME input#Remember, a.Remember_ME .Frm_wrp form .d_cmn textarea#Remember, .Frm_wrp form .d_cmn a.Remember_ME textarea#Remember, a.Remember_ME .Campaign_wrp ul li form fieldset .frm_dCmn textarea#Remember, .Campaign_wrp ul li form fieldset .frm_dCmn a.Remember_ME textarea#Remember {
-        width: 15px;
-        cursor: pointer;
-        height: 15px;
-        border-radius: 2px !important;
-        margin: 0 7px 0 0;
-    }
+a.Remember_ME input#Remember, a.Remember_ME .Frm_wrp form .d_cmn textarea#Remember, .Frm_wrp form .d_cmn a.Remember_ME textarea#Remember, a.Remember_ME .Campaign_wrp ul li form fieldset .frm_dCmn textarea#Remember, .Campaign_wrp ul li form fieldset .frm_dCmn a.Remember_ME textarea#Remember {
+    width: 15px;
+    cursor: pointer;
+    height: 15px;
+    border-radius: 2px !important;
+    margin: 0 7px 0 0;
+}
+
+.signUP_01 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.signUP_01 .btn2 {
+    padding: .8rem 1.3rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin: .5rem 0;
+    background: #119f7f;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.signUP_01 .btn2:hover {
+    opacity: .66;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+div#main02 {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.F_Wrapper1 {
+    width: 90%;
+    height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.F_Wrapper1 form {
+    width: 35%;
+    margin: 0 auto;
+    background: #fff;
+    -webkit-box-shadow: 0 0 3px 2px #e7e7e8;
+    box-shadow: 0 0 3px 2px #e7e7e8;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.F_Wrapper1 form .Head_wrp {
+    padding: 0 0 1.8rem;
+    border-bottom: 1px solid #dadde1;
+    margin: 0 0 0.5rem;
+}
+
+.F_Wrapper1 form .Head_wrp h2 {
+    font-size: 1.7rem;
+    color: #000;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.F_Wrapper1 form .Head_wrp span {
+    font-size: 14px;
+    color: #999;
+    display: block;
+    margin: .4rem 0 0;
+}
+
+.F_Wrapper1 form input, .F_Wrapper1 .Frm_wrp form .d_cmn textarea, .Frm_wrp .F_Wrapper1 form .d_cmn textarea, .F_Wrapper1 .Campaign_wrp ul li form fieldset .frm_dCmn textarea, .Campaign_wrp ul li .F_Wrapper1 form fieldset .frm_dCmn textarea {
+    padding: .8rem .5rem;
+    width: 100%;
+    margin: .8rem 0;
+}
+
+.F_Wrapper1 form input:focus, .F_Wrapper1 .Frm_wrp form .d_cmn textarea:focus, .Frm_wrp .F_Wrapper1 form .d_cmn textarea:focus, .F_Wrapper1 .Campaign_wrp ul li form fieldset .frm_dCmn textarea:focus, .Campaign_wrp ul li .F_Wrapper1 form fieldset .frm_dCmn textarea:focus {
+    outline-color: #119f7f;
+}
+
+.F_Wrapper1 form span#close02 {
+    position: absolute;
+    right: -11px;
+    top: -15px;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.F_Wrapper1 form span#close02:hover {
+    opacity: .66;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.F_Wrapper1 form .Sign_up {
+    text-align: center;
+}
+
+.F_Wrapper1 form .Sign_up input[type="submit"], .F_Wrapper1 .Frm_wrp form .Sign_up .d_cmn textarea[type="submit"], .Frm_wrp .F_Wrapper1 form .Sign_up .d_cmn textarea[type="submit"], .F_Wrapper1 .Frm_wrp form .d_cmn .Sign_up textarea[type="submit"], .Frm_wrp .F_Wrapper1 form .d_cmn .Sign_up textarea[type="submit"], .F_Wrapper1 .Campaign_wrp ul li form .Sign_up fieldset .frm_dCmn textarea[type="submit"], .Campaign_wrp ul li .F_Wrapper1 form .Sign_up fieldset .frm_dCmn textarea[type="submit"], .F_Wrapper1 .Campaign_wrp ul li form fieldset .frm_dCmn .Sign_up textarea[type="submit"], .Campaign_wrp ul li .F_Wrapper1 form fieldset .frm_dCmn .Sign_up textarea[type="submit"] {
+    width: 50%;
+    margin: 0 auto;
+    background: #119f7f;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 1rem 0;
+    border-radius: 5px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.F_Wrapper1 form .Sign_up input[type="submit"]:hover, .F_Wrapper1 .Frm_wrp form .Sign_up .d_cmn textarea[type="submit"]:hover, .Frm_wrp .F_Wrapper1 form .Sign_up .d_cmn textarea[type="submit"]:hover, .F_Wrapper1 .Frm_wrp form .d_cmn .Sign_up textarea[type="submit"]:hover, .Frm_wrp .F_Wrapper1 form .d_cmn .Sign_up textarea[type="submit"]:hover, .F_Wrapper1 .Campaign_wrp ul li form .Sign_up fieldset .frm_dCmn textarea[type="submit"]:hover, .Campaign_wrp ul li .F_Wrapper1 form .Sign_up fieldset .frm_dCmn textarea[type="submit"]:hover, .F_Wrapper1 .Campaign_wrp ul li form fieldset .frm_dCmn .Sign_up textarea[type="submit"]:hover, .Campaign_wrp ul li .F_Wrapper1 form fieldset .frm_dCmn .Sign_up textarea[type="submit"]:hover {
+    opacity: .66;
+    border-radius: 100px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
 
