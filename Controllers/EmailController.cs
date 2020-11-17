@@ -1,4 +1,5 @@
-﻿using BulkEmailMarketing.Services;
+﻿using BulkEmailMarketing.Models;
+using BulkEmailMarketing.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,14 @@ namespace BulkEmailMarketing.Controllers
     {
         // GET: Email
         private static EmailService service = new EmailService();
-        public async Task<ActionResult> SendEmail(FormCollection collection)
+
+        [HttpPost]
+        public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
 
-            await service.SendEmail( collection);
-            Task.Delay(1000);
-            return RedirectToAction("Index" ,"Home",null);
+             bool status=service.SendEmail(postObj);
+       
+            return (Json(status ,JsonRequestBehavior.AllowGet));
         }
 
         // GET: Email/Details/5

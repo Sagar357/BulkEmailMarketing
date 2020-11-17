@@ -14,8 +14,16 @@ namespace BulkEmailMarketing.Models
         public string attachmentCode { get; set; }
         public string emailBody { get; set; }
         public string campaignLogo { get; set; }
+        public string to { get; set; }
     }
 
+    public class PostEmail_Obj
+    {
+        public string from { get; set; }
+        public string subject { get; set; }
+        public string emailBody { get; set; }
+        public string to { get; set; }
+    }
     public class Campaign_List
     {
         public Campaign_List() 

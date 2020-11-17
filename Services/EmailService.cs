@@ -15,7 +15,7 @@ namespace BulkEmailMarketing.Services
 {
     public class EmailService
     {
-        public async Task<bool> SendEmail(FormCollection collection) 
+        public  bool SendEmail(PostEmail_Obj collection) 
         {
             bool status = false;
 
@@ -43,11 +43,11 @@ namespace BulkEmailMarketing.Services
             {
                 
                     var senderEmail = new MailAddress("markushno357@gmail.com", "Mark");
-                    var receiverEmail = new MailAddress(collection["Toname"].ToString(), "Receiver");
+                    var receiverEmail = new MailAddress(collection.to, "Receiver");
                     var password = "marcia@357";
-                    var sub = collection["subject"].ToString();
+                    var sub = collection.subject;
                 //var body = collection["textarea"].ToString();
-                var body="  Hi sagar <a href= \"www.google.com\" > Goog </ a >";
+                var body=collection.emailBody;
                     var smtp = new SmtpClient
                     {
                         Host = "smtp.gmail.com",
@@ -61,7 +61,7 @@ namespace BulkEmailMarketing.Services
                     {
                         IsBodyHtml = true,   
                          BodyEncoding = UTF8Encoding.UTF8,
-                         Subject = collection["subject"].ToString(),
+                         Subject = collection.subject,
                         Body = body
                     })
                     {

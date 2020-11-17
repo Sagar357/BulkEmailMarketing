@@ -44,7 +44,7 @@
                     @foreach (var element in Model.list )
                     {
                         <li class="L1">
-                            <form action="@Url.Action("SendEmail" ,"Email")" method="post">
+                            <form action="" id="form-@element.campaighId" method="post" data-target="body-@element.campaighId" data-store="#store-@element.campaighId" onsubmit="formSubmit(event)">
                                 <span class="checkbox01">
                                     <input type="checkbox" name="checkbox" id="@element.campaighId">
                                 </span>
@@ -52,11 +52,11 @@
                                     <legend>@element.campaignName</legend>
                                     <div class="d1 frm_dCmn">
                                         <label for="#">To</label>
-                                        <input type="text"  name="Toname" placeholder="To.." required>
+                                        <input type="text"  name="to" placeholder="To.." required>
                                     </div>
                                     <div class="d2 frm_dCmn">
                                         <label for="#">From</label>
-                                        <input type="text"  value="@element.from" name="ToFrom" readonly placeholder="from.." required>
+                                        <input type="text"  value="@element.from" name="from" readonly placeholder="from.." required>
                                     </div>
                                     <div class="d3 frm_dCmn">
                                         <label for="#">subject</label>
@@ -64,7 +64,8 @@
                                     </div>
                                     <div class="d4 frm_dCmn">
                                         <label for="#">body</label>
-                                        <textarea name="textarea"  cols="30" rows="10">@element.emailBody</textarea>
+                                        <textarea  class="body" id="body-@element.campaighId" cols="30" rows="10">@element.emailBody</textarea>
+                                        <input type="hidden" value="" name="body" id="store-@element.campaighId" />
                                     </div>
                                     <div class="d5 submit">
                                         <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
@@ -227,14 +228,59 @@
           }
     </div>
 
-    @if (ViewBag.status=="success") 
-    {
-        <script>
-            window.onload(function () {
-                FormSubmit2();
-            });
-        </script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.body').each(function (e) {
+            CKEDITOR.replace(this.id);
+        })
+    });
+    var formSubmit = event => {
+ 
+        var editor = event.target.dataset.target;
+        var store = event.target.dataset.store;
+        var data = CKEDITOR.instances[editor].getData();
+        var formid = event.currentTarget.id;
+        $(store).val(data); 
+        var input;
+        var jsonString="{\"";
+        $("form#"+formid+" :input[type='text']").each(function(){
+             input = $(this);
+            if (jsonString + $(this).attr('name') != undefined) {
+                            jsonString = jsonString + $(this).attr('name') + "\":\"" + $(this).val() + "\",\"";
+            }
+                debugger
+        });
+        jsonString = jsonString.substring(0, jsonString.length - 2) + "}";
+        var postObj = JSON.parse(jsonString);
+        postObj.emailBody = data;
+      
+    $.ajax({
+        url: "/Email/SendEmail" ,
+        data: JSON.stringify(postObj),
+        method: 'POST',
+        contentType: "application/json",
+        dataType:"json",
+        async: true,
+        success: data => {
+
+            $('#btnfile').attr('data-name', data);
+            alert("success");
+           
+            debugger
+
+        },
+        error: error => {
+            alert("error");
+        }
+
+    });
+
+
+               
     }
+
+</script>
 
     <!-- curor movement -->
     <!-- end here -->

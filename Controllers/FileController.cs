@@ -47,8 +47,8 @@ namespace BulkEmailMarketing.Controllers
                 string extension = Path.GetExtension(file.FileName).ToString();
                 if (extension == ".xlsx")
                 {
-                   
-                    ExcelData records = FileService.ImportExcell(model.fileName, "Sheet1");
+                    string x = Path.Combine( uploadPath , model.fileName);
+                    model.records = FileService.ImportExcell(x, "Sheet1");
 
                 }
             }
