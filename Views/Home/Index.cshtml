@@ -88,70 +88,29 @@
                 {
                     <div class="Campaign_wrp">
                         <span class="Camp_chain" id="Camp_chain">
-                            +
+                            @element.campaighId  @element.campaignName
                         </span>
                         <ul>
                             <li class="L2">
-                                <form action="#">
+                                <form action="" onsubmit="bulkEmailSubmit(event)" id="bulkForm-@element.campaighId" data-source="#hiddenexcel-@element.campaighId">
                                     <fieldset>
                                         <legend>@element.campaignName</legend>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">From</label>
-                                            <input type="text" id="ToFrom" name="ToFrom" value="@element.from" disabled placeholder="from.." required>
+                                            <input type="text" value="@element.from" disabled placeholder="from.." required>
                                         </div>
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Excel Document</label>
-                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-name="" required>
-
+                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId" required>
+                                            <input type="hidden" name="excelData" id="hiddenexcel-@element.campaighId" value="" />
                                         </div>
-                                        <div class="d5 submit"> 
-                                        <input type="button" class="btnfile" value="Upload">
-                                        </div>
-                                        <!-- <div class="d4 frm_dCmn">
-        <label for="#">body</label>
-       <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-    </div> -->
-                                        <div class="Table_wrp">
-                                            @*<table>
-                <thead>
-                    <tr>
-                        <th>To</th>
-                         <th>From</th>
-                        <th>body</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                </tbody>
-            </table>*@
+                          <div class="Table_wrp" id="Table-@element.campaighId">
+                                        
+               
                                         </div>
                                         <div class="d5 submit">
                                             <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
-                                            <input type="submit" value="Send">
+                                            <input type="submit" value="Send"  data-content="" onsubmit="emailSubmit(event)">
                                             <!-- </a>   -->
                                             <span class="Attach">
                                                 <img src="image/attach_file_black_20dp.png" alt="attach">
@@ -235,6 +194,28 @@
             CKEDITOR.replace(this.id);
         })
     });
+    var bulkEmailSubmit = event => {
+        debugger
+        var source = event.target.dataset.source;
+        var postObj = $(source).val();
+
+         $.ajax({
+        url: "/Email/SendBulkEmail" ,
+        data: postObj,
+        method: 'POST',
+        contentType: "application/json",
+        dataType:"json",
+        async: true,
+        success: data => {  
+            debugger
+
+        },
+        error: error => {
+            alert("error");
+        }
+
+    });
+    }
     var formSubmit = event => {
  
         var editor = event.target.dataset.target;
@@ -249,11 +230,13 @@
             if (jsonString + $(this).attr('name') != undefined) {
                             jsonString = jsonString + $(this).attr('name') + "\":\"" + $(this).val() + "\",\"";
             }
-                debugger
+         
         });
         jsonString = jsonString.substring(0, jsonString.length - 2) + "}";
         var postObj = JSON.parse(jsonString);
         postObj.emailBody = data;
+
+               debugger
       
     $.ajax({
         url: "/Email/SendEmail" ,

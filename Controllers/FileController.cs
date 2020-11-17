@@ -56,6 +56,7 @@ namespace BulkEmailMarketing.Controllers
             {
                 model.status = false;
             }
+            var v = Json(model, JsonRequestBehavior.AllowGet);
             return (Json(model, JsonRequestBehavior.AllowGet));
         }
 

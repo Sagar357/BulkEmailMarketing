@@ -9,10 +9,10 @@ namespace BulkEmailMarketing.Models
     {
         public File_Model() 
         {
-            this.records = new ExcelData();
+            this.records = new List<PostEmail_Obj>();
         }
         public string fileName { get; set; }
-        public ExcelData records { get; set; }
+        public List<PostEmail_Obj> records { get; set; }
         public bool status { get; set; }
     }
 }

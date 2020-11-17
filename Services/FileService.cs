@@ -43,9 +43,10 @@ namespace BulkEmailMarketing.Services
             return (response);
         }
 
-        public static ExcelData ImportExcell(string strFileName, string Table)
+        public static List<PostEmail_Obj> ImportExcell(string strFileName, string Table)
         {
-            ExcelData records = new ExcelData();
+            List<PostEmail_Obj> list = new List<PostEmail_Obj>();
+
             Microsoft.Office.Interop.Excel.Application xlApp;
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook;
             Microsoft.Office.Interop.Excel.Worksheet xlWorksheet;
@@ -62,26 +63,21 @@ namespace BulkEmailMarketing.Services
                 object[,] valueArray = (object[,])xlRange.get_Value(
            Microsoft.Office.Interop.Excel.XlRangeValueDataType.xlRangeValueDefault);
                 int i = 0;
-                records.smsRecords.Columns.Add("index");
-                records.smsRecords.Columns.Add("EmailTo");
-                records.smsRecords.Columns.Add("Subject");
-                records.smsRecords.Columns.Add("body");
 
                 for (xlRow = 2; xlRow <= xlRange.Rows.Count; xlRow++)
                 {
-                    DataRow dr = records.smsRecords.NewRow();
-                    dr["index"] = valueArray[xlRow, 1];
-                    dr["EmailTo"] = valueArray[xlRow, 2];
-                    dr["Subject"] = valueArray[xlRow, 3];
-                    dr["body"] = valueArray[xlRow, 4];
-                    records.smsRecords.Rows.Add(dr);
+                    PostEmail_Obj emailObj = new PostEmail_Obj();
+                    //dr["index"] = valueArray[xlRow, 1];
+                    emailObj.to = valueArray[xlRow, 2].ToString();
+                    emailObj.subject = valueArray[xlRow, 3].ToString();
+                    emailObj.emailBody = valueArray[xlRow, 4].ToString();
+                    list.Add(emailObj);
 
                 }
-                records.status = true;
                 xlWorkbook.Close();
                 xlApp.Quit();
             }
-            return records;
+            return list;
         }
 
 

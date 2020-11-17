@@ -19,16 +19,25 @@ namespace BulkEmailMarketing.Controllers
         {
 
              bool status=service.SendEmail(postObj);
-       
+            var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
 
         // GET: Email/Details/5
-        public ActionResult Details(int id)
+  
+        public JsonResult SendBulkEmail(List<PostEmail_Obj> postObj)
         {
-            return View();
-        }
+            bool status = false;
+            foreach (var obj in postObj)
+            {
 
+                status = service.SendEmail(obj);
+            }
+            //bool status = service.SendEmail(postObj);
+            //var x = Json(status, JsonRequestBehavior.AllowGet);
+            
+            return (Json(status ,JsonRequestBehavior.AllowGet));
+        }
         // GET: Email/Create
         public ActionResult Create()
         {
