@@ -54,7 +54,7 @@ $('.file-upload').change(event => {
             var listElements = ``;
             for (var i = 0; i < data.records.length; i++)
             {
-                listElements = `<tr>`;
+                listElements = listElements+ `<tr>`;
                 listElements = listElements + `<td>` + data.records[i].to + `</td>`;
                 listElements = listElements + `<td>` + data.records[i].subject + `</td>`
                 listElements = listElements + `<td>` + data.records[i].emailBody + `</td>`

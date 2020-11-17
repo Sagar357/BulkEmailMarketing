@@ -25,13 +25,14 @@ namespace BulkEmailMarketing.Controllers
 
         // GET: Email/Details/5
   
-        public JsonResult SendBulkEmail(List<PostEmail_Obj> postObj)
+        public async Task<JsonResult> SendBulkEmail(postBulkObj postObj)
         {
             bool status = false;
-            foreach (var obj in postObj)
+            foreach (var obj in postObj.list)
             {
 
-                status = service.SendEmail(obj);
+                status =  service.SendEmail(obj);
+                await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);
             //var x = Json(status, JsonRequestBehavior.AllowGet);

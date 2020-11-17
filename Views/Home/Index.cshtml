@@ -99,18 +99,22 @@
                                             <label for="#">From</label>
                                             <input type="text" value="@element.from" disabled placeholder="from.." required>
                                         </div>
+                                        <div class="d2 frm_dCmn">
+                                            <label for="#">Delay(Milliseconds)</label>
+                                            <input type="text" value="" name="delay" id="delay-@element.campaighId"  placeholder="Delay between mails.." required>
+                                        </div>
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Excel Document</label>
                                             <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId" required>
                                             <input type="hidden" name="excelData" id="hiddenexcel-@element.campaighId" value="" />
                                         </div>
-                          <div class="Table_wrp" id="Table-@element.campaighId">
-                                        
-               
+                                        <div class="Table_wrp" id="Table-@element.campaighId">
+
+
                                         </div>
                                         <div class="d5 submit">
                                             <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
-                                            <input type="submit" value="Send"  data-content="" onsubmit="emailSubmit(event)">
+                                            <input type="submit" value="Send" data-content="" onsubmit="emailSubmit(event)">
                                             <!-- </a>   -->
                                             <span class="Attach">
                                                 <img src="image/attach_file_black_20dp.png" alt="attach">
@@ -197,8 +201,15 @@
     var bulkEmailSubmit = event => {
         debugger
         var source = event.target.dataset.source;
-        var postObj = $(source).val();
+        var Obj = $(source).val();
+        var jobj = JSON.parse(Obj);
+        var delayid = '#delay-' + source.split('-')[1];
+        var delay = $(delayid).val();
+        var o = {};
+        o.list = jobj;
+        o.delay = delay;
 
+        postObj = JSON.stringify(o);
          $.ajax({
         url: "/Email/SendBulkEmail" ,
         data: postObj,
