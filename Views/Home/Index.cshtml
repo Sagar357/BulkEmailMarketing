@@ -6,13 +6,13 @@
 @model BulkEmailMarketing.Models.Campaign_List
 
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email</title>
-    <link rel="stylesheet" href="~/Content/Style.css">
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
- 
-    @*<link rel="stylesheet" href="css/Hover-master/css/hover-min.css">*@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email</title>
+<link rel="stylesheet" href="~/Content/Style.css">
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="~/Scripts/fontawesome-free-5.15.1-web/css/all.css">
+@*<link rel="stylesheet" href="css/Hover-master/css/hover-min.css">*@
 
 <body>
     <div class="site_container">
@@ -36,12 +36,18 @@
                     <span class="R2 R_cmn">
                         <button onclick="openProduct('product2')">Bulk Email</button>
                     </span>
+                    <span class="R3 R_cmn">
+                        <button type="button">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <b class="Log_out">Log out</b>
+                        </button>
+                    </span>
                 </div>
             </div>
 
             <div class="Campaign_wrp product" style="display: block;" id="CWrapper">
                 <ul>
-                    @foreach (var element in Model.list )
+                    @foreach (var element in Model.list)
                     {
                         <li class="L1">
                             <form action="@Url.Action("SendEmail" ,"Email")" method="post">
@@ -52,19 +58,19 @@
                                     <legend>@element.campaignName</legend>
                                     <div class="d1 frm_dCmn">
                                         <label for="#">To</label>
-                                        <input type="text"  name="Toname" placeholder="To.." required>
+                                        <input type="text" name="Toname" placeholder="To.." required>
                                     </div>
                                     <div class="d2 frm_dCmn">
                                         <label for="#">From</label>
-                                        <input type="text"  value="@element.from" name="ToFrom" readonly placeholder="from.." required>
+                                        <input type="text" value="@element.from" name="ToFrom" readonly placeholder="from.." required>
                                     </div>
                                     <div class="d3 frm_dCmn">
                                         <label for="#">subject</label>
-                                        <input type="text"  name="subject" placeholder="Subject" value="@element.subject" required>
+                                        <input type="text" name="subject" placeholder="Subject" value="@element.subject" required>
                                     </div>
                                     <div class="d4 frm_dCmn">
                                         <label for="#">body</label>
-                                        <textarea name="textarea"  cols="30" rows="10">@element.emailBody</textarea>
+                                        <textarea name="textarea" cols="30" rows="10">@element.emailBody</textarea>
                                     </div>
                                     <div class="d5 submit">
                                         <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
@@ -103,8 +109,8 @@
                                             <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-name="" required>
 
                                         </div>
-                                        <div class="d5 submit"> 
-                                        <input type="button" class="btnfile" value="Upload">
+                                        <div class="d5 submit">
+                                            <input type="button" class="btnfile" value="Upload">
                                         </div>
                                         <div class="Table_wrp">
                                             @*table*@
@@ -169,26 +175,26 @@
                 </form>
             </div>
         </div>
-          @if (ViewBag.status == "success")
-          {
-        <div class="FormPop2 Form_cmn" style="display:block;">
-            <div class="Frm_wrp2">
-                <div class="thanks">
-                    <strong>
-                        <svg class="checkmark_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                        </svg>
-                    </strong>
-                    <h3>Campaign created</h3>
-                    <span id="close02" role="button" onclick="fnclose(event);" class="close" data-link="#" data-target="FormPop2" title="Ok Modal">Ok</span>
+        @if (ViewBag.status == "success")
+        {
+            <div class="FormPop2 Form_cmn" style="display:block;">
+                <div class="Frm_wrp2">
+                    <div class="thanks">
+                        <strong>
+                            <svg class="checkmark_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                            </svg>
+                        </strong>
+                        <h3>Campaign created</h3>
+                        <span id="close02" role="button" onclick="fnclose(event);" class="close" data-link="#" data-target="FormPop2" title="Ok Modal">Ok</span>
+                    </div>
                 </div>
             </div>
-        </div>
-          }
+        }
     </div>
 
-    @if (ViewBag.status=="success") 
+    @if (ViewBag.status == "success")
     {
         <script>
             window.onload(function () {
