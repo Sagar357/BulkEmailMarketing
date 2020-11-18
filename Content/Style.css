@@ -673,28 +673,30 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     justify-content: flex-start;
 }
 
-.Campaign_wrp ul li form fieldset .d5 input[type="submit"], .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"], .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"], .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"], .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"] {
-    background-image: linear-gradient(45deg, #002f34, #20fcbe);
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    border: none;
-    outline: none;
-    padding: 1rem 3.5rem;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-}
+    .Campaign_wrp ul li form fieldset .d5 input[type="submit"], .d5 input.cust-delete,
+    .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"], .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"], .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"], .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"], .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"] {
+        background-image: linear-gradient(45deg, #002f34, #20fcbe);
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        border: none;
+        outline: none;
+        padding: 1rem 3.5rem;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+    }
 
-.Campaign_wrp ul li form fieldset .d5 input[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"]:hover {
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    border-radius: 100px;
-    background-image: linear-gradient(45deg, #20fcbe, #002f34);
-}
+    .Campaign_wrp ul li form fieldset .d5 input[type="submit"]:hover, .d5 input.cust-delete:hover,
+    .Campaign_wrp ul li .Frm_wrp form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form fieldset .d5 .d_cmn textarea[type="submit"]:hover, .Campaign_wrp ul li .Frm_wrp form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Frm_wrp .Campaign_wrp ul li form .d_cmn fieldset .d5 textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .d5 .frm_dCmn textarea[type="submit"]:hover, .Campaign_wrp ul li form fieldset .frm_dCmn .d5 textarea[type="submit"]:hover {
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        border-radius: 100px;
+        background-image: linear-gradient(45deg, #20fcbe, #002f34);
+    }
 
 .Campaign_wrp ul li form fieldset .d5 .Attach {
     cursor: pointer;

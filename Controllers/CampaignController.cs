@@ -66,7 +66,8 @@ namespace BulkEmailMarketing.Controllers
         // GET: Campaign/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            service.DeleteCampaign(id);
+            return RedirectToAction("Index" ,"Home");
         }
 
         // POST: Campaign/Delete/5

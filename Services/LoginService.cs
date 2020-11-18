@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Services
 {
@@ -79,6 +80,37 @@ namespace BulkEmailMarketing.Services
 
             }
             return obj;
+        }
+        public string AddUser(FormCollection userData)
+        {
+            string status;
+            try
+            {
+                user_Model Model = new user_Model();
+                Model.user_name = userData["Username1"];
+                Model.password = userData["password2"];
+                Model.email = userData["email1"];
+
+                using (SqlConnection db = ConnectionHelper.getConnection())
+                {
+                    db.Open();
+                    DataSet ds = new DataSet();
+                    ds = new DataSet();
+                    SqlParameter[] param = new SqlParameter[7];
+                    param[0] = new SqlParameter("@userName", Model.user_name);
+                    param[1] = new SqlParameter("@password", Model.password);
+                    param[2] = new SqlParameter("@email", Model.email);
+              
+                    ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcCreateUser", param);
+                    status = "success";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                status = "failed";
+            }
+            return status;
         }
 
     }
