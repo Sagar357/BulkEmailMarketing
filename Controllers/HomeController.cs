@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AppBaseController
     {
         public async Task<ActionResult> Index(string status="")
         {

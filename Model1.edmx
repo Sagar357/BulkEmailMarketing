@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BulkEmailPrjModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="campaignTable">
+          <Key>
+            <PropertyRef Name="campaignid" />
+          </Key>
+          <Property Name="campaignid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="canpaign_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="campaign_from" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="attachmentcode" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="email_body" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="campaign_subject" Type="nvarchar" MaxLength="2000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fileTable">
+          <Key>
+            <PropertyRef Name="fileid" />
+          </Key>
+          <Property Name="fileid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filename" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="filepath" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="attachmentcode" Type="nvarchar" MaxLength="2000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Log">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="isActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BulkEmailPrjModelStoreContainer">
+          <EntitySet Name="campaignTable" EntityType="Self.campaignTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fileTable" EntityType="Self.fileTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Log" EntityType="Self.User_Log" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BulkEmailPrjModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="campaignTable">
+          <Key>
+            <PropertyRef Name="campaignid" />
+          </Key>
+          <Property Name="campaignid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="canpaign_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="campaign_from" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="attachmentcode" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email_body" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="campaign_subject" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fileTable">
+          <Key>
+            <PropertyRef Name="fileid" />
+          </Key>
+          <Property Name="fileid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filename" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="filepath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="attachmentcode" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Log">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BulkEmailPrjEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="campaignTables" EntityType="Self.campaignTable" />
+          <EntitySet Name="fileTables" EntityType="Self.fileTable" />
+          <EntitySet Name="User_Log" EntityType="Self.User_Log" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BulkEmailPrjModelStoreContainer" CdmEntityContainer="BulkEmailPrjEntities">
+          <EntitySetMapping Name="campaignTables">
+            <EntityTypeMapping TypeName="BulkEmailPrjModel.campaignTable">
+              <MappingFragment StoreEntitySet="campaignTable">
+                <ScalarProperty Name="campaignid" ColumnName="campaignid" />
+                <ScalarProperty Name="canpaign_name" ColumnName="canpaign_name" />
+                <ScalarProperty Name="campaign_from" ColumnName="campaign_from" />
+                <ScalarProperty Name="attachmentcode" ColumnName="attachmentcode" />
+                <ScalarProperty Name="email_body" ColumnName="email_body" />
+                <ScalarProperty Name="campaign_subject" ColumnName="campaign_subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fileTables">
+            <EntityTypeMapping TypeName="BulkEmailPrjModel.fileTable">
+              <MappingFragment StoreEntitySet="fileTable">
+                <ScalarProperty Name="fileid" ColumnName="fileid" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="attachmentcode" ColumnName="attachmentcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Log">
+            <EntityTypeMapping TypeName="BulkEmailPrjModel.User_Log">
+              <MappingFragment StoreEntitySet="User_Log">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Controllers
 {
-    public class FileController : Controller
+    public class FileController : AppBaseController
     {
         // GET: File
         public ActionResult Index()

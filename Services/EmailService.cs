@@ -15,7 +15,7 @@ namespace BulkEmailMarketing.Services
 {
     public class EmailService
     {
-        public  bool SendEmail(PostEmail_Obj collection) 
+        public  bool SendEmail(PostEmail_Obj collection , user_Model userData) 
         {
             bool status = false;
 
@@ -42,9 +42,9 @@ namespace BulkEmailMarketing.Services
             try
             {
                 
-                    var senderEmail = new MailAddress("markushno357@gmail.com", "Mark");
+                    var senderEmail = new MailAddress(userData.user_name, "Mark");
                     var receiverEmail = new MailAddress(collection.to, "Receiver");
-                    var password = "marcia@357";
+                    var password = userData.password;
                     var sub = collection.subject;
                 //var body = collection["textarea"].ToString();
                 var body=collection.emailBody;

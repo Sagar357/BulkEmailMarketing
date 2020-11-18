@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Controllers
 {
-    public class EmailController : Controller
+    public class EmailController : AppBaseController
     {
         // GET: Email
         private static EmailService service = new EmailService();
@@ -18,7 +18,7 @@ namespace BulkEmailMarketing.Controllers
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
 
-             bool status=service.SendEmail(postObj);
+             bool status=service.SendEmail(postObj , userData);
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
@@ -31,7 +31,7 @@ namespace BulkEmailMarketing.Controllers
             foreach (var obj in postObj.list)
             {
 
-                status =  service.SendEmail(obj);
+                status =  service.SendEmail(obj , userData);
                 await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);

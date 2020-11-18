@@ -87,11 +87,11 @@
                 @foreach (var element in Model.list)
                 {
                     <div class="Campaign_wrp">
-                        <span class="Camp_chain" id="Camp_chain">
+                        <span class="Camp_chain" onclick="expand(event)">
                             @element.campaighId  @element.campaignName
                         </span>
-                        <ul>
-                            <li class="L2">
+                        <ul  class="L2">
+                            <li>
                                 <form action="" onsubmit="bulkEmailSubmit(event)" id="bulkForm-@element.campaighId" data-source="#hiddenexcel-@element.campaighId">
                                     <fieldset>
                                         <legend>@element.campaignName</legend>
