@@ -82,14 +82,14 @@
         <div class="NewAccount_wrp Form_cmn" id="main02">
             <span id="close01" role="button" onclick="fnclose();" class="close" title="Close Modal">X</span>
             <div class="F_Wrapper1">
-                <form action="#">
+                <form action="@Url.Action("Create" ,"Login")" method="post">
                     <span id="close02" role="button" onclick="document.getElementById('main02').style.display='none'" class="close" title="Close Modal">x</span>
                     <div class="Head_wrp">
                         <h2>Sign Up</h2>
                         <span>It's  quick and easy</span>
                     </div>
                     <div class="Nm_inp Nm_cmn01">
-                        <input type="text" name="Usename1" id="Usename2" placeholder="User Name" required>
+                        <input type="text" name="Username1" id="Usename2" placeholder="User Name" required>
                     </div>
                     <div class="Nm_inp2 Nm_cmn01">
                         <input type="email" name="email1" id="eamil2" placeholder="Email Address" required>

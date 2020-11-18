@@ -26,7 +26,10 @@ namespace CRM.Controllers
             {
                 if (this.Request.IsAuthenticated)
                 {
-                    returnUrl = Url.Action("Index" ,"Home");
+                    if (string.IsNullOrEmpty(returnUrl))
+                    {
+                        returnUrl = Url.Action("Index", "Home");
+                    }
                     return this.RedirectToLocal(returnUrl);
                 }
             }

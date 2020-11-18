@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BulkEmailMarketing.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,9 +7,10 @@ using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : AppBaseController
     {
         // GET: Login
+        LoginService service = new LoginService();
         public ActionResult Index()
         {
             return View();
@@ -33,8 +35,8 @@ namespace BulkEmailMarketing.Controllers
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                service.AddUser(collection);
+                return RedirectToAction("Login" ,"Account");
             }
             catch
             {

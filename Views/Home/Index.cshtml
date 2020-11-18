@@ -75,6 +75,7 @@
                                             <img src="~/img/attach_file_black_20dp.png" alt="attach">
                                             <input type="file" hidden>
                                         </span>
+                                        <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
                                     </div>
                                 </fieldset>
                             </form>
@@ -112,9 +113,9 @@
 
 
                                         </div>
-                                        <div class="d5 submit"> 
+                                        @*<div class="d5 submit"> 
                                         <input type="button" class="btnfile" value="Upload">
-                                        </div>
+                                        </div>*@
                                         <div class="Table_wrp">
                                             @*table*@
                                         </div>
@@ -126,6 +127,8 @@
                                                 <img src="~/img/attach_file_black_20dp.png" alt="attach">
                                                 <input type="file" hidden>
                                             </span>
+                                            <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
+
                                         </div>
                                     </fieldset>
                                 </form>

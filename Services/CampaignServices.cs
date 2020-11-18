@@ -135,6 +135,33 @@ namespace BulkEmailMarketing.Services
             }
             return detail;
         }
+        public string DeleteCampaign(int id)
+        {
+            string status;
+            try
+            {
+               
+
+                using (SqlConnection db = ConnectionHelper.getConnection())
+                {
+                    db.Open();
+                    DataSet ds = new DataSet();
+                    ds = new DataSet();
+                    SqlParameter[] param = new SqlParameter[7];
+                    param[0] = new SqlParameter("@campaignId",id);
+                
+                    ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcdeleteCampaign", param);
+                    status = "success";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                status = "failed";
+            }
+            return status;
+        }
+
 
 
     }
