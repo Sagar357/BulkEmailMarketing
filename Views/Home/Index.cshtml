@@ -36,6 +36,9 @@
                     <span class="R2 R_cmn">
                         <button onclick="openProduct('product2')">Bulk Email</button>
                     </span>
+                    <span class="R3 R_cmn">
+                        <button onclick="location.href='@Url.Action("LogOff" ,"Account")'">Log Out</button>
+                    </span>
                 </div>
             </div>
 
@@ -69,13 +72,13 @@
                                     </div>
                                     <div class="d5 submit">
                                         <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
-                                        <input type="submit" value="Send">
+                                        <input type="submit" value="Send" style="margin-right:1rem;">
                                         <!-- </a>   -->
+                                        <input type="button" class="cust-delete" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
                                         <span class="Attach">
                                             <img src="~/img/attach_file_black_20dp.png" alt="attach">
                                             <input type="file" hidden>
                                         </span>
-                                        <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
                                     </div>
                                 </fieldset>
                             </form>
