@@ -196,11 +196,13 @@ menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
     padding: 0.7rem 1.3rem !important;
     -webkit-transition: all .3s ease-in;
     transition: all .3s ease-in;
+    text-align: center;
 }
 
 .btn_Wrp .Btn_Grid .R3 button i.fas.fa-sign-out-alt {
     font-size: 1.4rem;
-    padding-right: 5px;
+   /* padding-right: 5px;*/
+     text-align:center;
 }
 
 .btn_Wrp .Btn_Grid .R3 button b {
