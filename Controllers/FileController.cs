@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Controllers
 {
-    public class FileController : Controller
+    public class FileController : AppBaseController
     {
         // GET: File
         public ActionResult Index()
@@ -47,8 +47,8 @@ namespace BulkEmailMarketing.Controllers
                 string extension = Path.GetExtension(file.FileName).ToString();
                 if (extension == ".xlsx")
                 {
-                   
-                    ExcelData records = FileService.ImportExcell(model.fileName, "Sheet1");
+                    string x = Path.Combine( uploadPath , model.fileName);
+                    model.records = FileService.ImportExcell(x, "Sheet1");
 
                 }
             }
@@ -56,6 +56,7 @@ namespace BulkEmailMarketing.Controllers
             {
                 model.status = false;
             }
+            var v = Json(model, JsonRequestBehavior.AllowGet);
             return (Json(model, JsonRequestBehavior.AllowGet));
         }
 

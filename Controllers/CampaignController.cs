@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Controllers
 {
-    public class CampaignController : Controller
+    public class CampaignController : AppBaseController
     {
         // GET: Campaign
         public static CampaignServices service = new CampaignServices();

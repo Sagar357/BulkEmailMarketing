@@ -44,7 +44,7 @@
                     @foreach (var element in Model.list )
                     {
                         <li class="L1">
-                            <form action="@Url.Action("SendEmail" ,"Email")" method="post">
+                            <form action="" id="form-@element.campaighId" method="post" data-target="body-@element.campaighId" data-store="#store-@element.campaighId" onsubmit="formSubmit(event)">
                                 <span class="checkbox01">
                                     <input type="checkbox" name="checkbox" id="@element.campaighId">
                                 </span>
@@ -52,11 +52,11 @@
                                     <legend>@element.campaignName</legend>
                                     <div class="d1 frm_dCmn">
                                         <label for="#">To</label>
-                                        <input type="text"  name="Toname" placeholder="To.." required>
+                                        <input type="text"  name="to" placeholder="To.." required>
                                     </div>
                                     <div class="d2 frm_dCmn">
                                         <label for="#">From</label>
-                                        <input type="text"  value="@element.from" name="ToFrom" readonly placeholder="from.." required>
+                                        <input type="text"  value="@element.from" name="from" readonly placeholder="from.." required>
                                     </div>
                                     <div class="d3 frm_dCmn">
                                         <label for="#">subject</label>
@@ -64,14 +64,15 @@
                                     </div>
                                     <div class="d4 frm_dCmn">
                                         <label for="#">body</label>
-                                        <textarea name="textarea"  cols="30" rows="10">@element.emailBody</textarea>
+                                        <textarea  class="body" id="body-@element.campaighId" cols="30" rows="10">@element.emailBody</textarea>
+                                        <input type="hidden" value="" name="body" id="store-@element.campaighId" />
                                     </div>
                                     <div class="d5 submit">
                                         <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
                                         <input type="submit" value="Send">
                                         <!-- </a>   -->
                                         <span class="Attach">
-                                            <img src="image/attach_file_black_20dp.png" alt="attach">
+                                            <img src="~/img/attach_file_black_20dp.png" alt="attach">
                                             <input type="file" hidden>
                                         </span>
                                     </div>
@@ -86,74 +87,43 @@
                 @foreach (var element in Model.list)
                 {
                     <div class="Campaign_wrp">
-                        <span class="Camp_chain" id="Camp_chain">
-                            +
+                        <span class="Camp_chain" onclick="expand(event)">
+                            @element.campaighId  @element.campaignName
                         </span>
-                        <ul>
-                            <li class="L2">
-                                <form action="#">
+                        <ul  class="L2">
+                            <li>
+                                <form action="" onsubmit="bulkEmailSubmit(event)" id="bulkForm-@element.campaighId" data-source="#hiddenexcel-@element.campaighId">
                                     <fieldset>
                                         <legend>@element.campaignName</legend>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">From</label>
-                                            <input type="text" id="ToFrom" name="ToFrom" value="@element.from" disabled placeholder="from.." required>
+                                            <input type="text" value="@element.from" disabled placeholder="from.." required>
+                                        </div>
+                                        <div class="d2 frm_dCmn">
+                                            <label for="#">Delay(Milliseconds)</label>
+                                            <input type="text" value="" name="delay" id="delay-@element.campaighId"  placeholder="Delay between mails.." required>
                                         </div>
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Excel Document</label>
-                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-name="" required>
+                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId" required>
+                                            <input type="hidden" name="excelData" id="hiddenexcel-@element.campaighId" value="" />
+                                        </div>
+                                        <div class="Table_wrp" id="Table-@element.campaighId">
+
 
                                         </div>
                                         <div class="d5 submit"> 
                                         <input type="button" class="btnfile" value="Upload">
                                         </div>
-                                        <!-- <div class="d4 frm_dCmn">
-        <label for="#">body</label>
-       <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-    </div> -->
                                         <div class="Table_wrp">
-                                            @*<table>
-                <thead>
-                    <tr>
-                        <th>To</th>
-                         <th>From</th>
-                        <th>body</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                         <td>3</td>
-                    </tr>
-                </tbody>
-            </table>*@
+                                            @*table*@
                                         </div>
                                         <div class="d5 submit">
                                             <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
-                                            <input type="submit" value="Send">
+                                            <input type="submit" value="Send" data-content="" onsubmit="emailSubmit(event)">
                                             <!-- </a>   -->
                                             <span class="Attach">
-                                                <img src="image/attach_file_black_20dp.png" alt="attach">
+                                                <img src="~/img/attach_file_black_20dp.png" alt="attach">
                                                 <input type="file" hidden>
                                             </span>
                                         </div>
@@ -227,14 +197,90 @@
           }
     </div>
 
-    @if (ViewBag.status=="success") 
-    {
-        <script>
-            window.onload(function () {
-                FormSubmit2();
-            });
-        </script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.body').each(function (e) {
+            CKEDITOR.replace(this.id);
+        })
+    });
+    var bulkEmailSubmit = event => {
+        debugger
+        var source = event.target.dataset.source;
+        var Obj = $(source).val();
+        var jobj = JSON.parse(Obj);
+        var delayid = '#delay-' + source.split('-')[1];
+        var delay = $(delayid).val();
+        var o = {};
+        o.list = jobj;
+        o.delay = delay;
+
+        postObj = JSON.stringify(o);
+         $.ajax({
+        url: "/Email/SendBulkEmail" ,
+        data: postObj,
+        method: 'POST',
+        contentType: "application/json",
+        dataType:"json",
+        async: true,
+        success: data => {  
+            debugger
+
+        },
+        error: error => {
+            alert("error");
+        }
+
+    });
     }
+    var formSubmit = event => {
+ 
+        var editor = event.target.dataset.target;
+        var store = event.target.dataset.store;
+        var data = CKEDITOR.instances[editor].getData();
+        var formid = event.currentTarget.id;
+        $(store).val(data); 
+        var input;
+        var jsonString="{\"";
+        $("form#"+formid+" :input[type='text']").each(function(){
+             input = $(this);
+            if (jsonString + $(this).attr('name') != undefined) {
+                            jsonString = jsonString + $(this).attr('name') + "\":\"" + $(this).val() + "\",\"";
+            }
+         
+        });
+        jsonString = jsonString.substring(0, jsonString.length - 2) + "}";
+        var postObj = JSON.parse(jsonString);
+        postObj.emailBody = data;
+
+               debugger
+      
+    $.ajax({
+        url: "/Email/SendEmail" ,
+        data: JSON.stringify(postObj),
+        method: 'POST',
+        contentType: "application/json",
+        dataType:"json",
+        async: true,
+        success: data => {
+
+            $('#btnfile').attr('data-name', data);
+            alert("success");
+           
+            debugger
+
+        },
+        error: error => {
+            alert("error");
+        }
+
+    });
+
+
+               
+    }
+
+</script>
 
     <!-- curor movement -->
     <!-- end here -->

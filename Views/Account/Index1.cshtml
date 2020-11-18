@@ -1,0 +1,98 @@
+﻿@model BulkEmailMarketing.Models.Login_Model
+@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lg</title>
+    <link rel="stylesheet" href="~/Content/Style.css">
+    <link rel="stylesheet" href="~/Scripts/fontawesome-free-5.15.1-web/css/all.css">
+</head>
+<body>
+    <div class="site_container">
+        <div class="container">
+            <div class="main_Wrp">
+                <div class="wrapper">
+                    <div class="Lg_frst L_cmn01">
+                        <figure>
+                            <img src="~/img/undraw_mobile_login_ikmv.png" alt="login">
+                        </figure>
+                    </div>
+                    <div class="form_WRp1 L_cmn01">
+                        <form class="login">
+                            @Html.AntiForgeryToken()
+                            <p class="title">Log in</p>
+                            @*<input type="text" placeholder="Username" autofocus />*@
+                            @Html.LabelFor(model => model.UserName)
+
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            <i class="fa fa-user"></i>
+                            @*<input type="password" placeholder="Password" />*@
+                            @Html.LabelFor(model => model.Password)
+
+                            @Html.EditorFor(model => model.Password)
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            <label for="#">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            </label>
+                            <i class="fa fa-key"></i>
+                            <a href="#">Forgot your password?</a>
+                            <a href="#" class="Remember_ME">
+                                <input type="checkbox" name="Remember" id="Remember">
+                                Remember me
+                            </a>
+                            <button class="btn1">
+                                <i class="spinner"></i>
+                                <span class="state">Log in</span>
+                            </button>
+                        </form>
+                        <div class="signUP_01">
+                            <button class="btn2" onclick="mBtn()">
+                                <h2>Create New account</h2>
+                            </button>
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- form2  Create new member -->
+        <div class="NewAccount_wrp Form_cmn" id="main02">
+            <!-- <span id="close01" role="button" onclick="fnclose();" class="close" title="Close Modal">X</span> -->
+            <div class="F_Wrapper1">
+                <form action="#">
+                    <span id="close02" role="button" onclick="document.getElementById('main02').style.display='none'" class="close" title="Close Modal">x</span>
+                    <div class="Head_wrp">
+                        <h2>Sign Up</h2>
+                        <span>It's  quick and easy</span>
+                    </div>
+                    <div class="Nm_inp Nm_cmn01">
+                        <input type="text" name="Usename1" id="Usename2" placeholder="User Name" required>
+                    </div>
+                    <div class="Nm_inp2 Nm_cmn01">
+                        <input type="email" name="email1" id="eamil2" placeholder="Email Address" required>
+                    </div>
+                    <div class="Nm_inp3 Nm_cmn01">
+                        <input type="password" name="password2" id="password2" placeholder="New password" required>
+                    </div>
+                    <div class="Sign_up">
+                        <input type="submit" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scritp section -->
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>
