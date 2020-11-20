@@ -48,25 +48,40 @@ namespace BulkEmailMarketing.Services
                     var sub = collection.subject;
                 //var body = collection["textarea"].ToString();
                 var body=collection.emailBody;
-                    var smtp = new SmtpClient
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential(senderEmail.Address, password)
-                    };
-                    using (var mess = new MailMessage(senderEmail, receiverEmail)
-                    {
-                        IsBodyHtml = true,   
-                         BodyEncoding = UTF8Encoding.UTF8,
-                         Subject = collection.subject,
-                        Body = body
-                    })
-                    {
-                        smtp.Send(mess);
-                    }
+                //var smtp = new SmtpClient
+                //{
+                //    Host = "smtp.gmail.com",
+                //    Port = 587,
+                //    EnableSsl = true,
+                //    DeliveryMethod = SmtpDeliveryMethod.Network,
+                //    UseDefaultCredentials = false,
+                //    Credentials = new NetworkCredential(senderEmail.Address, password)
+                //};
+                //using (var mess = new MailMessage(senderEmail, receiverEmail)
+                //{
+                //    IsBodyHtml = true,   
+                //     BodyEncoding = UTF8Encoding.UTF8,
+                //     Subject = collection.subject,
+                //    Body = body
+                //})
+                //{
+                //    smtp.Send(mess);
+                //}
+                MailMessage msgs = new MailMessage();
+                msgs.To.Add(receiverEmail.Address);
+                MailAddress address = new MailAddress(senderEmail.Address);
+                msgs.From = address;
+                msgs.Subject = collection.subject;
+                string htmlBody = collection.emailBody;
+                msgs.Body = htmlBody;
+                msgs.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient();
+                client.Host = "relay-hosting.secureserver.net";
+                client.Port = 25;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new System.Net.NetworkCredential(senderEmail.Address, userData.password);
+                //Send the msgs  
+                client.Send(msgs);
                 status = true;
             }
             catch (Exception ex)
