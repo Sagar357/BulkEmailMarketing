@@ -25,11 +25,11 @@
                     </button>
                 </div>
                 <div class="Btn_Grid">
-                    <span class="R0 R_cmn">
+                    @*<span class="R0 R_cmn">
                         <input type="checkbox" name="checkbox" id="checkbox"
                                title="Select All" style="cursor: pointer;">
                         <span class="tool_tip">Select All</span>
-                    </span>
+                    </span>*@
                     <span class="R1 R_cmn">
                         <button onclick="openProduct('CWrapper')">Email</button>
                     </span>
@@ -48,9 +48,9 @@
                     {
                         <li class="L1">
                             <form action="" id="form-@element.campaighId" method="post" data-target="body-@element.campaighId" data-store="#store-@element.campaighId" onsubmit="formSubmit(event)">
-                                <span class="checkbox01">
+                                @*<span class="checkbox01">
                                     <input type="checkbox" name="checkbox" id="@element.campaighId">
-                                </span>
+                                </span>*@
                                 <fieldset>
                                     <legend>@element.campaignName</legend>
                                     <div class="d1 frm_dCmn">
@@ -92,7 +92,7 @@
                 {
                     <div class="Campaign_wrp">
                         <span class="Camp_chain" onclick="expand(event)">
-                            @element.campaighId  @element.campaignName
+                            @*@element.campaighId*@  @element.campaignName
                         </span>
                         <ul  class="L2">
                             <li>
@@ -158,19 +158,19 @@
                         <label>Subject:</label>
                         <input type="text" name="Subject" id="Subject2" placeholder="Subject..">
                     </div>
-                    <div class="d3 d_cmn">
+                    <div class="d2 d_cmn">
                         <div class="Cwrp01 Cwrp0">
                             <label> Campaign Name:</label>
                             <input type="text" name="CampaignName" id="CampaignName" placeholder="Campaign Name..">
                         </div>
-                        <div class="Cwrp02 Cwrp0">
+                        @*<div class="Cwrp02 Cwrp0">
                             <label> Upload File</label>
                             <input type="file" name="File3" id="File3">
                             <span>
                                 <img id="camp_logo" src="#" alt="image">
 
                             </span>
-                        </div>
+                        </div>*@
                     </div>
                     <div class="d4 d_cmn">
                         <label> Email body:</label>
@@ -209,6 +209,8 @@
         $('.body').each(function (e) {
             CKEDITOR.replace(this.id);
         })
+
+        CKEDITOR.replace("textarea1");
     });
     var bulkEmailSubmit = event => {
         debugger

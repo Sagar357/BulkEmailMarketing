@@ -13,7 +13,7 @@ namespace BulkEmailMarketing.Services
 {
     public class CampaignServices
     {
-        public string AddCampaign(FormCollection campaignData)
+        public string AddCampaign(FormCollection campaignData ,user_Model userData)
         {
             string status;
             try
@@ -33,7 +33,7 @@ namespace BulkEmailMarketing.Services
                     db.Open();
                     DataSet ds = new DataSet();
                     ds = new DataSet();
-                    SqlParameter[] param = new SqlParameter[7];
+                    SqlParameter[] param = new SqlParameter[8];
                     param[0] = new SqlParameter("@campaignName", Model.campaignName);
                     param[1] = new SqlParameter("@attachmentCode", Model.attachmentCode);
                     param[2] = new SqlParameter("@emailBody", Model.emailBody);
@@ -41,6 +41,8 @@ namespace BulkEmailMarketing.Services
                     param[4] = new SqlParameter("@subject", Model.subject);
                     param[5] = new SqlParameter("@filename", filename);
                     param[6] = new SqlParameter("@filepath", filepath);
+                    param[7] = new SqlParameter("@userid", userData.user_id);
+
                     ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prccreateCampaign", param);
                     status = "success";
                 }

@@ -35,7 +35,7 @@ namespace BulkEmailMarketing.Controllers
         {
           
                 // TODO: Add insert logic here
-                string status= service.AddCampaign(collection);
+                string status= service.AddCampaign(collection ,userData);
 
                 return RedirectToAction("Index" ,"Home" ,new { status=status });
           
