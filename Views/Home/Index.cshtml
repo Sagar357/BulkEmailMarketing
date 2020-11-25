@@ -101,7 +101,7 @@
                                         <legend>@element.campaignName</legend>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">From</label>
-                                            <input type="text" value="@element.from" disabled placeholder="from.." required>
+                                            <input type="text" value="@ViewBag.username" disabled placeholder="from.." required>
                                         </div>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">Delay(Milliseconds)</label>
@@ -210,7 +210,7 @@
             CKEDITOR.replace(this.id);
         })
 
-        CKEDITOR.replace("textarea1");
+       
     });
     var bulkEmailSubmit = event => {
         debugger
