@@ -25,7 +25,16 @@ namespace BulkEmailMarketing.Services
                 Model.from = campaignData[""];
                 Model.subject = campaignData["Subject"];
                 Model.from = campaignData["Frominput"];
-                string filename = campaignData["campaignLogo"];
+                string filename;
+                if (!string.IsNullOrEmpty(campaignData["campaignLogo"].ToString()))
+                {
+                    filename = campaignData["campaignLogo"];
+                }
+                else
+                {
+                    filename = "";
+                }
+                
                 string filepath = "~/upload/";
 
                 using (SqlConnection db = ConnectionHelper.getConnection())

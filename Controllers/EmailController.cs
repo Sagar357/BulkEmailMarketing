@@ -30,7 +30,7 @@ namespace BulkEmailMarketing.Controllers
             bool status = false;
             foreach (var obj in postObj.list)
             {
-
+                obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData);
                 await Task.Delay(postObj.delay);
             }

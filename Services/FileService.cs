@@ -86,14 +86,14 @@ namespace BulkEmailMarketing.Services
                     foreach(DataRow dr in dtResult.Rows)
                     {
                         PostEmail_Obj postEmail_Obj = new PostEmail_Obj();
-                        if (!string.IsNullOrEmpty(dr["body"].ToString()))
-                        {
-                            postEmail_Obj.emailBody = dr["body"].ToString();
-                        }
-                        else
-                        {
-                            postEmail_Obj.emailBody = "";
-                        }
+                        //if (!string.IsNullOrEmpty(dr["body"].ToString()))
+                        //{
+                        //    postEmail_Obj.emailBody = dr["body"].ToString();
+                        //}
+                        //else
+                        //{
+                        //    postEmail_Obj.emailBody = "";
+                        //}
                         if (!string.IsNullOrEmpty(dr["EmailTo"].ToString()))
                         {
                             postEmail_Obj.to = dr["EmailTo"].ToString();

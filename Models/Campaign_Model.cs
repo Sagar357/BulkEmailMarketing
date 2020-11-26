@@ -32,6 +32,7 @@ namespace BulkEmailMarketing.Models
             this.list = new List<PostEmail_Obj>();
         }
         public List<PostEmail_Obj> list { get; set; }
+        public string BulkEmailBody { get; set; }
         public int delay { get; set; }
 
     }

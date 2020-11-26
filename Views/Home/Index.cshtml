@@ -96,7 +96,7 @@
                         </span>
                         <ul  class="L2">
                             <li>
-                                <form action="" onsubmit="bulkEmailSubmit(event)" id="bulkForm-@element.campaighId" data-source="#hiddenexcel-@element.campaighId">
+                                <form action="" onsubmit="bulkEmailSubmit(event)" id="bulkForm-@element.campaighId"  data-target="bulkbody-@element.campaighId" data-source="#hiddenexcel-@element.campaighId">
                                     <fieldset>
                                         <legend>@element.campaignName</legend>
                                         <div class="d2 frm_dCmn">
@@ -106,6 +106,10 @@
                                         <div class="d2 frm_dCmn">
                                             <label for="#">Delay(Milliseconds)</label>
                                             <input type="text" value="" name="delay" id="delay-@element.campaighId"  placeholder="Delay between mails.." required>
+                                        </div>
+                                        <div class="d2 frm_dCmn">
+                                            <label for="#">body</label>
+                                            <textarea class="body" id="bulkbody-@element.campaighId" cols="30" rows="10">@element.emailBody</textarea>
                                         </div>
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Excel Document</label>
@@ -124,7 +128,7 @@
                                         </div>
                                         <div class="d5 submit">
                                             <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
-                                            <input type="submit" value="Send" data-content="" onsubmit="emailSubmit(event)">
+                                            <input type="submit"  value="Send" data-content="" >
                                             <!-- </a>   -->
                                             <span class="Attach">
                                                 <img src="~/img/attach_file_black_20dp.png" alt="attach">
@@ -152,7 +156,7 @@
                     </div> -->
                     <div class="d1 d_cmn">
                         <label>From:</label>
-                        <input type="text" value="markushno357@gmail.com" name="Frominput" readonly id="ToInpt" placeholder="From..">
+                        <input type="text" value="@ViewBag.username" name="Frominput" readonly id="ToInpt" placeholder="From..">
                     </div>
                     <div class="d2 d_cmn">
                         <label>Subject:</label>
@@ -214,7 +218,9 @@
     });
     var bulkEmailSubmit = event => {
         debugger
+        var editor = event.target.dataset.target;
         var source = event.target.dataset.source;
+        var data = CKEDITOR.instances[editor].getData();
         var Obj = $(source).val();
         var jobj = JSON.parse(Obj);
         var delayid = '#delay-' + source.split('-')[1];
@@ -222,6 +228,7 @@
         var o = {};
         o.list = jobj;
         o.delay = delay;
+        o.BulkEmailBody = data;
 
         postObj = JSON.stringify(o);
          $.ajax({
@@ -232,14 +239,15 @@
         dataType:"json",
         async: true,
         success: data => {  
-            debugger
+  
 
         },
         error: error => {
             alert("error");
         }
 
-    });
+         });
+        location.href = "@Url.Action("Index" ,"Home")";
     }
     var formSubmit = event => {
  
