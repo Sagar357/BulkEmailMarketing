@@ -37,7 +37,7 @@ namespace BulkEmailMarketing.Controllers
         public async Task<JsonResult> SendBulkEmail(postBulkObj postObj)
         {
             bool status = false;
-            postObj.list = (List<PostEmail_Obj>)Session["excel"];
+            //postObj.list = (List<PostEmail_Obj>)Session["excel"];
             foreach (var obj in postObj.list)
             {
                 obj.emailBody = postObj.BulkEmailBody;

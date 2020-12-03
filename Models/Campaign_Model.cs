@@ -15,6 +15,7 @@ namespace BulkEmailMarketing.Models
         public string emailBody { get; set; }
         public string campaignLogo { get; set; }
         public string to { get; set; }
+        public string fromName { get; set; }
     }
 
     public class PostEmail_Obj
@@ -24,6 +25,7 @@ namespace BulkEmailMarketing.Models
         public string emailBody { get; set; }
         public string to { get; set; }
         public string filePath { get; set; }
+        public string Name { get; set; }
     }
 
     public class postBulkObj
@@ -35,6 +37,8 @@ namespace BulkEmailMarketing.Models
         public List<PostEmail_Obj> list { get; set; }
         public string BulkEmailBody { get; set; }
         public int delay { get; set; }
+        public string Name { get; set; }
+
 
     }
     public class Campaign_List

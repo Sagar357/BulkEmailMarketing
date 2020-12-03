@@ -61,7 +61,7 @@ namespace BulkEmailMarketing.Services
             {
                 /*good code*/
 
-                var senderEmail = new MailAddress(userData.user_name, "Mark<markushno357@gmail.com>");
+                var senderEmail = new MailAddress(userData.user_name, collection.Name);
                 var receiverEmail = new MailAddress(collection.to, "Receiver");
                 var password = userData.password;
                 var sub = collection.subject;

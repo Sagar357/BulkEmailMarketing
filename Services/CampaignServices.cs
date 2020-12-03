@@ -25,6 +25,7 @@ namespace BulkEmailMarketing.Services
                 Model.from = campaignData[""];
                 Model.subject = campaignData["Subject"];
                 Model.from = campaignData["Frominput"];
+                Model.fromName= campaignData["Name"];
                 string filename;
                 if (!string.IsNullOrEmpty(campaignData["campaignLogo"].ToString()))
                 {
@@ -42,7 +43,7 @@ namespace BulkEmailMarketing.Services
                     db.Open();
                     DataSet ds = new DataSet();
                     ds = new DataSet();
-                    SqlParameter[] param = new SqlParameter[8];
+                    SqlParameter[] param = new SqlParameter[9];
                     param[0] = new SqlParameter("@campaignName", Model.campaignName);
                     param[1] = new SqlParameter("@attachmentCode", Model.attachmentCode);
                     param[2] = new SqlParameter("@emailBody", Model.emailBody);
@@ -50,7 +51,8 @@ namespace BulkEmailMarketing.Services
                     param[4] = new SqlParameter("@subject", Model.subject);
                     param[5] = new SqlParameter("@filename", filename);
                     param[6] = new SqlParameter("@filepath", filepath);
-                    param[7] = new SqlParameter("@userid", userData.user_id);
+                    param[7] = new SqlParameter("@userid", userData.user_id); 
+                    param[8] = new SqlParameter("@fromName", Model.fromName);
 
                     ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prccreateCampaign", param);
                     status = "success";
@@ -124,6 +126,14 @@ namespace BulkEmailMarketing.Services
                                 else
                                 {
                                     obj.subject = "";
+                                }
+                                if (!string.IsNullOrEmpty(dr["FromName"].ToString()))
+                                {
+                                    obj.fromName = dr["FromName"].ToString();
+                                }
+                                else
+                                {
+                                    obj.fromName = "";
                                 }
                                 if (!string.IsNullOrEmpty(dr["campaignLogo"].ToString()))
                                 {
