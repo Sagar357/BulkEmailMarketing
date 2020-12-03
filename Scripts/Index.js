@@ -46,7 +46,7 @@ $('.file-upload').change(event => {
                     <tr>
                         <th>Email To</th>
                          <th>Email Subject</th>
-                        <th>Email Body</th>
+                        
                     </tr>
                 </thead>
                 <tbody>`;
@@ -57,7 +57,7 @@ $('.file-upload').change(event => {
                 listElements = listElements+ `<tr>`;
                 listElements = listElements + `<td>` + data.records[i].to + `</td>`;
                 listElements = listElements + `<td>` + data.records[i].subject + `</td>`
-                listElements = listElements + `<td>` + data.records[i].emailBody + `</td>`
+               
                 listElements = listElements + `</tr>`;
             }
             str = str + listElements + ` </tbody>
@@ -65,6 +65,33 @@ $('.file-upload').change(event => {
             $(ele).empty();
             $(ele).append(str);
             $(store).val(JSON.stringify(data.records));
+        },
+        error: error => {
+            alert("error");
+        }
+
+    });
+});
+
+
+$('.editor-upload').change(event => {
+    var files = event.currentTarget;
+    var formData = new FormData();
+    formData.append("files", files.files[0]);
+    var ele = event.target.dataset.target;
+    var store = event.target.dataset.store;
+    debugger
+    $.ajax({
+        url: '/File/Upload',
+        data: formData,
+        method: 'POST',
+        contentType: false,
+        processData: false,
+        async: true,
+        success: data => {
+
+            debugger
+            $(ele).val(data.filePath);
         },
         error: error => {
             alert("error");

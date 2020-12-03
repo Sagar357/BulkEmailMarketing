@@ -64,7 +64,7 @@ namespace BulkEmailMarketing.Services
             return status;
         }
 
-        public Campaign_List GetCampaignList()
+        public Campaign_List GetCampaignList(user_Model userData)
         {
             DataSet ds = null;
             Campaign_List detail = new Campaign_List();
@@ -74,6 +74,8 @@ namespace BulkEmailMarketing.Services
                 {
                     db.Open();
                     ds = new DataSet();
+                    SqlParameter[] param = new SqlParameter[4];
+                    param[0] = new SqlParameter("@userid" ,userData.user_id);
                     ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcgetCampaignData");
 
                     if (ds.Tables.Count > 0)

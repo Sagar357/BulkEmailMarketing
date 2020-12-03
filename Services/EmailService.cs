@@ -1,15 +1,13 @@
 ﻿using BulkEmailMarketing.Models;
+using BulkEmailMarketing.utils;
+using Microsoft.ApplicationBlocks.Data;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Web.Mvc;
 
@@ -30,11 +28,12 @@ namespace BulkEmailMarketing.Services
                     X509Certificate certificate,
                     X509Chain chain,
                     SslPolicyErrors sslPolicyErrors
-                ) {
+                )
+                {
                     return true;
                 };
         }
-        public  bool SendEmail(PostEmail_Obj collection , user_Model userData) 
+        public bool SendEmail(PostEmail_Obj collection, user_Model userData)
         {
             bool status = false;
 
@@ -58,21 +57,25 @@ namespace BulkEmailMarketing.Services
 
             //}
 
-              try
-              {
+            try
+            {
+                /*good code*/
+
+                var senderEmail = new MailAddress(userData.user_name, "Mark<markushno357@gmail.com>");
+                var receiverEmail = new MailAddress(collection.to, "Receiver");
+                var password = userData.password;
+                var sub = collection.subject;
 
 
-                  var senderEmail = new MailAddress(userData.user_name, "Mark<markushno357@gmail.com>");
-                  var receiverEmail = new MailAddress(collection.to, "Receiver");
-                  var password = userData.password;
-                  var sub = collection.subject;
-
-                MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
+                //MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
+                MailAddress godaddy = new MailAddress("noreply@emailtick.com");
                 MailMessage message = new MailMessage(senderEmail.Address, receiverEmail.Address);
                 message.Sender = godaddy;
                 message.Body = collection.emailBody;
                 message.IsBodyHtml = true;
                 message.Subject = collection.subject;
+                /*good code*/
+                 
                 /* var mail = new MailAddress("shub@gmail.com");
 
                  //var body = collection["textarea"].ToString();
@@ -103,23 +106,27 @@ namespace BulkEmailMarketing.Services
                 MailAddress sender = new MailAddress("noreply@emailblasterservices.com");
 
 
-            //MailMessage msgs = new MailMessage();
-            //msgs.To.Add(receiverEmail.Address);
-            //MailAddress address = new MailAddress(senderEmail.Address);
-            //msgs.From = address;
-            //msgs.Subject = collection.subject;
-            //string htmlBody = collection.emailBody;
-            //msgs.Body = htmlBody;
-            //msgs.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient();
-            client.Host = "relay-hosting.secureserver.net";
-            client.Port = 25;
-            client.UseDefaultCredentials = false;
-                // client.Credentials = new System.Net.NetworkCredential(msgs.Sender.Address, "Za#&9=1u=a");
-                client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Za#&9=1u=a");
+                //MailMessage msgs = new MailMessage();
+                //msgs.To.Add(receiverEmail.Address);
+                //MailAddress address = new MailAddress(senderEmail.Address);
+                //msgs.From = address;
+                //msgs.Subject = collection.subject;
+                //string htmlBody = collection.emailBody;
+                //msgs.Body = htmlBody;
+                //msgs.IsBodyHtml = true;
+                //SmtpClient client = new SmtpClient();
+               
+                using (SmtpClient client = new SmtpClient()) 
+                {
+                    client.Host = "relay-hosting.secureserver.net";
+                    client.Port = 25;
+                    client.UseDefaultCredentials = false;
+                    // client.Credentials = new System.Net.NetworkCredential(msgs.Sender.Address,"Za#&9=1u=a" );
+                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Emzfp!xY4x");
+                    client.Send(message);
+                }
                 //Send the msgs  
-                client.Send(message);
-            status = true;
+                status = true;
             }
             catch (Exception ex)
             {
@@ -152,10 +159,39 @@ namespace BulkEmailMarketing.Services
             return status;
         }
 
-        internal void SendEmail(FormCollection formCollection, object collection)
+        public string SaveTemplate(Campaign_Model Model)
         {
-            throw new NotImplementedException();
+            string status;
+            try
+            {
+              
+
+               
+
+                using (SqlConnection db = ConnectionHelper.getConnection())
+                {
+                    db.Open();
+                    DataSet ds = new DataSet();
+                    ds = new DataSet();
+                    SqlParameter[] param = new SqlParameter[8];
+                   
+                    param[1] = new SqlParameter("@emailBody", Model.emailBody);
+                   
+                    param[0] = new SqlParameter("@campaignid", Model.campaighId);
+
+                    ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "updateTemplate", param);
+                    status = "success";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                status = "failed";
+            }
+            return status;
         }
+
+        
 
 
     }

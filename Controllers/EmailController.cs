@@ -23,11 +23,21 @@ namespace BulkEmailMarketing.Controllers
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
 
-        // GET: Email/Details/5
-  
+        [HttpPost]
+        public JsonResult SaveTemplate(Campaign_Model postObj)
+        {
+
+            string status = service.SaveTemplate(postObj);
+            
+            return (Json(status, JsonRequestBehavior.AllowGet));
+        }
+
+        // GET: Email/Details/5SaveTemplate
+        [HttpPost]
         public async Task<JsonResult> SendBulkEmail(postBulkObj postObj)
         {
             bool status = false;
+            postObj.list = (List<PostEmail_Obj>)Session["excel"];
             foreach (var obj in postObj.list)
             {
                 obj.emailBody = postObj.BulkEmailBody;

@@ -12,6 +12,8 @@
             }
         }
     }
+
+    location.href = '/Home/Index';
     //     debugger
 }
 

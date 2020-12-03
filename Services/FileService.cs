@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using System.IO;
@@ -36,6 +37,8 @@ namespace BulkEmailMarketing.Services
                     response = new File_Model();
                     response.fileName = uploadedFileName;
                     response.status = true;
+                    
+                    response.filePath = Path.Combine(ConfigurationManager.AppSettings["domainPath"].ToString(), uploadedFileName);
                     result = uploadedFileName;
                 }
             }

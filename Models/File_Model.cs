@@ -12,6 +12,8 @@ namespace BulkEmailMarketing.Models
             this.records = new List<PostEmail_Obj>();
         }
         public string fileName { get; set; }
+        public string filePath{ get; set; }
+
         public List<PostEmail_Obj> records { get; set; }
         public bool status { get; set; }
     }

@@ -50,6 +50,7 @@ namespace BulkEmailMarketing.Controllers
                     string x = Path.Combine( uploadPath , model.fileName);
                     //model.records = FileService.ImportExcell(x, "Sheet1");
                     model.records=FileService.ConvertExcelToDataTable(x);
+                    Session["excel"] = model.records;
 
                 }
             }

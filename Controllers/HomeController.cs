@@ -15,7 +15,7 @@ namespace BulkEmailMarketing.Controllers
         {
             ViewBag.status = status;
             CampaignServices service = new CampaignServices();
-            Campaign_List list=service.GetCampaignList();
+            Campaign_List list=service.GetCampaignList(userData);
             return View(list);
         }
 

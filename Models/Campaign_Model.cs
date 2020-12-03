@@ -23,6 +23,7 @@ namespace BulkEmailMarketing.Models
         public string subject { get; set; }
         public string emailBody { get; set; }
         public string to { get; set; }
+        public string filePath { get; set; }
     }
 
     public class postBulkObj
