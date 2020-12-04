@@ -68,7 +68,9 @@ namespace BulkEmailMarketing.Services
 
 
                 //MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
-                MailAddress godaddy = new MailAddress("noreply@emailtick.com");
+                //MailAddress godaddy = new MailAddress("noreply@emailtick.com");
+                MailAddress godaddy = new MailAddress("noreply@miilup.com");
+
                 MailMessage message = new MailMessage(senderEmail.Address, receiverEmail.Address);
                 message.Sender = godaddy;
                 message.Body = collection.emailBody;
@@ -122,7 +124,8 @@ namespace BulkEmailMarketing.Services
                     client.Port = 25;
                     client.UseDefaultCredentials = false;
                     // client.Credentials = new System.Net.NetworkCredential(msgs.Sender.Address,"Za#&9=1u=a" );
-                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Emzfp!xY4x");
+                    //client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Emzfp!xY4x");
+                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Settings@123");
                     client.Send(message);
                 }
                 //Send the msgs  

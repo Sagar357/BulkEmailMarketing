@@ -76,7 +76,7 @@ namespace BulkEmailMarketing.Services
                     ds = new DataSet();
                     SqlParameter[] param = new SqlParameter[4];
                     param[0] = new SqlParameter("@userid" ,userData.user_id);
-                    ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcgetCampaignData");
+                    ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcgetCampaignData" ,param);
 
                     if (ds.Tables.Count > 0)
                     {
