@@ -2,6 +2,7 @@
 using BulkEmailMarketing.utils;
 using Microsoft.ApplicationBlocks.Data;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
@@ -130,6 +131,16 @@ namespace BulkEmailMarketing.Services
             }
             catch (Exception ex)
             {
+                var w32ex = ex as Win32Exception;
+                if (w32ex == null)
+                {
+                    w32ex = ex.InnerException as Win32Exception;
+                }
+                if (w32ex != null)
+                {
+                    int code = w32ex.ErrorCode;
+                    // do stuff
+                }
                 status = false;
             }
 

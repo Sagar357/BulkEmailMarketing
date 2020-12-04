@@ -111,9 +111,9 @@ namespace BulkEmailMarketing.Services
                                 {
                                     obj.from = "";
                                 }
-                                if (!string.IsNullOrEmpty(dr["email_body"].ToString()))
+                                if (!string.IsNullOrEmpty(dr["templateContent"].ToString()))
                                 {
-                                    obj.emailBody = dr["email_body"].ToString();
+                                    obj.emailBody = dr["templateContent"].ToString();
                                 }
                                 else
                                 {
