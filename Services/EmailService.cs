@@ -9,7 +9,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-
+using System.Text;
 using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Services
@@ -38,111 +38,112 @@ namespace BulkEmailMarketing.Services
         {
             bool status = false;
 
-            //try
-            //{
-            //    string senderEmail = "jhanvimalhotra357@gmail.com";
-            //    string senderPassword = "sagar@12345";
-            //    SmtpClient client = new SmtpClient("smtp.gmail.com" ,587);
-            //    client.EnableSsl = true;
-            //    client.Timeout = 100000;
-            //    client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //    client.UseDefaultCredentials = false;
-            //    client.Credentials = new NetworkCredential(senderEmail ,senderPassword);
-            //    MailMessage message = new MailMessage(senderEmail ,collection["Toname"].ToString() ,collection["subject"].ToString() , "<p>email body 1</p>");
-            //    message.IsBodyHtml = true;
-            //    message.BodyEncoding=UTF8Encoding.UTF8;
-            //    client.Send(message);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
-
             try
             {
-                /*good code*/
-
-                var senderEmail = new MailAddress(userData.user_name, collection.Name);
-                var receiverEmail = new MailAddress(collection.to, "Receiver");
-                var password = userData.password;
-                var sub = collection.subject;
-
-
-                //MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
-                MailAddress godaddy = new MailAddress("noreply@emailtick.com");
-                MailMessage message = new MailMessage(senderEmail.Address, receiverEmail.Address);
-                message.Sender = godaddy;
-                message.Body = collection.emailBody;
+                //string senderEmail = "markushno357@gmail.com";
+                var senderEmail= new MailAddress("markushno357@gmail.com", collection.Name);
+                string senderPassword = "marcia@357";
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                client.Timeout = 100000;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(senderEmail.Address, senderPassword);
+                MailMessage message = new MailMessage(senderEmail.Address, collection.to, collection.subject, collection.emailBody);
                 message.IsBodyHtml = true;
-                message.Subject = collection.subject;
-                /*good code*/
-                 
-                /* var mail = new MailAddress("shub@gmail.com");
-
-                 //var body = collection["textarea"].ToString();
-                 var body = collection.emailBody;
-                 IPAddress[] ip = Dns.GetHostAddresses("smtp.gmail.com");
-                 var smtp = new SmtpClient
-                 {
-                     Host = ip[0].ToString(),
-                     Port = 587,
-                     EnableSsl = true,
-                     DeliveryMethod = SmtpDeliveryMethod.Network
-
-                 };
-                 using (var mess = new System.Net.Mail.MailMessage(mail, receiverEmail)
-                 {
-                     IsBodyHtml = true,
-                     BodyEncoding = UTF8Encoding.UTF8,
-                     Subject = collection.subject,
-                     Body = body,
-                     Sender = senderEmail
-                 })
-                 {
-                     EmailService.NEVER_EAT_POISON_Disable_CertificateValidation();
-                     smtp.Send(mess);
-                 }*/
-
-
-                MailAddress sender = new MailAddress("noreply@emailblasterservices.com");
-
-
-                //MailMessage msgs = new MailMessage();
-                //msgs.To.Add(receiverEmail.Address);
-                //MailAddress address = new MailAddress(senderEmail.Address);
-                //msgs.From = address;
-                //msgs.Subject = collection.subject;
-                //string htmlBody = collection.emailBody;
-                //msgs.Body = htmlBody;
-                //msgs.IsBodyHtml = true;
-                //SmtpClient client = new SmtpClient();
-               
-                using (SmtpClient client = new SmtpClient()) 
-                {
-                    client.Host = "relay-hosting.secureserver.net";
-                    client.Port = 25;
-                    client.UseDefaultCredentials = false;
-                    // client.Credentials = new System.Net.NetworkCredential(msgs.Sender.Address,"Za#&9=1u=a" );
-                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Emzfp!xY4x");
-                    client.Send(message);
-                }
-                //Send the msgs  
-                status = true;
+                message.BodyEncoding = UTF8Encoding.UTF8;
+                client.Send(message);
             }
             catch (Exception ex)
             {
-                var w32ex = ex as Win32Exception;
-                if (w32ex == null)
-                {
-                    w32ex = ex.InnerException as Win32Exception;
-                }
-                if (w32ex != null)
-                {
-                    int code = w32ex.ErrorCode;
-                    // do stuff
-                }
-                status = false;
+
             }
+
+            //try
+            //{
+            //    /*good code*/
+
+            //    var senderEmail = new MailAddress(userData.user_name, collection.Name);
+            //    var receiverEmail = new MailAddress(collection.to, "Receiver");
+            //    var password = userData.password;
+            //    var sub = collection.subject;
+
+
+            //    //MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
+            //    MailAddress godaddy = new MailAddress("noreply@emailtick.com");
+            //    MailMessage message = new MailMessage(senderEmail.Address, receiverEmail.Address);
+            //    message.Sender = godaddy;
+            //    message.Body = collection.emailBody;
+            //    message.IsBodyHtml = true;
+            //    message.Subject = collection.subject;
+            //    /*good code*/
+
+            //    /* var mail = new MailAddress("shub@gmail.com");
+
+            //     //var body = collection["textarea"].ToString();
+            //     var body = collection.emailBody;
+            //     IPAddress[] ip = Dns.GetHostAddresses("smtp.gmail.com");
+            //     var smtp = new SmtpClient
+            //     {
+            //         Host = ip[0].ToString(),
+            //         Port = 587,
+            //         EnableSsl = true,
+            //         DeliveryMethod = SmtpDeliveryMethod.Network
+
+            //     };
+            //     using (var mess = new System.Net.Mail.MailMessage(mail, receiverEmail)
+            //     {
+            //         IsBodyHtml = true,
+            //         BodyEncoding = UTF8Encoding.UTF8,
+            //         Subject = collection.subject,
+            //         Body = body,
+            //         Sender = senderEmail
+            //     })
+            //     {
+            //         EmailService.NEVER_EAT_POISON_Disable_CertificateValidation();
+            //         smtp.Send(mess);
+            //     }*/
+
+
+            //    MailAddress sender = new MailAddress("noreply@emailblasterservices.com");
+
+
+            //    //MailMessage msgs = new MailMessage();
+            //    //msgs.To.Add(receiverEmail.Address);
+            //    //MailAddress address = new MailAddress(senderEmail.Address);
+            //    //msgs.From = address;
+            //    //msgs.Subject = collection.subject;
+            //    //string htmlBody = collection.emailBody;
+            //    //msgs.Body = htmlBody;
+            //    //msgs.IsBodyHtml = true;
+            //    //SmtpClient client = new SmtpClient();
+
+            //    using (SmtpClient client = new SmtpClient()) 
+            //    {
+            //        client.Host = "relay-hosting.secureserver.net";
+            //        client.Port = 25;
+            //        client.UseDefaultCredentials = false;
+            //        // client.Credentials = new System.Net.NetworkCredential(msgs.Sender.Address,"Za#&9=1u=a" );
+            //        client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Emzfp!xY4x");
+            //        client.Send(message);
+            //    }
+            //    //Send the msgs  
+            //    status = true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    var w32ex = ex as Win32Exception;
+            //    if (w32ex == null)
+            //    {
+            //        w32ex = ex.InnerException as Win32Exception;
+            //    }
+            //    if (w32ex != null)
+            //    {
+            //        int code = w32ex.ErrorCode;
+            //        // do stuff
+            //    }
+            //    status = false;
+            //}
 
             //try
             //{
