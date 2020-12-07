@@ -24,12 +24,17 @@
                         Add Camppaign
                     </button>
                 </div>
+                <div class="child_Wrp">
+                    <button onclick="location.href='@Url.Action("GetCampaignStatus" ,"Campaign")'">
+                        My Campaigns
+                    </button>
+                </div>
                 <div class="Btn_Grid">
                     @*<span class="R0 R_cmn">
-                        <input type="checkbox" name="checkbox" id="checkbox"
-                               title="Select All" style="cursor: pointer;">
-                        <span class="tool_tip">Select All</span>
-                    </span>*@
+                <input type="checkbox" name="checkbox" id="checkbox"
+                       title="Select All" style="cursor: pointer;">
+                <span class="tool_tip">Select All</span>
+            </span>*@
                     <span class="R1 R_cmn">
                         <button onclick="openProduct('CWrapper')">Email</button>
                     </span>
@@ -328,31 +333,31 @@
         var postObj = JSON.parse(jsonString);
         postObj.emailBody = data;
 
-             
-      
-    $.ajax({
-        url: "/Email/SendEmail" ,
-        data: JSON.stringify(postObj),
-        method: 'POST',
-        contentType: "application/json",
-        dataType:"json",
-        async: true,
-        success: data => {
+        var res = new Promise(function (resolve, reject) {
 
-            $('#btnfile').attr('data-name', data);
-            alert("success");
-           
-            debugger
+            $.ajax({
+                url: "/Email/SendEmail",
+                data: JSON.stringify(postObj),
+                method: 'POST',
+                contentType: "application/json",
+                dataType: "json",
+                async: true,
+                success: data => {
 
-        },
-        error: error => {
-            alert("error");
-        }
+                    alert("success");
 
-    });
+                    debugger
 
+                },
+                error: error => {
+                    debugger
+                    alert("error");
+                }
 
-              location.href = "@Url.Action("Index" ,"Home")";
+            });
+
+        });
+        console.log(res);
          
     }
 

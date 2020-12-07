@@ -33,8 +33,8 @@ namespace BulkEmailMarketing.Controllers
             return View();
         }
 
-        
-        public ActionResult GetLogo()
+        [Route("/GetLogo/{Trackimage}")]
+        public ActionResult GetLogo(string img)
         {
             Byte[] b = System.IO.File.ReadAllBytes(@"E:\react\Projects\copy\BulkEmailMarketing\img\camp1.png");   // You can use your own method over here.         
             return File(b, "image/jpeg");

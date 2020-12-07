@@ -10,12 +10,14 @@ using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BulkEmailMarketing.Services
 {
     public class EmailService
     {
+        private static string emailStatus=string.Empty;
 
         [Obsolete("Do not use this in Production code!!!", false)]
         static void NEVER_EAT_POISON_Disable_CertificateValidation()
@@ -34,29 +36,76 @@ namespace BulkEmailMarketing.Services
                     return true;
                 };
         }
-        public bool SendEmail(PostEmail_Obj collection, user_Model userData)
-        {
-            bool status = false;
 
+        #region SendAsyncCancel
+
+        /// <summary>
+
+        /// this code used to SmtpClient.SendAsyncCancel Method
+
+        /// </summary>
+
+        // static bool mailSent = false;
+
+        void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+
+        {
+
+            if (e.Cancelled)
+
+            {
+
+                emailStatus="Send canceled.";
+
+            }
+
+            if (e.Error != null)
+
+            {
+
+                emailStatus=e.Error.ToString();
+
+            }
+
+            else
+
+            {
+
+                emailStatus="Email sent successfully";
+
+            }
+
+        }
+
+        #endregion
+        public  string SendEmail(PostEmail_Obj collection, user_Model userData)
+        {
+            string status = "false";
             try
             {
+
                 //string senderEmail = "markushno357@gmail.com";
-                var senderEmail= new MailAddress("markushno357@gmail.com", collection.Name);
+                var senderEmail = new MailAddress("markushno357@gmail.com", collection.Name);
                 string senderPassword = "marcia@357";
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                 client.EnableSsl = true;
                 client.Timeout = 100000;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.UseDefaultCredentials = false;
+                    
                 client.Credentials = new NetworkCredential(senderEmail.Address, senderPassword);
-                MailMessage message = new MailMessage(senderEmail.Address, collection.to, collection.subject, collection.emailBody);
+                client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
+                MailMessage message = new MailMessage(senderEmail.Address, collection.to, collection.subject, collection.emailBody + "<img alt=\"logo\" src=\"https://emailblasterservices.com/Home/Index\" style =\"float:left;height:90px;margin-left:5px;margin-right:5px;width:100px\" class=\"CToWUd\">");
                 message.IsBodyHtml = true;
                 message.BodyEncoding = UTF8Encoding.UTF8;
+                message.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                message.Headers.Add("Disposition-Notification-To", "sagar@massmancybergeeks.com");
+         
                 client.Send(message);
             }
-            catch (Exception ex)
+            catch (SmtpFailedRecipientsException ex)
             {
-
+                status = ex.Message;
             }
 
             //try

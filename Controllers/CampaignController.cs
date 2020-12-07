@@ -18,9 +18,9 @@ namespace BulkEmailMarketing.Controllers
         }
 
         // GET: Campaign/Details/5
-        public ActionResult Details(int id)
+        public ActionResult GetCampaignStatus()
         {
-            return View();
+            return View("MyCampaigns");
         }
 
         // GET: Campaign/Create

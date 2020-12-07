@@ -18,7 +18,7 @@ namespace BulkEmailMarketing.Controllers
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
 
-             bool status=service.SendEmail(postObj , userData);
+             string status= service.SendEmail(postObj , userData);
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
@@ -36,7 +36,7 @@ namespace BulkEmailMarketing.Controllers
         [HttpPost]
         public async Task<JsonResult> SendBulkEmail(postBulkObj postObj)
         {
-            bool status = false;
+            string status = "";
             //postObj.list = (List<PostEmail_Obj>)Session["excel"];
             foreach (var obj in postObj.list)
             {
