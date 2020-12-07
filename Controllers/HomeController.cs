@@ -2,6 +2,7 @@
 using BulkEmailMarketing.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -31,6 +32,15 @@ namespace BulkEmailMarketing.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [Route("/GetLogo/{Trackimage}")]
+        public ActionResult GetLogo(string img)
+        {
+            string filePath=Server.MapPath("~/img");
+            string path = Path.Combine(filePath, "camp1.png");
+            Byte[] b = System.IO.File.ReadAllBytes(path);   // You can use your own method over here.         
+            return File(b, "image/jpeg");
         }
     }
 }
