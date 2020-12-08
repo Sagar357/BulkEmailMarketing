@@ -1,4 +1,5 @@
-﻿using BulkEmailMarketing.Services;
+﻿using BulkEmailMarketing.Models;
+using BulkEmailMarketing.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,8 @@ namespace BulkEmailMarketing.Controllers
         // GET: Campaign/Details/5
         public ActionResult GetCampaignStatus()
         {
-            return View("MyCampaigns");
+            postBulkObj model=service.GetEmailStatus(userData);
+            return View("MyCampaigns" ,model);
         }
 
         // GET: Campaign/Create

@@ -26,6 +26,9 @@ namespace BulkEmailMarketing.Models
         public string to { get; set; }
         public string filePath { get; set; }
         public string Name { get; set; }
+        public int campaignId { get; set; }
+        public string status { get; set; }
+        public DateTime createdDate { get; set; }
     }
 
     public class postBulkObj
@@ -33,11 +36,14 @@ namespace BulkEmailMarketing.Models
         public postBulkObj() 
         {
             this.list = new List<PostEmail_Obj>();
+            this.statusList = new List<EmailSumary>();
         }
         public List<PostEmail_Obj> list { get; set; }
+        public List<EmailSumary> statusList { get; set; }
         public string BulkEmailBody { get; set; }
         public int delay { get; set; }
         public string Name { get; set; }
+        public int campaignId { get; set; }
 
 
     }
@@ -50,4 +56,10 @@ namespace BulkEmailMarketing.Models
         public List<Campaign_Model> list { get; set; }
         public string message { get; set; }
     }
-}
+
+    public class EmailSumary
+    {
+        public string status  { get; set; }
+        public int statusCount { get; set; }
+    }
+    }

@@ -1,43 +1,60 @@
 //language//
-$(document).ready(function(){
-    $(".Lang_ag").click(function(){
+$(document).ready(function () {
+    $(".Lang_ag").click(function () {
         $("#Lng").toggle();
-      });
-      //--endd---//
+    });
+    //--endd---//
 
-      //--login
-      $(".Login").click(function(){
+    //--login
+    $(".Login").click(function () {
         $("#Login_wrapper").toggle();
-      });
-      //end---//
-      $(".UserPro").click(function(){
+    });
+    //end---//
+    $(".UserPro").click(function () {
         $("#UserProfile_Wrapper").toggle();
-      });
-    //---start---//
-    $(".Filter").click(function(){
-      $("#Search_form").toggle();
+    });
+    //---//
+    $(".Camp_i01").click(function () {
+        $(".camp_list").toggle();
     });
 
-    // ----end--here---
-      // add & Remove class
-      $(".List01").click(function () {
-        if(!$(this).hasClass('List_active'))
-        {    
-            $(".List01.List_active").removeClass("List_active");
-            $(this).addClass("List_active");        
-        }
-      });
+    //---start---//
+    $(".Filter").click(function () {
+        $("#Search_form").toggle();
+        $("#Setting-child,#Setting-child1,#Setting-child2").css('display', 'none');
     });
+    // ---setting---
+    $(".setting").click(function () {
+        $("#Setting-child").toggle();
+        $("#Search_form").css('display', 'none');
+    });
+    $("#setting1").click(function () {
+        $("#Setting-child1").toggle();
+        $("#Setting-child2,#Search_form").css('display', 'none');
+    });
+    $("#setting2").click(function () {
+        $("#Setting-child2").toggle();
+        $("#Setting-child1,#Search_form").css('display', 'none');
+    });
+    // ----end--here---
+    // add & Remove class
+    $(".List01").click(function () {
+        if (!$(this).hasClass('List_active')) {
+            $(".List01.List_active").removeClass("List_active");
+            $(this).addClass("List_active");
+        }
+    });
+});
 
 //--end---here----//
 
 function openList(ListName) {
-  var i;
-  var x = document.getElementsByClassName("List");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  document.getElementById(ListName).style.display = "block";  
+    var i;
+    var x = document.getElementsByClassName("List");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(ListName).style.display = "block";
 }
 
 

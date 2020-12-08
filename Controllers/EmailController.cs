@@ -17,8 +17,11 @@ namespace BulkEmailMarketing.Controllers
         [HttpPost]
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
-
-             string status= service.SendEmail(postObj , userData);
+            postObj.filePath = Url.Action("GetLogo" ,"Home");
+         
+            string status= service.SendEmail(postObj , userData);
+            postObj.status = status;
+            service.SaveEmail(postObj);
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
@@ -42,6 +45,8 @@ namespace BulkEmailMarketing.Controllers
             {
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData);
+                obj.status = status;
+                service.SaveEmail(obj);
                 await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);
@@ -50,10 +55,7 @@ namespace BulkEmailMarketing.Controllers
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
         // GET: Email/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+       
 
         // POST: Email/Create
         [HttpPost]

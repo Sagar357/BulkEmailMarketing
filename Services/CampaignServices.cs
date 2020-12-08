@@ -185,6 +185,113 @@ namespace BulkEmailMarketing.Services
             return status;
         }
 
+        
+    public postBulkObj GetEmailStatus(user_Model userData)
+        {
+            DataSet ds = null;
+            postBulkObj detail = new postBulkObj();
+            try
+            {
+                using (SqlConnection db = ConnectionHelper.getConnection())
+                {
+                    db.Open();
+                    ds = new DataSet();
+                    SqlParameter[] param = new SqlParameter[4];
+                    param[0] = new SqlParameter("@userid", userData.user_id);
+                    ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcGetEmailStatus" ,param);
+
+                    if (ds.Tables.Count > 0)
+                    {
+                     
+                            foreach (DataRow dr in ds.Tables[0].Rows)
+                            {
+                                PostEmail_Obj obj = new PostEmail_Obj();
+                                if (!string.IsNullOrEmpty(dr["Logid"].ToString()))
+                                {
+                                    obj.campaignId = Convert.ToInt32(dr["Logid"].ToString());
+                                }
+                                else
+                                {
+                                    obj.campaignId = 0;
+                                }
+                                if (!string.IsNullOrEmpty(dr["canpaign_name"].ToString()))
+                                {
+                                    obj.Name = dr["canpaign_name"].ToString();
+                                }
+                                else
+                                {
+                                    obj.Name = "";
+                                }
+                                if (!string.IsNullOrEmpty(dr["campaign_subject"].ToString()))
+                                {
+                                    obj.subject = dr["campaign_subject"].ToString();
+                                }
+                                else
+                                {
+                                    obj.subject = "";
+                                }
+                                if (!string.IsNullOrEmpty(dr["toMailId"].ToString()))
+                                {
+                                    obj.to = dr["toMailId"].ToString();
+                                }
+                                else
+                                {
+                                    obj.to = "";
+                                }
+                                if (!string.IsNullOrEmpty(dr["status"].ToString()))
+                                {
+                                    obj.status = dr["status"].ToString();
+                                }
+                                else
+                                {
+                                    obj.status = "";
+                                }
+                                if (!string.IsNullOrEmpty(dr["createdDate"].ToString()))
+                                {
+                                    obj.createdDate = Convert.ToDateTime(dr["createdDate"].ToString());
+                                }
+                                else
+                                {
+                                    obj.createdDate = DateTime.Now;
+                                }
+
+                                detail.list.Add(obj);
+                            }
+
+                        foreach (DataRow dr in ds.Tables[1].Rows)
+                        {
+                            EmailSumary obj = new EmailSumary();
+                            if (!string.IsNullOrEmpty(dr["EmailCount"].ToString()))
+                            {
+                                obj.statusCount = Convert.ToInt32(dr["EmailCount"].ToString());
+                            }
+                            else
+                            {
+                                obj.statusCount = 0;
+                            }
+                            if (!string.IsNullOrEmpty(dr["status"].ToString()))
+                            {
+                                obj.status = dr["status"].ToString();
+                            }
+                            else
+                            {
+                                obj.status = "";
+                            }
+                            detail.statusList.Add(obj);
+                        }
+
+
+                    }
+        
+                }
+
+            }
+            catch (Exception ex)
+            {
+       
+            }
+            return detail;
+        }
 
 
     }
