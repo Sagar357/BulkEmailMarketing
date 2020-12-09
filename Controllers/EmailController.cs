@@ -46,6 +46,7 @@ namespace BulkEmailMarketing.Controllers
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData);
                 obj.status = status;
+                obj.campaignId = postObj.campaignId;
                 service.SaveEmail(obj);
                 await Task.Delay(postObj.delay);
             }
