@@ -17,7 +17,7 @@ namespace BulkEmailMarketing.Controllers
         [HttpPost]
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
-            postObj.filePath = Url.Action("GetLogo" ,"Home");
+            postObj.filePath = Url.Action("GetLogo" ,"Home" ,new { mail=postObj.to });
          
             string status= service.SendEmail(postObj , userData);
             postObj.status = status;
