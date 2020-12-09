@@ -34,8 +34,8 @@ namespace BulkEmailMarketing.Controllers
             return View();
         }
 
-        [Route("/GetLogo/{Trackimage}")]
-        public ActionResult GetLogo(string img)
+
+        public ActionResult GetLogo(string mail)
         {
             string filePath=Server.MapPath("~/img");
             string path = Path.Combine(filePath, "camp1.png");
