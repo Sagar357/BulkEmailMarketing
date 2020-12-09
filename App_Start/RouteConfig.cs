@@ -23,7 +23,7 @@ namespace BulkEmailMarketing
             routes.MapRoute(
                 name: "Logo",
                 url: "Logo/{mail}",
-                defaults: new { controller = "Home", action = "GetLogo" }
+                defaults: new { controller = "Home", action = "GetLogo"}
             );
         }
     }

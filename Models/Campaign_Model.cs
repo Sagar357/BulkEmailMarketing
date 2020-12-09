@@ -45,7 +45,6 @@ namespace BulkEmailMarketing.Models
         public string Name { get; set; }
         public int campaignId { get; set; }
 
-
     }
     public class Campaign_List
     {
@@ -62,4 +61,4 @@ namespace BulkEmailMarketing.Models
         public string status  { get; set; }
         public int statusCount { get; set; }
     }
-    }
+  }
