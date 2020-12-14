@@ -35,10 +35,12 @@ namespace BulkEmailMarketing.Controllers
         }
 
 
-        public ActionResult GetLogo(string mail)
+        public ActionResult GetLogo(int unique)
         {
             string filePath = Server.MapPath("~/img");
             string path = Path.Combine(filePath, "camp1.png");
+            EmailService service = new EmailService();
+            service.UpdateStatus(unique, 3);
             Byte[] b = System.IO.File.ReadAllBytes(path);   // You can use your own method over here.         
             return File(b, "image/jpeg");
         }

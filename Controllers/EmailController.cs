@@ -17,11 +17,14 @@ namespace BulkEmailMarketing.Controllers
         [HttpPost]
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
-            postObj.filePath = Url.Action("GetLogo" ,"Home" ,new { mail=postObj.to });
-         
-            string status= service.SendEmail(postObj , userData);
+            postObj.status = "Sending";
+            int id=service.SaveEmail(postObj);
+            postObj.filePath = Url.Action("GetLogo", "Home", new { unique=id });
+
+
+            string status = service.SendEmail(postObj , userData);
             postObj.status = status;
-            service.SaveEmail(postObj);
+           
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
