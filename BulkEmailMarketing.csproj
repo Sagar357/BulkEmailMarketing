@@ -996,6 +996,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\aos.css" />
     <Content Include="Content\css\CampParameter.css" />
     <Content Include="Content\css\fontawesome-free-5.15.1-web\attribution.js" />
     <Content Include="Content\css\fontawesome-free-5.15.1-web\css\all.css" />
@@ -3846,7 +3848,13 @@
     <Content Include="Content\css\mixin.css.map" />
     <Content Include="Content\css\mixin.scss" />
     <Content Include="Content\css\style.css.map" />
-    <Content Include="Content\css\style.scss" />
+    <Content Include="Content\css\style.scss">
+      <Generator>SassTranspiler</Generator>
+    </Content>
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\styles.js" />
@@ -5509,11 +5517,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\aos.js" />
     <Content Include="Scripts\js\emoojis.js" />
     <Content Include="Scripts\js\jquery.min.js" />
     <Content Include="Scripts\js\main.js" />
     <Content Include="Scripts\js\movement.js" />
     <Content Include="Scripts\js\particle.js" />
+    <Content Include="Scripts\js\wow.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="upload\error.txt" />
@@ -5542,6 +5552,7 @@
     <Content Include="Views\Home\mailinglist.cshtml" />
     <Content Include="Views\Home\MessageContent.cshtml" />
     <Content Include="Views\Home\preview.cshtml" />
+    <Content Include="Views\Home\login2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

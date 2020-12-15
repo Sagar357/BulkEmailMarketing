@@ -186,3 +186,51 @@ function openMsgTemp(ListName) {
 // });
 
 
+
+$(document).ready(function () {
+    $('#goRight').on('click', function () {
+        $('#slideBox').animate({
+            'marginLeft': '0'
+        });
+        $('.topLayer').animate({
+            'marginLeft': '100%'
+        });
+    });
+    $('#goLeft').on('click', function () {
+        if (window.innerWidth > 769) {
+            $('#slideBox').animate({
+                'marginLeft': '50%'
+            });
+        }
+        else {
+            $('#slideBox').animate({
+                'marginLeft': '20%'
+            });
+        }
+        $('.topLayer').animate({
+            'marginLeft': '0'
+        });
+    });
+});
+
+
+// ---Log---in---
+const signupButton = document.getElementById('signup-button'),
+    loginButton = document.getElementById('login-button'),
+    userForms = document.getElementById('user_options-forms')
+
+/**
+ * Add event listener to the "Sign Up" button
+ */
+signupButton.addEventListener('click', () => {
+    userForms.classList.remove('bounceRight')
+    userForms.classList.add('bounceLeft')
+}, false)
+
+/**
+ * Add event listener to the "Login" button
+ */
+loginButton.addEventListener('click', () => {
+    userForms.classList.remove('bounceLeft')
+    userForms.classList.add('bounceRight')
+}, false)
