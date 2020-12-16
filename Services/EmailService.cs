@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -125,14 +126,21 @@ namespace BulkEmailMarketing.Services
 
                 var path = Url.Combine("http://emailblasterservices.com/", collection.filePath);
 
-                MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
+                MailAddress godaddy = new MailAddress("support@host.earthithub.com");
+                //MailAddress godaddy = new MailAddress("noreply@emailblasterservices.com");
                 //MailAddress godaddy = new MailAddress("noreply@emailtick.com");
                 //MailAddress godaddy = new MailAddress("support@helpfulltips.us");
+                ContentType mimeType = new System.Net.Mime.ContentType("text/html");
+                string body = collection.emailBody + "<img alt=\"logo\" src=\"" + path + "\" style =\"float:left;height:90px;margin-left:5px;margin-right:5px;width:100px\" class=\"CToWUd\">";
+                AlternateView alternate = AlternateView.CreateAlternateViewFromString(body, mimeType);
+                
                 MailMessage message = new MailMessage(senderEmail.Address, receiverEmail.Address);
                 message.Sender = godaddy;
-                message.Body = collection.emailBody + "<img alt=\"logo\" src=\"" + path + "\" style =\"float:left;height:90px;margin-left:5px;margin-right:5px;width:100px\" class=\"CToWUd\">";
+                message.Body = body;
                 message.IsBodyHtml = true;
                 message.Subject = collection.subject;
+                message.AlternateViews.Add(alternate);
+                
                 /*good code*/
 
                 /* var mail = new MailAddress("shub@gmail.com");
@@ -179,11 +187,13 @@ namespace BulkEmailMarketing.Services
                 {
                     //client.Host = "relay-hosting.secureserver.net";
                     client.Host = "host.earthithub.com";
-                    client.Port = 25;
+                    //client.Port = 25;
+                    client.Port = 587;
                     client.UseDefaultCredentials = false;
-
+                    client.EnableSsl = true;
                     /*Email Blaster*/
-                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Za#&9=1u=a");
+                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Settings@123");
+                    //client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Za#&9=1u=a");
                     //client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Emzfp!xY4x");
                     //client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "helpfulltips.us");
                     client.Send(message);
@@ -193,16 +203,7 @@ namespace BulkEmailMarketing.Services
             }
             catch (Exception ex)
             {
-                var w32ex = ex as Win32Exception;
-                if (w32ex == null)
-                {
-                    w32ex = ex.InnerException as Win32Exception;
-                }
-                if (w32ex != null)
-                {
-                    int code = w32ex.ErrorCode;
-                    // do stuff
-                }
+                status = ex.Message;
 
             }
 

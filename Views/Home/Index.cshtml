@@ -347,15 +347,15 @@
                 dataType: "json",
                 async: true,
                 success: data => {
-
-                    alert("success");
-
+                       alert("success");
+                    console.log(data);
                     debugger
 
                 },
                 error: error => {
                     debugger
                     alert("error");
+                    console.log(error);
                 }
 
             });
