@@ -23,11 +23,12 @@ namespace BulkEmailMarketing.Services
                 {
                     db.Open();
                     ds = new DataSet();
-                    SqlParameter[] param = new SqlParameter[2];
+                    SqlParameter[] param = new SqlParameter[3];
                     param[0] = new SqlParameter("@username", model.UserName);
                     param[1] = new SqlParameter("@password", model.Password);
+                   
                     ds = SqlHelper.ExecuteDataset(db, CommandType.StoredProcedure, "prcValidateUsers", param);
-
+                  
                     if (ds.Tables.Count > 0)
                     {
                         foreach (DataTable dt in ds.Tables)

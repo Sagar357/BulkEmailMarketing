@@ -24,12 +24,17 @@
                         Add Camppaign
                     </button>
                 </div>
+                <div class="child_Wrp">
+                    <button onclick="location.href='@Url.Action("GetCampaignStatus" ,"Campaign")'">
+                        My Campaigns
+                    </button>
+                </div>
                 <div class="Btn_Grid">
                     @*<span class="R0 R_cmn">
-                        <input type="checkbox" name="checkbox" id="checkbox"
-                               title="Select All" style="cursor: pointer;">
-                        <span class="tool_tip">Select All</span>
-                    </span>*@
+                <input type="checkbox" name="checkbox" id="checkbox"
+                       title="Select All" style="cursor: pointer;">
+                <span class="tool_tip">Select All</span>
+            </span>*@
                     <span class="R1 R_cmn">
                         <button onclick="openProduct('CWrapper')">Email</button>
                     </span>
@@ -53,6 +58,10 @@
                                 </span>*@
                                 <fieldset>
                                     <legend>@element.campaignName</legend>
+                                    <div class="d1 frm_dCmn">
+                                        <label for="#">Name ( Email )</label>
+                                        <input type="text" name="Name" value="@element.fromName" placeholder="Name displayed in email.." >
+                                    </div>
                                     <div class="d1 frm_dCmn">
                                         <label for="#">To</label>
                                         <input type="text" name="to" placeholder="To.." required>
@@ -81,9 +90,9 @@
                                         <!-- </a>   -->
                                         <input type="button" class="cust-delete" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
                                         @*<span class="Attach">
-            <img src="~/img/attach_file_black_20dp.png" alt="attach">
-            <input type="file" hidden>
-        </span>*@
+                <img src="~/img/attach_file_black_20dp.png" alt="attach">
+                <input type="file" hidden>
+            </span>*@
                                         <input type="button" class="cust-delete" value="Save Templet" data-target="body-@element.campaighId" id="@element.campaighId" onclick="saveTemplate(event)">
 
                                     </div>
@@ -106,13 +115,17 @@
                                 <form action="" method="post" onsubmit="bulkEmailSubmit(event)" id="bulkForm-@element.campaighId"  data-target="bulkbody-@element.campaighId" data-source="#hiddenexcel-@element.campaighId">
                                     <fieldset>
                                         <legend>@element.campaignName</legend>
+                                        <div class="d1 frm_dCmn">
+                                            <label for="#">Name ( Email )</label>
+                                            <input type="text" name="Name" value="@element.fromName" id="fromName-@element.campaighId" placeholder="Name displayed in email.." >
+                                        </div>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">From</label>
-                                            <input type="text" value="@ViewBag.username" disabled placeholder="from.." required>
+                                            <input type="text" value="@ViewBag.username" disabled placeholder="from.." >
                                         </div>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">Delay(Milliseconds)</label>
-                                            <input type="text" value="" name="delay" id="delay-@element.campaighId" placeholder="Delay between mails.." required>
+                                            <input type="text" value="" name="delay" id="delay-@element.campaighId" placeholder="Delay between mails.." >
                                         </div>
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Upload Image</label>
@@ -126,7 +139,7 @@
 
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Excel Document</label>
-                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId" required>
+                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId" >
                                             <input type="hidden" name="excelData" id="hiddenexcel-@element.campaighId" value="" />
                                         </div>
                                         <div class="Table_wrp" id="Table-@element.campaighId">
@@ -143,10 +156,12 @@
                                             <!-- <a href="#" class="hvr-shutter-out-horizontal"> -->
                                             <input type="submit" value="Send" data-content="">
                                             <!-- </a>   -->
-                                            <span class="Attach">
-                                                <img src="~/img/attach_file_black_20dp.png" alt="attach">
-                                                <input type="file" hidden>
-                                            </span>
+                                            @*<span class="Attach">
+            <img src="~/img/attach_file_black_20dp.png" alt="attach">
+            <input type="file" hidden>
+        </span>*@
+                                            <input type="button" value="Save Template" onclick="saveTemplate(event)" data-content="">
+
                                             <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
 
                                         </div>
@@ -163,10 +178,11 @@
         <div class="FormPop Form_cmn">
             <div class="Frm_wrp">
                 <form action="@Url.Action("Create" ,"Campaign")" method="post">
-                    <!-- <div class="d1 d_cmn">
-                        <label >To:</label>
-                        <input type="text" name="Toinput" id="ToInpt" placeholder="To..">
-                    </div> -->
+                     <div class="d1 d_cmn">
+                         <label>Name ( Email ):</label>
+                        <input type="text"name="Name" placeholder="Name displayed in email..">
+                     </div> 
+                    
                     <div class="d1 d_cmn">
                         <label>From:</label>
                         <input type="text" value="@ViewBag.username" name="Frominput" readonly id="ToInpt" placeholder="From..">
@@ -181,13 +197,13 @@
                             <input type="text" name="CampaignName" id="CampaignName" placeholder="Campaign Name..">
                         </div>
                         @*<div class="Cwrp02 Cwrp0">
-                            <label> Upload File</label>
-                            <input type="file" name="File3" id="File3">
-                            <span>
-                                <img id="camp_logo" src="#" alt="image">
+                <label> Upload File</label>
+                <input type="file" name="File3" id="File3">
+                <span>
+                    <img id="camp_logo" src="#" alt="image">
 
-                            </span>
-                        </div>*@
+                </span>
+            </div>*@
                     </div>
                     <div class="d4 d_cmn">
                         <label> Email body:</label>
@@ -252,6 +268,8 @@
                 alert("error");
             }
         });
+
+        location.href = "@Url.Action("Index" ,"Home")";
     }
     var bulkEmailSubmit = event => {
         debugger
@@ -261,12 +279,15 @@
         var Obj = $(source).val();
         var jobj = JSON.parse(Obj);
         var delayid = '#delay-' + source.split('-')[1];
+        var fromNameid = '#fromName-' + source.split('-')[1];
+        var fromName = $(fromNameid);
         var delay = $(delayid).val();
         var o = {};
-        o.list = null;
+        o.list = jobj;
         o.delay = delay;
         o.BulkEmailBody = data;
-
+        o.Name = fromName;
+        o.campaignId = parseInt(source.split('-')[1]);
         postObj = JSON.stringify(o);
         $.ajax({
             url: "/Email/SendBulkEmail",
@@ -285,32 +306,16 @@
   
 
         },
-        error: error => {
+            error: error => {
+                debugger
+                var x = error;
+                console.log(error);
             alert("error");
         }
 
          });
 
-        //$.post(
-        //    "/Email/SendBulkEmail",
-        //    o,
-        //    function(){}
-        //)
-
-        @*$.ajax({
-    url: "@Url.Action("SendBulkEmail" ,"Email")",
-            dataType: "application/json",
-            data: o,
-        type: "POST",
-        proccessData: false, // this is true by default
-            success: function (ret) {
-
-            },
-            error: function (error) {
-
-            }
-});*@
-      //  location.href = "@Url.Action("Index" ,"Home")";
+       
     }
     var formSubmit = event => {
    debugger
@@ -331,32 +336,32 @@
         jsonString = jsonString.substring(0, jsonString.length - 2) + "}";
         var postObj = JSON.parse(jsonString);
         postObj.emailBody = data;
+        postObj.campaignId = editor.split('-')[1];
+        var res = new Promise(function (resolve, reject) {
 
-             
-      
-    $.ajax({
-        url: "/Email/SendEmail" ,
-        data: JSON.stringify(postObj),
-        method: 'POST',
-        contentType: "application/json",
-        dataType:"json",
-        async: true,
-        success: data => {
+            $.ajax({
+                url: "/Email/SendEmail",
+                data: JSON.stringify(postObj),
+                method: 'POST',
+                contentType: "application/json",
+                dataType: "json",
+                async: true,
+                success: data => {
+                       alert("success");
+                    console.log(data);
+                    debugger
 
-            $('#btnfile').attr('data-name', data);
-            alert("success");
-           
-            debugger
+                },
+                error: error => {
+                    debugger
+                    alert("error");
+                    console.log(error);
+                }
 
-        },
-        error: error => {
-            alert("error");
-        }
+            });
 
-    });
-
-
-              location.href = "@Url.Action("Index" ,"Home")";
+        });
+        console.log(res);
          
     }
 

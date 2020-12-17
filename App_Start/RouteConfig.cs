@@ -18,6 +18,13 @@ namespace BulkEmailMarketing
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
             );
+
+
+            routes.MapRoute(
+                name: "Logo",
+                url: "Logo/{mail}",
+                defaults: new { controller = "Home", action = "GetLogo"}
+            );
         }
     }
 }

@@ -1,0 +1,2578 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    color: #787878;
+    background: #f9fafb;
+    font-family: 'Gotham Pro Regular';
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, del, dfn, em, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, .head-wrp, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gotham Pro bold';
+    color: #2c3e50;
+}
+
+a, p {
+    font-family: 'Gotham Pro Regular';
+    color: #787878;
+}
+
+header {
+    width: 100%;
+    padding: 2rem 0;
+    position: absolute;
+    z-index: 1;
+}
+
+    header nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+        header nav .Left_side {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            width: 58%;
+        }
+
+            header nav .Left_side .logo h2 {
+                font-size: 1.5rem;
+                font-family: "Choplin ExtraLight";
+                padding-right: 2.3rem;
+                font-weight: bold;
+                color: #e7f3ff;
+            }
+
+                header nav .Left_side .logo h2 span {
+                    color: #ffff;
+                }
+
+        header nav .Right_side {
+            width: 35%;
+        }
+
+            header nav .Right_side ul {
+                -webkit-box-pack: end !important;
+                -ms-flex-pack: end !important;
+                justify-content: flex-end !important;
+            }
+
+                header nav .Right_side ul li:nth-child(2) a {
+                    background: #ffffff29 !important;
+                    padding: 7px 12px;
+                    color: #fff;
+                    -webkit-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                    border-radius: 5px;
+                    border: 1px solid #ffffff29;
+                }
+
+                    header nav .Right_side ul li:nth-child(2) a:hover {
+                        border: 1px solid rgba(255, 255, 255, 0.534);
+                        -webkit-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
+                        background: transparent !important;
+                    }
+
+                header nav .Right_side ul li:nth-child(3) a {
+                    background: #ffffff29 !important;
+                    padding: 7px 12px;
+                    color: #fff;
+                    -webkit-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                    border-radius: 5px;
+                    border: 1px solid #ffffff29;
+                }
+
+                    header nav .Right_side ul li:nth-child(3) a:hover {
+                        border: 1px solid rgba(255, 255, 255, 0.534);
+                        -webkit-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
+                        background: transparent !important;
+                    }
+
+            header nav .Right_side .Lang_ag {
+                position: relative;
+            }
+
+                header nav .Right_side .Lang_ag a {
+                    padding-right: 3px;
+                }
+
+                header nav .Right_side .Lang_ag .Language_wrp {
+                    display: none;
+                    width: 192px;
+                    position: absolute;
+                    top: 58px;
+                    left: -63px;
+                    background: #fff;
+                    border-radius: 5px;
+                    -webkit-box-shadow: -1px 3px 6px 2px #b3b3b370;
+                    box-shadow: -1px 3px 6px 2px #b3b3b370;
+                    border-bottom: 2px solid #999;
+                }
+
+                    header nav .Right_side .Lang_ag .Language_wrp ul {
+                        display: inherit !important;
+                        text-align: center;
+                        position: relative;
+                    }
+
+                        header nav .Right_side .Lang_ag .Language_wrp ul::before {
+                            content: '';
+                            width: 15px;
+                            height: 15px;
+                            background: #fff;
+                            position: absolute;
+                            top: -7px;
+                            z-index: -1;
+                            -webkit-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+
+                        header nav .Right_side .Lang_ag .Language_wrp ul li {
+                            padding: .5rem 0;
+                            margin: 2px 0 !important;
+                            background: #9999991a;
+                            -webkit-transition: all 0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
+                            cursor: pointer;
+                        }
+
+                            header nav .Right_side .Lang_ag .Language_wrp ul li a {
+                                text-decoration: none;
+                                color: #787878;
+                                font-size: 15px;
+                                text-transform: capitalize;
+                                padding: 0 !important;
+                            }
+
+                            header nav .Right_side .Lang_ag .Language_wrp ul li:hover {
+                                -webkit-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                                background: transparent;
+                            }
+
+            header nav .Right_side .Login_wrapper {
+                position: absolute;
+                top: 94px;
+                background: #fff;
+                color: #000000;
+                right: 173px;
+                width: 300px;
+                border-radius: 5px;
+                -webkit-box-shadow: 0px 1px 4px 1px #0000007d;
+                box-shadow: 0px 1px 4px 1px #0000007d;
+                border-bottom: 3px solid #673AB7;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-box-align: inherit;
+                -ms-flex-align: inherit;
+                align-items: inherit;
+            }
+
+                header nav .Right_side .Login_wrapper .Login-content {
+                    width: 100%;
+                }
+
+                    header nav .Right_side .Login_wrapper .Login-content .Log-heading {
+                        width: 100%;
+                        padding: .5rem 0;
+                        text-align: center;
+                        background: linear-gradient(150deg, #28148300 15%, #8f6ed57a 70%, #d782d900 94%);
+                    }
+
+                        header nav .Right_side .Login_wrapper .Login-content .Log-heading h4 {
+                            font-size: 1.4rem;
+                            text-transform: capitalize;
+                        }
+
+                    header nav .Right_side .Login_wrapper .Login-content form {
+                        padding: 1rem 1rem;
+                    }
+
+                        header nav .Right_side .Login_wrapper .Login-content form .Inpt_cmn02 label {
+                            width: 100%;
+                            margin: .5rem 0;
+                        }
+
+                            header nav .Right_side .Login_wrapper .Login-content form .Inpt_cmn02 label input {
+                                width: 100%;
+                                padding: .5rem .6rem;
+                                border: 1px solid #9999993b;
+                                border-radius: 3px;
+                                margin: .1rem 0;
+                                -webkit-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                                header nav .Right_side .Login_wrapper .Login-content form .Inpt_cmn02 label input:focus {
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
+                                    outline-color: #684cb662 !important;
+                                    border: 1px solid #684cb662 !important;
+                                }
+
+                        header nav .Right_side .Login_wrapper .Login-content form .Fid03 {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                            justify-content: center;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: reverse;
+                            -ms-flex-direction: column-reverse;
+                            flex-direction: column-reverse;
+                            margin: .7rem 0 0;
+                            text-transform: capitalize;
+                        }
+
+                            header nav .Right_side .Login_wrapper .Login-content form .Fid03 label {
+                                width: 100%;
+                            }
+
+                                header nav .Right_side .Login_wrapper .Login-content form .Fid03 label .checkbox {
+                                    cursor: pointer;
+                                }
+
+                                header nav .Right_side .Login_wrapper .Login-content form .Fid03 label input[type="submit"] {
+                                    width: 100%;
+                                    margin: .5rem auto 0;
+                                    display: block;
+                                    padding: .5rem 0;
+                                    background: #684cb6ed;
+                                    border: none;
+                                    color: #fff;
+                                    border-radius: 4px;
+                                    font-size: 1rem;
+                                    text-transform: uppercase;
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
+                                    outline: none;
+                                }
+
+                                    header nav .Right_side .Login_wrapper .Login-content form .Fid03 label input[type="submit"]:hover {
+                                        -webkit-transition: all 0.3s ease-in-out;
+                                        transition: all 0.3s ease-in-out;
+                                        opacity: .77;
+                                    }
+
+        header nav .Nv_cmn ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+            header nav .Nv_cmn ul li {
+                list-style-type: none;
+                padding: 0 12px;
+            }
+
+                header nav .Nv_cmn ul li a {
+                    text-decoration: none;
+                    color: #e7f3ff;
+                    font-size: 1.1rem;
+                    padding-bottom: 3px;
+                    text-transform: capitalize;
+                }
+
+                header nav .Nv_cmn ul li .hvr-underline-from-left::before {
+                    background: #fff !important;
+                    height: 2px !important;
+                }
+
+.F1_li {
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    .F1_li i.fas.fa-chevron-down {
+        font-size: 14px;
+        padding: 4px 3px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .F1_li:hover i.fas.fa-chevron-down {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .F1_li:hover .Drop_box_wrp {
+        display: block !important;
+    }
+
+.Drop_main_wrp {
+    height: 25px;
+    width: 84px;
+    position: absolute;
+    width: 100%;
+}
+
+    .Drop_main_wrp .Drop_box_wrp {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        color: #000;
+        width: 600px;
+        padding: 1rem 1rem;
+        border-radius: 5px;
+        left: -63px;
+        top: 24px;
+        border-bottom: 3px solid #607D8B;
+    }
+
+        .Drop_main_wrp .Drop_box_wrp .Drop_content {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-pack: distribute !important;
+            justify-content: space-around !important;
+            -webkit-box-align: inherit !important;
+            -ms-flex-align: inherit !important;
+            align-items: inherit !important;
+            position: relative;
+        }
+
+            .Drop_main_wrp .Drop_box_wrp .Drop_content::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                top: -25px;
+                position: absolute;
+                left: 78px;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                z-index: -1;
+            }
+
+            .Drop_main_wrp .Drop_box_wrp .Drop_content ul {
+                display: inherit !important;
+            }
+
+                .Drop_main_wrp .Drop_box_wrp .Drop_content ul h4 {
+                    font-size: 1.1rem;
+                    text-transform: capitalize;
+                    margin: 0 0 0.8rem;
+                }
+
+                .Drop_main_wrp .Drop_box_wrp .Drop_content ul li {
+                    list-style-type: none;
+                    padding: .3rem 0 !important;
+                }
+
+                    .Drop_main_wrp .Drop_box_wrp .Drop_content ul li a {
+                        font-size: 15px;
+                        color: #2c3e50;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        -webkit-transition: all 0.3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                        .Drop_main_wrp .Drop_box_wrp .Drop_content ul li a:hover {
+                            -webkit-transition: all 0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
+                            padding-left: 5px;
+                            opacity: .77;
+                        }
+
+.Banner_wrapper {
+    width: 100%;
+    background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
+    background-size: cover;
+    height: 600px;
+    margin: 0rem 0 3rem;
+    position: relative;
+}
+
+    .Banner_wrapper .waves {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .Banner_wrapper .particles {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+    }
+
+        .Banner_wrapper .particles .particle {
+            position: absolute;
+            opacity: .1;
+            background: #fff;
+            -webkit-animation-iteration-count: infinite !important;
+            animation-iteration-count: infinite !important;
+        }
+
+    .Banner_wrapper .particle:nth-child(1) {
+        height: 25px;
+        width: 25px;
+        border-radius: 100%;
+        -webkit-animation: floating 28s linear;
+        animation: floating 28s linear;
+        top: 65%;
+        left: 10%;
+    }
+
+    .Banner_wrapper .particle:nth-child(2) {
+        height: 12px;
+        width: 12px;
+        border-radius: 100%;
+        -webkit-animation: floating 35s linear;
+        animation: floating 35s linear;
+        top: 15%;
+        left: 33%;
+    }
+
+    .Banner_wrapper .particle:nth-child(25),
+    .Banner_wrapper .particle:nth-child(3) {
+        -webkit-animation: floating 28s linear;
+        border-radius: 100%;
+    }
+
+    .Banner_wrapper .particle:nth-child(3) {
+        height: 21px;
+        width: 21px;
+        -webkit-animation: floating 28s linear;
+        animation: floating 28s linear;
+        top: 48%;
+        left: 36%;
+    }
+
+    .Banner_wrapper .particle:nth-child(4) {
+        height: 16px;
+        width: 16px;
+        border-radius: 100%;
+        -webkit-animation: floating 25s linear;
+        animation: floating 25s linear;
+        top: 85%;
+        left: 75%;
+    }
+
+    .Banner_wrapper .particle:nth-child(5) {
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        -webkit-animation: floating 32s linear;
+        animation: floating 32s linear;
+        top: 36%;
+        left: 78%;
+    }
+
+    .Banner_wrapper .particle:nth-child(6) {
+        height: 22px;
+        width: 22px;
+        border-radius: 100%;
+        -webkit-animation: floating 23s linear;
+        animation: floating 23s linear;
+        top: 87%;
+        left: 18%;
+    }
+
+    .Banner_wrapper .particle:nth-child(7) {
+        height: 16px;
+        width: 16px;
+        border-radius: 100%;
+        -webkit-animation: floating 36s linear;
+        animation: floating 36s linear;
+        top: 63%;
+        left: 78%;
+    }
+
+    .Banner_wrapper .particle:nth-child(8) {
+        height: 17px;
+        width: 17px;
+        border-radius: 100%;
+        -webkit-animation: floating 27s linear;
+        animation: floating 27s linear;
+        top: 35%;
+        left: 76%;
+    }
+
+    .Banner_wrapper .particle:nth-child(9) {
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        -webkit-animation: floating 31s linear;
+        animation: floating 31s linear;
+        top: 20%;
+        left: 70%;
+    }
+
+    .Banner_wrapper .particle:nth-child(10) {
+        height: 13px;
+        width: 13px;
+        border-radius: 100%;
+        -webkit-animation: floating 32s linear;
+        animation: floating 32s linear;
+        top: 42%;
+        left: 23%;
+    }
+
+    .Banner_wrapper .particle:nth-child(11) {
+        height: 14px;
+        width: 14px;
+        border-radius: 100%;
+        -webkit-animation: floating 30s linear;
+        animation: floating 30s linear;
+        top: 62%;
+        left: 17%;
+    }
+
+    .Banner_wrapper .particle:nth-child(12) {
+        height: 13px;
+        width: 13px;
+        border-radius: 100%;
+        -webkit-animation: floating 29s linear;
+        animation: floating 29s linear;
+        top: 9%;
+        left: 63%;
+    }
+
+    .Banner_wrapper .particle:nth-child(13) {
+        height: 14px;
+        width: 14px;
+        border-radius: 100%;
+        -webkit-animation: floating 21s linear;
+        animation: floating 21s linear;
+        top: 14%;
+        left: 30%;
+    }
+
+    .Banner_wrapper .particle:nth-child(14) {
+        height: 11px;
+        width: 11px;
+        border-radius: 100%;
+        -webkit-animation: floating 34s linear;
+        animation: floating 34s linear;
+        top: 29%;
+        left: 33%;
+    }
+
+    .Banner_wrapper .particle:nth-child(15) {
+        height: 17px;
+        width: 17px;
+        border-radius: 100%;
+        -webkit-animation: floating 23s linear;
+        animation: floating 23s linear;
+        top: 68%;
+        left: 31%;
+    }
+
+    .Banner_wrapper .particle:nth-child(16) {
+        height: 18px;
+        width: 18px;
+        border-radius: 100%;
+        -webkit-animation: floating 21s linear;
+        animation: floating 21s linear;
+        top: 29%;
+        left: 57%;
+    }
+
+    .Banner_wrapper .particle:nth-child(17) {
+        height: 18px;
+        width: 18px;
+        border-radius: 100%;
+        -webkit-animation: floating 32s linear;
+        animation: floating 32s linear;
+        top: 49%;
+        left: 21%;
+    }
+
+    .Banner_wrapper .particle:nth-child(18) {
+        height: 7px;
+        width: 7px;
+        border-radius: 100%;
+        -webkit-animation: floating 37s linear;
+        animation: floating 37s linear;
+        top: 35%;
+        left: 94%;
+    }
+
+    .Banner_wrapper .particle:nth-child(19) {
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        -webkit-animation: floating 35s linear;
+        animation: floating 35s linear;
+        top: 42%;
+        left: 33%;
+    }
+
+    .Banner_wrapper .particle:nth-child(20) {
+        height: 18px;
+        width: 18px;
+        border-radius: 100%;
+        -webkit-animation: floating 35s linear;
+        animation: floating 35s linear;
+        top: 94%;
+        left: 20%;
+    }
+
+    .Banner_wrapper .particle:nth-child(21) {
+        height: 24px;
+        width: 24px;
+        border-radius: 100%;
+        -webkit-animation: floating 37s linear;
+        animation: floating 37s linear;
+        top: 7%;
+        left: 23%;
+    }
+
+    .Banner_wrapper .particle:nth-child(22) {
+        height: 24px;
+        width: 24px;
+        border-radius: 100%;
+        -webkit-animation: floating 34s linear;
+        animation: floating 34s linear;
+        top: 49%;
+        left: 33%;
+    }
+
+    .Banner_wrapper .particle:nth-child(23) {
+        height: 25px;
+        width: 25px;
+        border-radius: 100%;
+        -webkit-animation: floating 29s linear;
+        animation: floating 29s linear;
+        top: 82%;
+        left: 58%;
+    }
+
+    .Banner_wrapper .particle:nth-child(24) {
+        height: 14px;
+        width: 14px;
+        border-radius: 100%;
+        -webkit-animation: floating 32s linear;
+        animation: floating 32s linear;
+        top: 60%;
+        left: 90%;
+    }
+
+    .Banner_wrapper .particle:nth-child(25) {
+        height: 25px;
+        width: 25px;
+        -webkit-animation: floating 28s linear;
+        animation: floating 28s linear;
+        top: 53%;
+        left: 85%;
+    }
+
+    .Banner_wrapper .particle:nth-child(26) {
+        height: 23px;
+        width: 23px;
+        border-radius: 100%;
+        -webkit-animation: floating 28s linear;
+        animation: floating 28s linear;
+        top: 63%;
+        left: 94%;
+    }
+
+@-webkit-keyframes floating {
+    0% {
+        -webkit-transform: translate(0, 0) scale(0.5);
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .1;
+    }
+
+    50% {
+        -webkit-transform: translate(0, -250px) scale(1.4);
+        transform: translate(0, -250px) scale(1.4);
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate(0, -500px) scale(0.5);
+        transform: translate(0, -500px) scale(0.5);
+    }
+}
+
+@keyframes floating {
+    0% {
+        -webkit-transform: translate(0, 0) scale(0.5);
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .1;
+    }
+
+    50% {
+        -webkit-transform: translate(0, -250px) scale(1.4);
+        transform: translate(0, -250px) scale(1.4);
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate(0, -500px) scale(0.5);
+        transform: translate(0, -500px) scale(0.5);
+    }
+}
+
+.Banner_wrapper .Banner_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    -webkit-transform: translateY(7rem);
+    transform: translateY(7rem);
+}
+
+    .Banner_wrapper .Banner_content .bnr_cmn {
+        width: 49%;
+    }
+
+        .Banner_wrapper .Banner_content .bnr_cmn h1 {
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .Banner_wrapper .Banner_content .bnr_cmn p {
+            color: #fff;
+            line-height: 1.8;
+            margin: 2rem 0 1rem;
+        }
+
+        .Banner_wrapper .Banner_content .bnr_cmn figure img {
+            max-width: 100%;
+        }
+
+    .Banner_wrapper .Banner_content .button_wrp {
+        width: 100%;
+        display: inline-block;
+    }
+
+        .Banner_wrapper .Banner_content .button_wrp a {
+            font-size: 1rem;
+            margin: 1rem 1rem 0 0;
+            background: #fff;
+            border-radius: 5px;
+            padding: .8rem 2rem;
+            display: inline-block;
+            text-transform: capitalize;
+            color: #333;
+            font-weight: bold;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            text-decoration: none;
+            border: 1px solid #fff;
+        }
+
+            .Banner_wrapper .Banner_content .button_wrp a:hover {
+                background: transparent;
+                border: 1px solid #fff;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+                color: #fff;
+                border-radius: 100px;
+            }
+
+.Patform_wrapper {
+    position: relative;
+    margin: 1rem 0;
+}
+
+    .Patform_wrapper .top_icon1 {
+        position: absolute;
+        width: 18px;
+        height: 40px;
+        z-index: 3;
+        border-radius: 40px;
+        border: 2px solid #2c3e50;
+        left: 50%;
+        top: -47px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+        .Patform_wrapper .top_icon1 .bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2c3e50;
+            -webkit-animation: animate 3s linear infinite;
+            animation: animate 3s linear infinite;
+            -webkit-animation-delay: 1ms;
+            animation-delay: 1ms;
+        }
+
+    .Patform_wrapper .Pt_cnt_Heading {
+        padding: 4rem 0 3rem;
+    }
+
+        .Patform_wrapper .Pt_cnt_Heading p {
+            color: #787878;
+            padding: 1rem 0 0;
+            font-size: 1.1rem;
+        }
+
+    .Patform_wrapper .Platform_Box_wrp {
+        margin: 1rem 0 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+        .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 {
+            width: 23%;
+            margin: 0 5px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+            .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 a {
+                text-decoration: none;
+                height: 300px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            }
+
+                .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 a i {
+                    font-size: 5rem;
+                    padding: 2rem 0 0;
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #28148359), color-stop(70%, #8f6ed5), color-stop(94%, #d782d9d1));
+                    background: linear-gradient(to bottom, #28148359 15%, #8f6ed5 70%, #d782d9d1 94%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+            .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01:hover {
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 figure {
+                width: 100%;
+                margin: 0 !important;
+            }
+
+                .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 figure img {
+                    max-width: 100%;
+                }
+
+            .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 figcaption {
+                width: 100%;
+            }
+
+                .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 figcaption h4 {
+                    font-size: 1.2rem;
+                    color: #2c3e50;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    margin: 1rem 0;
+                }
+
+                .Patform_wrapper .Platform_Box_wrp .Pt_Box_cmn01 figcaption p {
+                    font-size: 15px;
+                    color: #787878;
+                }
+
+.Pt_Box_cmn01 a:hover .figr i {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #d782d9d1), color-stop(70%, #8f6ed5), color-stop(94%, #28148359));
+    background: linear-gradient(to bottom, #d782d9d1 15%, #8f6ed5 70%, #28148359 94%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@-webkit-keyframes animate {
+    0%, 100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    50% {
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@keyframes animate {
+    0%, 100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    50% {
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+}
+
+.marketing_tool {
+    margin: 6rem 0 0px;
+    padding: 0 0 8rem;
+    position: relative;
+    background: #f9f9f9;
+}
+
+    .marketing_tool::before {
+        content: '';
+        width: 100%;
+        height: 150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../image/bg-wave-sym.png) no-repeat;
+        background-size: cover;
+        position: absolute;
+    }
+
+    .marketing_tool .marketing_content .marketing_heading {
+        padding: 3rem 0 0;
+    }
+
+        .marketing_tool .marketing_content .marketing_heading p {
+            color: #787878;
+            padding: 1rem 0;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+    .marketing_tool .marketing_content .mrt_Cnt_wrapper {
+        margin: 5rem 0 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+        .marketing_tool .marketing_content .mrt_Cnt_wrapper figure img {
+            max-width: 100%;
+        }
+
+        .marketing_tool .marketing_content .mrt_Cnt_wrapper .chil_1 {
+            padding: 0 15px 0 24px;
+        }
+
+            .marketing_tool .marketing_content .mrt_Cnt_wrapper .chil_1 h5 {
+                font-size: 1.1rem;
+                text-transform: capitalize;
+                position: relative;
+            }
+
+                .marketing_tool .marketing_content .mrt_Cnt_wrapper .chil_1 h5::before {
+                    content: '';
+                    width: 15px;
+                    height: 15px;
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #3a4a5b), color-stop(70%, #2c3e50), color-stop(94%, #2c3e50));
+                    background: linear-gradient(to bottom, #3a4a5b 15%, #2c3e50 70%, #2c3e50 94%);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: -25px;
+                    bottom: 4px;
+                }
+
+            .marketing_tool .marketing_content .mrt_Cnt_wrapper .chil_1 p {
+                font-size: 15px;
+            }
+
+    .marketing_tool .marketing_content .Mrt_cnt2 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+
+.subscription_wrapper {
+    margin: 2rem 0 1rem !important;
+    background: #fff !important;
+    padding: 0 0 0 !important;
+}
+
+    .subscription_wrapper::before {
+        content: none;
+    }
+
+footer {
+    background: url(../image/footer1.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    margin: 3rem 0 0;
+}
+
+    footer::before {
+        display: none;
+    }
+
+    footer .Footer_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: inherit !important;
+        -ms-flex-align: inherit !important;
+        align-items: inherit !important;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 6rem 0 .5rem;
+    }
+
+        footer .Footer_content .Ftr_cmn01 {
+            width: 24%;
+        }
+
+            footer .Footer_content .Ftr_cmn01 figure img {
+                max-width: 57%;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+                footer .Footer_content .Ftr_cmn01 figure img:hover {
+                    -webkit-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+
+            footer .Footer_content .Ftr_cmn01 h2 {
+                text-align: inherit;
+                position: relative;
+                color: #fff;
+                text-transform: capitalize;
+                font-size: 1.5rem;
+            }
+
+                footer .Footer_content .Ftr_cmn01 h2:before {
+                    content: '';
+                    height: 2px;
+                    position: absolute;
+                    background: #fdfdfdd7 !important;
+                    bottom: -17px;
+                    border-radius: 100%;
+                    z-index: 2344242;
+                    width: 50%;
+                }
+
+            footer .Footer_content .Ftr_cmn01 ul {
+                padding: 1.5rem 0 0;
+            }
+
+                footer .Footer_content .Ftr_cmn01 ul li {
+                    list-style-type: none;
+                    margin: 1rem 0;
+                }
+
+                    footer .Footer_content .Ftr_cmn01 ul li a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: .95em;
+                        font-family: 'Open Sans',sans-serif;
+                        -webkit-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
+                    }
+
+                        footer .Footer_content .Ftr_cmn01 ul li a:hover {
+                            padding: 0 0 0 5px;
+                            color: #ffffff9a !important;
+                            -webkit-transition: all .3s ease-in-out;
+                            transition: all .3s ease-in-out;
+                        }
+
+        footer .Footer_content .Ft_cnt4 {
+            padding-left: 1rem;
+        }
+
+            footer .Footer_content .Ft_cnt4 .Unord_First li {
+                display: inline-block !important;
+                margin: 1rem 1rem 0 0 !important;
+            }
+
+                footer .Footer_content .Ft_cnt4 .Unord_First li a {
+                    width: 40px;
+                    height: 40px;
+                    background: #fff;
+                    color: #000;
+                    display: inline-block;
+                    border-radius: 50%;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                }
+
+            footer .Footer_content .Ft_cnt4 .Unord_second li {
+                display: block !important;
+                position: relative;
+            }
+
+                footer .Footer_content .Ft_cnt4 .Unord_second li a {
+                    -webkit-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                    overflow: hidden;
+                }
+
+                    footer .Footer_content .Ft_cnt4 .Unord_second li a .fas {
+                        padding: 0 5px;
+                        -webkit-transition: all .3s ease-in-out;
+                        transition: all .3s ease-in-out;
+                        font-size: 1rem;
+                    }
+
+                        footer .Footer_content .Ft_cnt4 .Unord_second li a .fas:hover {
+                            -webkit-transition: all .3s ease-in-out;
+                            transition: all .3s ease-in-out;
+                            -webkit-transform: scale(1.1);
+                            transform: scale(1.1);
+                        }
+
+            footer .Footer_content .Ft_cnt4 .social-icon:hover {
+                color: #fff !important;
+                padding: 0 !important;
+                border-color: #4481eb;
+                background: #4481eb;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+            footer .Footer_content .Ft_cnt4 .Sl_02:hover {
+                background: #50abf1 !important;
+                border: #50abf1 !important;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+            footer .Footer_content .Ft_cnt4 .Sl_03:hover {
+                background: #cc4136 !important;
+                border: #cc4136 !important;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+            footer .Footer_content .Ft_cnt4 .Sl_04:hover {
+                background: #2164f3 !important;
+                border: #2164f3 !important;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+    footer .Ft_cnt1.Ftr_cmn01 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    footer .copyright_wrapper {
+        padding: 1rem 0;
+        background: #0000001c;
+        margin: 3em 0 0;
+        width: 100%;
+    }
+
+        footer .copyright_wrapper .Copyright_content {
+            text-align: center;
+        }
+
+            footer .copyright_wrapper .Copyright_content p {
+                color: #fff;
+            }
+
+                footer .copyright_wrapper .Copyright_content p span {
+                    font-size: 13px;
+                    word-spacing: 5px;
+                    letter-spacing: 1px;
+                }
+
+#EmailService_wrapper header {
+    background: -webkit-gradient(linear, left top, right top, from(#694ff9), to(#bcafff));
+    background: linear-gradient(to right, #694ff9, #bcafff);
+    padding: 1rem 0 !important;
+    position: fixed !important;
+    -webkit-box-shadow: 0px -1px 3px 1px #ffffff7a;
+    box-shadow: 0px -1px 3px 1px #ffffff7a;
+    z-index: 17;
+}
+
+    #EmailService_wrapper header .container-fluid {
+        width: 95% !important;
+        margin: 0 auto;
+    }
+
+    #EmailService_wrapper header .UserProfile_Wrapper {
+        position: absolute;
+        display: none;
+        top: 70px;
+        right: 40px;
+        background: #fff;
+        color: #000000;
+        border: 1px solid;
+        width: 200px;
+    }
+
+#EmailService_wrapper .Main_Campaign {
+    background: #f2f5f5;
+}
+
+    #EmailService_wrapper .Main_Campaign .container-fluid {
+        width: 99% !important;
+        margin: 0 auto;
+    }
+
+    #EmailService_wrapper .Main_Campaign .Campaign_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: inherit !important;
+        -ms-flex-align: inherit !important;
+        align-items: inherit !important;
+        height: auto;
+    }
+
+        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 {
+            width: 17%;
+            z-index: 1;
+            position: fixed;
+            left: 0;
+            top: 60px;
+            height: 100%;
+            background: -webkit-gradient(linear, left top, left bottom, from(#694ff9), to(#694ff9));
+            background: linear-gradient(to bottom, #694ff9, #694ff9);
+        }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul {
+                margin: 0 !important;
+                padding-left: 20px;
+                padding: 1rem 0 0;
+                border-top: 1px solid #ffffff3d;
+            }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li i {
+                    padding-right: 13px;
+                }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 {
+                    position: relative;
+                }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1:hover {
+                        background: inherit !important;
+                    }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 a {
+                        padding: .8rem .0rem .8rem .5rem;
+                        background: #0000002e;
+                        margin: 4px 20px;
+                        text-align: center;
+                        border-radius: 5px;
+                        -webkit-transition: all 0.3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 a:hover {
+                            -webkit-transition: all 0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
+                            opacity: .77;
+                        }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 a i.fas.fa-chevron-down {
+                            padding-left: 22px;
+                            padding: 14px 14px 13px 12px;
+                            border-left: .5px solid #ffffff26;
+                            margin-left: 7px;
+                        }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 .camp_list {
+                        position: absolute;
+                        top: 71px;
+                        display: none;
+                        right: 52px;
+                    }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 .camp_list ul {
+                            background: #f2f5f5;
+                            width: 200px;
+                            border-radius: 5px;
+                            padding: 0 0 3px 0 !important;
+                            -webkit-box-shadow: 0 0 3px 2px #6c757d;
+                            box-shadow: 0 0 3px 2px #6c757d;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 .camp_list ul li {
+                                padding: .5rem .5rem .5rem 1.7rem;
+                                text-transform: capitalize;
+                                color: #000;
+                                font-size: 1rem;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 .camp_list ul li:first-child {
+                                    position: relative;
+                                }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li.Camp_Item1 .camp_list ul li:first-child::before {
+                                        content: '';
+                                        width: 15px;
+                                        height: 15px;
+                                        background: #f2f5f5;
+                                        position: absolute;
+                                        top: -13px;
+                                        right: 12px;
+                                        -webkit-transform: rotate(45deg);
+                                        transform: rotate(45deg);
+                                    }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li {
+                    list-style-type: none;
+                    padding: .7rem 0;
+                    background: #ffffff07;
+                    margin: 5px 0;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+                }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li:hover {
+                        -webkit-transition: all 0.3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
+                        background: #0000000d;
+                    }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL1 ul li a {
+                        padding-left: 31px;
+                        text-decoration: none;
+                        font-size: 15px;
+                        color: #fff;
+                        text-transform: capitalize;
+                    }
+
+        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 {
+            width: 81%;
+            padding: 2rem 0 0;
+            margin: 4rem 0 0 auto;
+        }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_heading h2 {
+                font-size: 2rem;
+                text-transform: capitalize;
+            }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_heading a {
+                text-decoration: none;
+                color: #fff;
+                padding: .6rem 1rem;
+                border-radius: 4px;
+                margin: .7rem .5rem .7rem 0;
+                display: inline-block;
+                text-transform: capitalize;
+                background: #3f51b5;
+                border: 1px solid #3f51b5;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_heading a:hover {
+                    opacity: .77;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    -webkit-box-shadow: 0px 2px 3px 1px #b1b1b1;
+                    box-shadow: 0px 2px 3px 1px #b1b1b1;
+                }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_heading a.a2 {
+                    background: #3f51b54a !important;
+                    color: #000 !important;
+                    font-weight: bold;
+                    border: 1px solid #00000036 !important;
+                }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Camp_top {
+                margin: 1rem 0 0;
+                padding: .6rem 0 0rem;
+                width: 100%;
+                border-bottom: 1px solid #9999993d;
+            }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Camp_top a {
+                    font-size: 1rem;
+                    color: #2c3e50;
+                    font-weight: bold;
+                    text-transform: capitalize;
+                    display: inline-block;
+                    padding: 0 0 1rem 0;
+                    margin: 0 1rem 0rem 0;
+                    text-decoration: none;
+                }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Camp_top .List_active {
+                    border-bottom: 3px solid #3f51b5 !important;
+                    color: #3f51b5 !important;
+                }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 {
+                width: 100%;
+            }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp {
+                    width: 100%;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+                    padding: .9rem .0rem;
+                }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 {
+                        display: inline-block;
+                        position: relative;
+                        -webkit-box-pack: start !important;
+                        -ms-flex-pack: start !important;
+                        justify-content: flex-start !important;
+                    }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .F_ankr {
+                            display: inline-block;
+                            text-transform: capitalize;
+                            font-size: 1.1rem;
+                            text-decoration: none;
+                            font-weight: bolder;
+                            color: #3f51b5;
+                            font-family: 'Gotham Pro bold';
+                            -webkit-transition: all 0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
+                            padding: 5px 10px 5px 0;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .F_ankr span {
+                                border-bottom: 1px dotted;
+                                margin-left: 5px;
+                            }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .F_ankr:hover {
+                                opacity: .77;
+                                -webkit-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .hvr-underline-from-center:before {
+                            background: #3f51b5 !important;
+                            height: 2px !important;
+                        }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 p {
+                            margin: 0;
+                            color: #2c3e50;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 p span {
+                                color: #2c3e50;
+                                padding: 0 5px;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form {
+                            width: 75%;
+                            position: absolute;
+                            display: none;
+                            top: 57px;
+                            background: #fff;
+                            margin: 0 auto;
+                            border-radius: 5px;
+                            z-index: 5;
+                            -webkit-box-shadow: 0 0 3px 1px #0808082b;
+                            box-shadow: 0 0 3px 1px #0808082b;
+                            -webkit-animation: ScaleAnime .4s linear;
+                            animation: ScaleAnime .4s linear;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp {
+                                width: 90%;
+                                margin: 0 auto;
+                                position: relative;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp::before {
+                                    content: '';
+                                    width: 15px;
+                                    height: 15px;
+                                    background: #fff;
+                                    position: absolute;
+                                    top: -7px;
+                                    left: 20px;
+                                    -webkit-transform: rotate(45deg);
+                                    transform: rotate(45deg);
+                                }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form {
+                                    width: 100%;
+                                    padding: 1rem 0 0;
+                                }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form label {
+                                        width: 100%;
+                                        font-size: 16px;
+                                        text-transform: capitalize;
+                                        margin: 0;
+                                    }
+
+                                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form label input {
+                                            width: 100%;
+                                            padding: .5rem .4rem;
+                                            border-radius: 5px;
+                                            margin: .6rem 0;
+                                            border: 1px solid #3f51b5;
+                                            text-transform: capitalize;
+                                            font-size: 14px;
+                                        }
+
+                                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form label input:focus {
+                                                border-color: #3f51b5 !important;
+                                                outline: #040404;
+                                                -webkit-box-shadow: 0px 0px 2px 0px #3f51b538;
+                                                box-shadow: 0px 0px 2px 0px #3f51b538;
+                                                border: none !important;
+                                                border-bottom: 2px solid #3d51b5 !important;
+                                            }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Fst_one_wrp {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: justify;
+                                        -ms-flex-pack: justify;
+                                        justify-content: space-between;
+                                    }
+
+                                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Fst_one_wrp .SrFrm_Cmn04 {
+                                            width: 48%;
+                                        }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Days_list {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        -ms-flex-pack: distribute !important;
+                                        justify-content: space-around !important;
+                                        background: #e9e9e96b;
+                                        padding: .6rem .5rem;
+                                        border-radius: 5px;
+                                    }
+
+                                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Days_list a {
+                                            font-size: 13px;
+                                            text-transform: capitalize;
+                                            margin: 0 4px 0 0;
+                                            text-decoration: none;
+                                        }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .tab_list {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        -ms-flex-pack: distribute;
+                                        justify-content: space-around;
+                                    }
+
+                                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .tab_list a {
+                                            font-size: 14px;
+                                            text-transform: capitalize;
+                                            margin: 10px 5px;
+                                            padding: .5rem .8rem;
+                                            border-radius: 5px;
+                                            display: inline-block;
+                                            background: #3f51b514;
+                                            width: 31%;
+                                            text-align: center;
+                                            text-decoration: none;
+                                        }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Search_camp_wrp {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        -webkit-box-pack: justify !important;
+                                        -ms-flex-pack: justify !important;
+                                        justify-content: space-between !important;
+                                    }
+
+                                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Search_camp_wrp .Srch_cm02 {
+                                            width: 49%;
+                                        }
+
+                                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .SForm_wrp form .Search_camp_wrp .Srch01 {
+                                            color: #000;
+                                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Srch05 {
+                                width: 100%;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Srch05 input {
+                                    width: 100%;
+                                }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Srch06 {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                justify-content: center;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
+                                -webkit-box-pack: start;
+                                -ms-flex-pack: start;
+                                justify-content: flex-start;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Srch06 input {
+                                    display: block;
+                                    margin: 0 8px 0 0;
+                                    cursor: pointer;
+                                }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Srch06 select {
+                                    margin: 0 5px;
+                                    outline: none;
+                                    border: 1px solid #00000025;
+                                    border-radius: 2px;
+                                    cursor: pointer;
+                                }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Form_Btn_wrapper {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                justify-content: center;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
+                                -webkit-box-pack: start;
+                                -ms-flex-pack: start;
+                                justify-content: flex-start;
+                                margin: 1rem 0;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Form_Btn_wrapper .F_btn1 input {
+                                    padding: .6rem 2.4rem;
+                                    margin: .5rem 1.1rem 0 0;
+                                    text-transform: uppercase;
+                                    background-color: #3f51b5;
+                                    border: none;
+                                    color: #fff;
+                                    border-radius: 5px;
+                                    outline: none;
+                                }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F01 .Search_form .Form_Btn_wrapper .F_btn1 input:hover {
+                                        opacity: .77;
+                                        -webkit-transition: all 0.3s ease-in-out;
+                                        transition: all 0.3s ease-in-out;
+                                        outline: none;
+                                        border-radius: 100px;
+                                    }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 {
+                        -webkit-box-pack: end !important;
+                        -ms-flex-pack: end !important;
+                        justify-content: flex-end !important;
+                    }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt {
+                            margin: 0 2rem 0 0;
+                            background: #fff;
+                            border: 1px solid #e4e4e4;
+                            padding: .4rem 1.2rem;
+                            border-radius: 3px;
+                            position: relative;
+                            cursor: default;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt p {
+                                font-size: 15px;
+                                margin: 0;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt p i.fas.fa-file-download {
+                                    font-size: 15px;
+                                    color: #87add3;
+                                    padding-right: 6px;
+                                }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt .export_title {
+                                padding: .3rem .2rem;
+                                background: #000000;
+                                position: absolute;
+                                top: -40px;
+                                left: -62%;
+                                text-align: center;
+                                width: 230px;
+                                border-radius: 5px;
+                                z-index: 3;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt .export_title p {
+                                    color: #fff;
+                                    font-size: 13px;
+                                }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt .export_title span {
+                                    width: 10px;
+                                    height: 10px;
+                                    position: absolute;
+                                    left: 50%;
+                                    background: #000000;
+                                    -webkit-transform: rotate(45deg);
+                                    transform: rotate(45deg);
+                                    z-index: -1;
+                                }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Exprt:hover .export_title {
+                                display: block;
+                                -webkit-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .export_title {
+                            display: none;
+                            -webkit-transition: all 0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
+                        }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F02 .Option select {
+                            padding: .4rem .2rem;
+                            border: 1px solid #c5c5c5 !important;
+                            border-radius: 3px;
+                            outline: none;
+                            font-family: "Gotham Pro Regular";
+                            cursor: pointer;
+                        }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Sub_wrp .F0002_cmn02 {
+                        width: 49%;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field {
+                    width: 100%;
+                }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        background: #fff;
+                        padding: 1rem .5rem;
+                        -webkit-box-pack: start !important;
+                        -ms-flex-pack: start !important;
+                        justify-content: flex-start !important;
+                        margin: 3rem 0 0;
+                        border-radius: 5px;
+                        position: relative;
+                    }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0 {
+                            width: 100px;
+                            text-align: center;
+                            position: relative;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0 span {
+                                padding: .7rem .9rem;
+                                color: #007bff;
+                                background: #e9f5ff85;
+                                border-radius: 50%;
+                                font-size: 1.2rem;
+                                cursor: pointer;
+                                -webkit-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0 span:hover {
+                                    background: #e9f5ff;
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
+                                }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0:hover .messge-popup {
+                                display: block !important;
+                            }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0 .messge-popup {
+                                width: 300px;
+                                display: none;
+                                background: #e5e9f0;
+                                padding: .5rem 11px;
+                                text-align: left !important;
+                                position: absolute;
+                                top: -26px;
+                                left: 90px;
+                                border-radius: 5px;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0 .messge-popup p {
+                                    margin: 0;
+                                    padding: .2rem 0;
+                                }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .user-0 .messge-popup p b {
+                                        color: #000;
+                                    }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User01 {
+                            width: 50%;
+                            -webkit-box-pack: start !important;
+                            -ms-flex-pack: start !important;
+                            justify-content: flex-start !important;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User01 span, #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User01 a {
+                                width: 100%;
+                                display: block;
+                            }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User01 a {
+                                margin: .4rem 0;
+                            }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User01 p {
+                                margin: 0;
+                            }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User02 {
+                            width: 40%;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                            justify-content: center;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
+                            -ms-flex-pack: distribute;
+                            justify-content: space-around;
+                            text-align: center;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User02 span {
+                                font-weight: bold;
+                                font-size: 1.4rem;
+                                text-transform: capitalize;
+                            }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .User02 p {
+                                margin: .6rem 0 0;
+                                text-transform: capitalize;
+                            }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .hr1 {
+                            width: 87% !important;
+                            width: 5px;
+                            background: #e9e9e9;
+                            border-radius: 10px;
+                            margin: 23px 0px 0px 97px;
+                            height: 10px;
+                            border: none;
+                        }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .setting {
+                            position: absolute;
+                            right: 21px;
+                            top: 5px;
+                            border-radius: 5px;
+                            padding: 2px 10px;
+                            cursor: pointer;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .setting:hover {
+                                -webkit-transition: all 0.3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
+                                background: #e5e9f09c;
+                            }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .setting i.fa.fa-ellipsis-h {
+                                font-size: 19px;
+                            }
+
+                        #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .Setting-child {
+                            position: absolute;
+                            bottom: 10px;
+                            width: 250px;
+                            height: auto;
+                            bottom: -157px;
+                            right: 13px;
+                            background: #f5f5f5;
+                            border-radius: 5px;
+                            -webkit-box-shadow: 0 2px 5px 1px #99999987;
+                            box-shadow: 0 2px 5px 1px #99999987;
+                            -webkit-animation: ScaleAnime .4s linear;
+                            animation: ScaleAnime .4s linear;
+                            display: none;
+                        }
+
+                            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .Setting-child ul {
+                                margin: 0 0 0;
+                                position: relative;
+                            }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .Setting-child ul span {
+                                    width: 18px;
+                                    height: 18px;
+                                    background: #f5f5f5;
+                                    -webkit-transform: rotate(45deg);
+                                    transform: rotate(45deg);
+                                    right: 15px;
+                                    top: -16px;
+                                    position: absolute;
+                                    z-index: -1;
+                                }
+
+                                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .Setting-child ul li {
+                                    list-style-type: none;
+                                    font-size: 1.1rem;
+                                    text-transform: capitalize;
+                                    padding: .5rem 0;
+                                    border-bottom: 1px solid #ffffff85;
+                                    padding-left: 1.5rem;
+                                    margin: .5rem 0;
+                                    cursor: pointer;
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
+                                }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .Setting-child ul li:hover {
+                                        background: #bdd1ff57;
+                                        -webkit-transition: all 0.3s ease-in-out;
+                                        transition: all 0.3s ease-in-out;
+                                    }
+
+                                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Child_Camp1 .Main-User_field .Child_userField .Setting-child ul li:last-child {
+                                        padding-bottom: 12px !important;
+                                        margin-bottom: 0px !important;
+                                    }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Cntr_report {
+                background: #bec5e33d;
+                margin: 1rem .1rem;
+                padding: .8rem;
+                border-radius: 5px;
+            }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Cntr_report .Rcmn02 h5 {
+                    margin: 0 0 1rem 0;
+                }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Camp_Content .Cntr_report .Rcmn02 span {
+                    font-size: 1rem;
+                    color: #2c3e50;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+
+            #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Copy--right {
+                padding: 16rem 0 13px;
+            }
+
+                #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Copy--right .Content {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+                }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Copy--right .Content .Cpy_Cnt01 {
+                        -ms-flex-pack: distribute !important;
+                        justify-content: space-around !important;
+                        width: 70%;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Copy--right .Content .Cpy_Cnt02 {
+                        width: 30%;
+                        -webkit-box-pack: end !important;
+                        -ms-flex-pack: end !important;
+                        justify-content: flex-end !important;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    }
+
+                    #EmailService_wrapper .Main_Campaign .Campaign_content .CampL2 .Copy--right .Content .Cpy_cmn02 a {
+                        font-size: 14px;
+                        text-decoration: none;
+                        color: #2c3e50;
+                    }
+
+@-webkit-keyframes ScaleAnime {
+    0% {
+        -webkit-transform: scale(0.77);
+        transform: scale(0.77);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@keyframes ScaleAnime {
+    0% {
+        -webkit-transform: scale(0.77);
+        transform: scale(0.77);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.Mailing_List-wrapper .Child_userField {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+    margin: 1.3rem 0 0.5rem !important;
+    padding: 1rem 1.5rem !important;
+}
+
+    .Mailing_List-wrapper .Child_userField .User01 p {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        margin: 0 !important;
+    }
+
+        .Mailing_List-wrapper .Child_userField .User01 p a {
+            width: auto !important;
+            margin: 0 5px !important;
+        }
+
+    .Mailing_List-wrapper .Child_userField .User02 p {
+        font-size: 15px !important;
+    }
+
+    .Mailing_List-wrapper .Child_userField #Setting-child1 {
+        bottom: -84px !important;
+        z-index: 1;
+    }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child1 ul .del_1 {
+            padding-top: 0.7rem !important;
+            border-top: 1px solid #5945cc17;
+        }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child1 ul li:nth-child(2), .Mailing_List-wrapper .Child_userField #Setting-child1 ul .edit {
+            border-bottom: inherit !important;
+        }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child1 ul li {
+            font-size: 15px !important;
+        }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child1 ul li i.fas.fa-trash-alt {
+                color: #f90000 !important;
+            }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child1 ul li i {
+                color: #9082dc;
+                padding-right: 8px;
+            }
+
+    .Mailing_List-wrapper .Child_userField #Setting-child2 {
+        width: 420px !important;
+        bottom: -346px !important;
+        z-index: 8;
+    }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01 {
+            position: relative;
+        }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2::before, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01::before {
+                content: "\f005";
+                position: absolute;
+                right: 20px;
+                bottom: 9px;
+                font-family: "Font Awesome 5 Free";
+                display: block;
+                color: #9082dc;
+            }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2 p, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01 p {
+                position: absolute;
+                padding: .2rem .5rem;
+                background: #000;
+                border-radius: 5px;
+                margin: 0;
+                color: #fff;
+                font-size: 12px;
+                top: -48px;
+                left: 19%;
+                display: none;
+                width: 250px;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                text-align: center;
+            }
+
+                .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2 p::before, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01 p::before {
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    background: #000;
+                    z-index: -1;
+                    position: absolute;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    bottom: -5px;
+                    left: 50%;
+                }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2:hover .p1, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01:hover .p1 {
+                display: block;
+            }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01::before {
+                display: none !important;
+            }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01 p {
+                top: -30px !important;
+            }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01:hover .p2 {
+                display: block;
+            }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01 {
+            background: #fff0;
+            color: #787878ad;
+            cursor: not-allowed !important;
+        }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Verify-2:hover, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01:hover, .Mailing_List-wrapper .Child_userField #Setting-child2 ul .Export_excel01:hover {
+                background: inherit !important;
+            }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child2 ul li {
+            font-size: 14px !important;
+            border-color: #ffff !important;
+            padding: 0.4rem 0 0.6rem 1.5rem !important;
+        }
+
+            .Mailing_List-wrapper .Child_userField #Setting-child2 ul li i {
+                color: #9082dc;
+                padding-right: 8px;
+            }
+
+                .Mailing_List-wrapper .Child_userField #Setting-child2 ul li i.fas.fa-trash-alt {
+                    color: red !important;
+                }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child2 ul .automation {
+            border-bottom: inherit !important;
+        }
+
+        .Mailing_List-wrapper .Child_userField #Setting-child2 ul .del_2 {
+            padding-top: 0.7rem !important;
+            border-top: 1px solid #5945cc17 !important;
+        }
+
+.Mailing_List-wrapper .F02 .Sort p {
+    margin: 0 !important;
+    padding: 0 10px 0 0;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.Mailing_List-wrapper .CampL2 .Copy--right {
+    padding: 21.6rem 0 13px !important;
+}
+
+.Mailing_List-wrapper .SForm_wrp form .Search_camp_wrp .Srch_cm02 {
+    width: 100% !important;
+}
+
+    .Mailing_List-wrapper .SForm_wrp form .Search_camp_wrp .Srch_cm02 label {
+        font-size: 15px !important;
+    }
+
+    .Mailing_List-wrapper .SForm_wrp form .Search_camp_wrp .Srch_cm02 input {
+        width: 100% !important;
+    }
+
+.Mailing_List-wrapper .SForm_wrp form .Search_camp_wrp select#select3 {
+    width: 100%;
+    padding: .5rem .5rem;
+    border: 1px solid #3f51b5;
+    border-radius: 3px;
+    margin: .7rem 0 0 0;
+}
+
+.Mailing_List-wrapper .SForm_wrp form .F_btn1 {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    .Mailing_List-wrapper .SForm_wrp form .F_btn1 input {
+        padding: 0.5rem 2.3rem !important;
+    }
+
+.Mailing_List-wrapper .Camp_heading .a2 {
+    color: #343a40 !important;
+}
+
+    .Mailing_List-wrapper .Camp_heading .a2 i {
+        padding-right: 4px !important;
+        color: #212529;
+        font-size: 14px;
+    }
+
+.Email_Template_wrapper .Camp_heading a .fa-plus-square {
+    color: #fff;
+    padding-right: 4px;
+}
+
+.Email_Template_wrapper .Camp_heading a .fa-folder-plus {
+    color: #000;
+}
+
+.Email_Template_wrapper .Child_Camp1 .Template_wrp {
+    width: 70%;
+    margin: 2rem auto 0 0;
+    height: 550px;
+    background: #fff;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+    .Email_Template_wrapper .Child_Camp1 .Template_wrp .Temp_cotent {
+        display: block;
+        text-align: center;
+    }
+
+        .Email_Template_wrapper .Child_Camp1 .Template_wrp .Temp_cotent figure i.fas.fa-newspaper {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #28148359), color-stop(70%, #8f6ed5), color-stop(94%, #d782d9d1));
+            background: linear-gradient(to bottom, #28148359 15%, #8f6ed5 70%, #d782d9d1 94%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 9rem;
+        }
+
+        .Email_Template_wrapper .Child_Camp1 .Template_wrp .Temp_cotent p {
+            font-size: 1rem;
+        }
+
+            .Email_Template_wrapper .Child_Camp1 .Template_wrp .Temp_cotent p a {
+                text-decoration: none;
+            }
+
+        .Email_Template_wrapper .Child_Camp1 .Template_wrp .Temp_cotent .Ad_temp {
+            text-decoration: none;
+            color: #fff;
+            background: #3f51b5;
+            text-transform: capitalize;
+            display: inline-block;
+            padding: .9rem 3rem;
+            margin: 1rem 0 0;
+            border-radius: 5px;
+        }
+/*# sourceMappingURL=style.css.map */

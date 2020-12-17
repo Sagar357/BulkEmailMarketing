@@ -17,8 +17,14 @@ namespace BulkEmailMarketing.Controllers
         [HttpPost]
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
+            postObj.status = "Sending";
+            int id=service.SaveEmail(postObj);
+            postObj.filePath = Url.Action("GetLogo", "Home", new { unique=id });
 
-             bool status=service.SendEmail(postObj , userData);
+
+            string status = service.SendEmail(postObj , userData);
+            postObj.status = status;
+           
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
@@ -36,12 +42,19 @@ namespace BulkEmailMarketing.Controllers
         [HttpPost]
         public async Task<JsonResult> SendBulkEmail(postBulkObj postObj)
         {
-            bool status = false;
-            postObj.list = (List<PostEmail_Obj>)Session["excel"];
+            string status = "";
+            //postObj.list = (List<PostEmail_Obj>)Session["excel"];
             foreach (var obj in postObj.list)
             {
+                obj.status = "Sending";
+                int id = service.SaveEmail(obj);
+                obj.filePath = Url.Action("GetLogo", "Home", new { unique = id });
+
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData);
+                obj.status = status;
+                obj.campaignId = postObj.campaignId;
+                service.SaveEmail(obj);
                 await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);
@@ -50,10 +63,7 @@ namespace BulkEmailMarketing.Controllers
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
         // GET: Email/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+       
 
         // POST: Email/Create
         [HttpPost]
