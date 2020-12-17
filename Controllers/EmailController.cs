@@ -46,6 +46,10 @@ namespace BulkEmailMarketing.Controllers
             //postObj.list = (List<PostEmail_Obj>)Session["excel"];
             foreach (var obj in postObj.list)
             {
+                obj.status = "Sending";
+                int id = service.SaveEmail(obj);
+                obj.filePath = Url.Action("GetLogo", "Home", new { unique = id });
+
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData);
                 obj.status = status;

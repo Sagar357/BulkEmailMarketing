@@ -399,6 +399,8 @@ namespace BulkEmailMarketing.Services
                     emailStatus = 1;
                 if (Model.status == "opened")
                     emailStatus = 3;
+                if (Model.status == "Sending")
+                    emailStatus = 4;
 
                 using (SqlConnection db = ConnectionHelper.getConnection())
                 {
