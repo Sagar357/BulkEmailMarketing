@@ -82,9 +82,8 @@ namespace BulkEmailMarketing.Services
 
                     if (ds.Tables.Count > 0)
                     {
-                        foreach (DataTable dt in ds.Tables)
-                        {
-                            foreach (DataRow dr in dt.Rows)
+                    
+                            foreach (DataRow dr in ds.Tables[0].Rows)
                             {
                                 Campaign_Model obj = new Campaign_Model();
                                 if (!string.IsNullOrEmpty(dr["campaignid"].ToString()))
@@ -146,7 +145,30 @@ namespace BulkEmailMarketing.Services
 
                                 detail.list.Add(obj);
                             }
-                        }
+                            foreach (DataRow dr in ds.Tables[1].Rows)
+                            {
+                                SmtpConnection_Model objCons = new SmtpConnection_Model();
+                                if (!string.IsNullOrEmpty(dr["connectionId"].ToString()))
+                                {
+                                objCons.connectionId = Convert.ToInt32(dr["connectionId"].ToString());
+                                }
+                                else
+                                {
+                                objCons.connectionId = 0;
+                                }
+                                if (!string.IsNullOrEmpty(dr["instanceName"].ToString()))
+                                {
+                                objCons.instanceName = dr["instanceName"].ToString();
+                                }
+                                else
+                                {
+                                objCons.instanceName = "";
+                                }
+                              
+
+                                detail.Smtp.smtpConnectionList.Add(objCons);
+                            }
+                        
                     }
                     detail.message = "success";
                 }

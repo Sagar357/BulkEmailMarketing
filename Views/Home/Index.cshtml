@@ -59,8 +59,18 @@
                                 <fieldset>
                                     <legend>@element.campaignName</legend>
                                     <div class="d1 frm_dCmn">
+                                        <label for="#">Smtp Server</label>
+                                        <select id="smtp-@element.campaighId">
+                                            @foreach (var ele in Model.Smtp.smtpConnectionList)
+                                            {
+                                                <option value="@ele.connectionId">@ele.instanceName</option>
+                                            }
+
+                                        </select>
+                                    </div>
+                                    <div class="d1 frm_dCmn">
                                         <label for="#">Name ( Email )</label>
-                                        <input type="text" name="Name" value="@element.fromName" placeholder="Name displayed in email.." >
+                                        <input type="text" name="Name" value="@element.fromName" placeholder="Name displayed in email..">
                                     </div>
                                     <div class="d1 frm_dCmn">
                                         <label for="#">To</label>
@@ -116,16 +126,26 @@
                                     <fieldset>
                                         <legend>@element.campaignName</legend>
                                         <div class="d1 frm_dCmn">
+                                            <label for="#">Smtp Server</label>
+                                            <select>
+                                                @foreach (var ele in Model.Smtp.smtpConnectionList)
+                                                {
+                                                    <option value="@ele.connectionId">@ele.instanceName</option>
+                                                }
+
+                                            </select>
+                                        </div>
+                                        <div class="d1 frm_dCmn">
                                             <label for="#">Name ( Email )</label>
-                                            <input type="text" name="Name" value="@element.fromName" id="fromName-@element.campaighId" placeholder="Name displayed in email.." >
+                                            <input type="text" name="Name" value="@element.fromName" id="fromName-@element.campaighId" placeholder="Name displayed in email..">
                                         </div>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">From</label>
-                                            <input type="text" value="@ViewBag.username" disabled placeholder="from.." >
+                                            <input type="text" value="@ViewBag.username" disabled placeholder="from..">
                                         </div>
                                         <div class="d2 frm_dCmn">
                                             <label for="#">Delay(Milliseconds)</label>
-                                            <input type="text" value="" name="delay" id="delay-@element.campaighId" placeholder="Delay between mails.." >
+                                            <input type="text" value="" name="delay" id="delay-@element.campaighId" placeholder="Delay between mails..">
                                         </div>
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Upload Image</label>
@@ -139,7 +159,7 @@
 
                                         <div class="d3 frm_dCmn">
                                             <label for="#">Excel Document</label>
-                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId" >
+                                            <input type="file" class="file-upload" name="exceldoc" value="@element.subject" data-target="#Table-@element.campaighId" data-store="#hiddenexcel-@element.campaighId">
                                             <input type="hidden" name="excelData" id="hiddenexcel-@element.campaighId" value="" />
                                         </div>
                                         <div class="Table_wrp" id="Table-@element.campaighId">
@@ -157,9 +177,9 @@
                                             <input type="submit" value="Send" data-content="">
                                             <!-- </a>   -->
                                             @*<span class="Attach">
-            <img src="~/img/attach_file_black_20dp.png" alt="attach">
-            <input type="file" hidden>
-        </span>*@
+                <img src="~/img/attach_file_black_20dp.png" alt="attach">
+                <input type="file" hidden>
+            </span>*@
                                             <input type="button" value="Save Template" onclick="saveTemplate(event)" data-content="">
 
                                             <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete" ,"Campaign")?id=@element.campaighId'">
@@ -337,6 +357,7 @@
         var postObj = JSON.parse(jsonString);
         postObj.emailBody = data;
         postObj.campaignId = editor.split('-')[1];
+        postObj.connectionId = $("#smtp-" + editor.split('-')[1]).val();
         var res = new Promise(function (resolve, reject) {
 
             $.ajax({

@@ -193,6 +193,7 @@
     <Compile Include="Models\Campaign_Model.cs" />
     <Compile Include="Models\ExcelData.cs" />
     <Compile Include="Models\File_Model.cs" />
+    <Compile Include="Models\SmtpConnection_Model.cs" />
     <Compile Include="Models\user_Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CampaignServices.cs" />

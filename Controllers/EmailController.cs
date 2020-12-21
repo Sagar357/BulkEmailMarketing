@@ -18,11 +18,12 @@ namespace BulkEmailMarketing.Controllers
         public  JsonResult SendEmail(PostEmail_Obj postObj)
         {
             postObj.status = "Sending";
-            int id=service.SaveEmail(postObj);
+            int id = service.SaveEmail(postObj);
             postObj.filePath = Url.Action("GetLogo", "Home", new { unique=id });
-
-
-            string status = service.SendEmail(postObj , userData);
+           
+            service.UpdateStatus(id, 2);
+            SmtpConnectionDetail_Model smtpDetial=service.getSmtpDetails(postObj.connectionId);
+            string status = service.SendEmail(postObj , userData ,smtpDetial);
             postObj.status = status;
            
             var x = Json(status, JsonRequestBehavior.AllowGet);
@@ -44,17 +45,20 @@ namespace BulkEmailMarketing.Controllers
         {
             string status = "";
             //postObj.list = (List<PostEmail_Obj>)Session["excel"];
+            service.getSmtpDetails(postObj.connectionId);
             foreach (var obj in postObj.list)
             {
                 obj.status = "Sending";
+                obj.campaignId = postObj.campaignId;
                 int id = service.SaveEmail(obj);
                 obj.filePath = Url.Action("GetLogo", "Home", new { unique = id });
 
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData);
                 obj.status = status;
-                obj.campaignId = postObj.campaignId;
-                service.SaveEmail(obj);
+                
+                service.UpdateStatus(id, 2);
+               
                 await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);

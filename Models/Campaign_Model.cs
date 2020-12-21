@@ -29,6 +29,7 @@ namespace BulkEmailMarketing.Models
         public int campaignId { get; set; }
         public string status { get; set; }
         public DateTime createdDate { get; set; }
+        public int connectionId { get; set; }
     }
 
     public class postBulkObj
@@ -44,15 +45,18 @@ namespace BulkEmailMarketing.Models
         public int delay { get; set; }
         public string Name { get; set; }
         public int campaignId { get; set; }
+        public int connectionId { get; set; }
 
     }
     public class Campaign_List
     {
         public Campaign_List() 
         {
-            this.list = new List<Campaign_Model>(); 
+            this.list = new List<Campaign_Model>();
+            this.Smtp = new SmtpConnection_List();
         }
         public List<Campaign_Model> list { get; set; }
+        public SmtpConnection_List Smtp { get; set; }
         public string message { get; set; }
     }
 
