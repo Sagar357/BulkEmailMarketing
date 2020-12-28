@@ -122,7 +122,7 @@ namespace BulkEmailMarketing.Services
                     client.Port = 587;
                     client.UseDefaultCredentials = false;
                     client.EnableSsl = true;
-                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, smtpDetail.instanceEmail);
+                    client.Credentials = new System.Net.NetworkCredential(message.Sender.Address.ToString(), smtpDetail.password.ToString());
 
                     /*Email Blaster*/
                     //client.Credentials = new System.Net.NetworkCredential(message.Sender.Address, "Settings@123");
