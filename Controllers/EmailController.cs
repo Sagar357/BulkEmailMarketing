@@ -45,7 +45,8 @@ namespace BulkEmailMarketing.Controllers
         {
             string status = "";
             //postObj.list = (List<PostEmail_Obj>)Session["excel"];
-            service.getSmtpDetails(postObj.connectionId);
+            SmtpConnectionDetail_Model smtpDetial = service.getSmtpDetails(postObj.connectionId);
+
             foreach (var obj in postObj.list)
             {
                 obj.status = "Sending";
@@ -54,7 +55,7 @@ namespace BulkEmailMarketing.Controllers
                 obj.filePath = Url.Action("GetLogo", "Home", new { unique = id });
 
                 obj.emailBody = postObj.BulkEmailBody;
-                status =  service.SendEmail(obj , userData);
+                status =  service.SendEmail(obj , userData , smtpDetial);
                 obj.status = status;
                 
                 service.UpdateStatus(id, 2);
