@@ -20,12 +20,14 @@ namespace BulkEmailMarketing.Controllers
             postObj.status = "Sending";
             int id = service.SaveEmail(postObj);
             postObj.filePath = Url.Action("GetLogo", "Home", new { unique=id });
-           
-            service.UpdateStatus(id, 2);
+          
             SmtpConnectionDetail_Model smtpDetial=service.getSmtpDetails(postObj.connectionId);
             string status = service.SendEmail(postObj , userData ,smtpDetial);
             postObj.status = status;
-           
+            if (status == "Email Sent")
+                service.UpdateStatus(id, 2);
+            else
+                service.UpdateStatus(id, 1);
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
@@ -57,9 +59,11 @@ namespace BulkEmailMarketing.Controllers
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData , smtpDetial);
                 obj.status = status;
-                
+                if (status=="Email Sent")
                 service.UpdateStatus(id, 2);
-               
+                else
+                    service.UpdateStatus(id, 1);
+
                 await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);
