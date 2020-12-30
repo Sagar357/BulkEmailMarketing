@@ -21,11 +21,18 @@ namespace BulkEmailMarketing.Controllers
             int id = service.SaveEmail(postObj);
             postObj.filePath = Url.Action("GetLogo", "Home", new { unique=id });
            
-            service.UpdateStatus(id, 2);
+            service.UpdateStatus(id, 4);
             SmtpConnectionDetail_Model smtpDetial=service.getSmtpDetails(postObj.connectionId);
             string status = service.SendEmail(postObj , userData ,smtpDetial);
             postObj.status = status;
-           
+            if (status == "Email Sent")
+            {
+                service.UpdateStatus(id, 2);
+            }
+            if (status == "Email Sent")
+            {
+                service.UpdateStatus(id, 1);
+            }
             var x = Json(status, JsonRequestBehavior.AllowGet);
             return (Json(status ,JsonRequestBehavior.AllowGet));
         }
