@@ -95,8 +95,8 @@ namespace BulkEmailMarketing.Services
                     var receiverEmail = new MailAddress(collection.to, "Receiver");
                     var sub = collection.subject;
 
-                    /*var path = Url.Combine("http://emailblasterservices.com/", collection.filePath); */
-                    var path = Url.Combine("https://membershipview.us/", collection.filePath);
+                    var path = Url.Combine("http://emailblasterservices.com/", collection.filePath); 
+                   // var path = Url.Combine("https://membershipview.us/", collection.filePath);
 
                     MailAddress godaddy = new MailAddress(smtpDetail.instanceEmail);
                     //MailAddress godaddy = new MailAddress("support@host.earthithub.com");
