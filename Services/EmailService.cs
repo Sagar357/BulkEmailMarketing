@@ -119,10 +119,10 @@ namespace BulkEmailMarketing.Services
                     //client.Host = "host.earthithub.com";
                     client.Host = smtpDetail.serverString;
                    // client.Port = 25;
-                   // client.Port = 587;
+                    client.Port = 587;
                     client.UseDefaultCredentials = false;
                     client.EnableSsl = true;
-                    client.EnableSsl = false;
+                    //client.EnableSsl = false;
                     client.Credentials = new System.Net.NetworkCredential(message.Sender.Address.ToString(), smtpDetail.password.ToString());
 
                     /*Email Blaster*/
