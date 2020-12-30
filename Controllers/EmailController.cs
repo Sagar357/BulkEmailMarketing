@@ -29,7 +29,7 @@ namespace BulkEmailMarketing.Controllers
             {
                 service.UpdateStatus(id, 2);
             }
-            if (status == "Email Sent")
+            else
             {
                 service.UpdateStatus(id, 1);
             }
