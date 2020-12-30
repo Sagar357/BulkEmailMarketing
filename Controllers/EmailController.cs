@@ -60,13 +60,20 @@ namespace BulkEmailMarketing.Controllers
                 obj.campaignId = postObj.campaignId;
                 int id = service.SaveEmail(obj);
                 obj.filePath = Url.Action("GetLogo", "Home", new { unique = id });
-
+              
                 obj.emailBody = postObj.BulkEmailBody;
                 status =  service.SendEmail(obj , userData , smtpDetial);
                 obj.status = status;
-                
-                service.UpdateStatus(id, 2);
-               
+
+                if (status == "Email Sent")
+                {
+                    service.UpdateStatus(id, 2);
+                }
+                else
+                {
+                    service.UpdateStatus(id, 1);
+                }
+
                 await Task.Delay(postObj.delay);
             }
             //bool status = service.SendEmail(postObj);
