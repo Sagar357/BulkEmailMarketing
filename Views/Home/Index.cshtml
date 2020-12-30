@@ -127,7 +127,7 @@
                                         <legend>@element.campaignName</legend>
                                         <div class="d1 frm_dCmn">
                                             <label for="#">Smtp Server</label>
-                                            <select>
+                                            <select  id="bulksmtp-@element.campaighId">
                                                 @foreach (var ele in Model.Smtp.smtpConnectionList)
                                                 {
                                                     <option value="@ele.connectionId">@ele.instanceName</option>
@@ -308,6 +308,8 @@
         o.BulkEmailBody = data;
         o.Name = fromName;
         o.campaignId = parseInt(source.split('-')[1]);
+        o.connectionId = $("#bulksmtp-" + source.split('-')[1]).val();
+       
         postObj = JSON.stringify(o);
         $.ajax({
             url: "/Email/SendBulkEmail",
